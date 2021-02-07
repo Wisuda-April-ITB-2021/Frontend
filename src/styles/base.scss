@@ -1,0 +1,80 @@
+// INIT
+@import "./variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// IMPORT FONTS
+@font-face {
+  font-family: Bitter-Bold;
+  src: url("./assets/Bitter-Bold.ttf");
+}
+
+@font-face {
+  font-family: Bitter-Italic;
+  src: url("./assets/Bitter-Italic.ttf");
+}
+
+@font-face {
+  font-family: Bitter-Regular;
+  src: url("./assets/Bitter-Regular.ttf");
+}
+
+@font-face {
+  font-family: Westmeath-Italic;
+  src: url("./assets/Westmeath-Italic.ttf");
+}
+
+@font-face {
+  font-family: Westmeath;
+  src: url("./assets/Westmeath.ttf");
+}
+
+// FONT SIZES
+
+h1,
+h2,
+h3 {
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: clamp(44px, 5.5vw, 100px);
+  font-family: $font1;
+}
+h2 {
+  font-size: clamp(28px, 3.5vw, 54px);
+  font-family: $font1;
+}
+h3 {
+  font-size: clamp(22px, 2.5vw, 48px);
+  font-family: $font1-italic;
+}
+h4 {
+  font-size: clamp(22px, 2.2vw, 36px);
+  font-weight: 300;
+  font-family: $font2-bold;
+}
+h5 {
+  font-size: clamp(14px, 2.1vw, 16px);
+  font-weight: 300;
+  font-family: $font2-italic;
+}
+h6 {
+  font-size: clamp(12px, 2vw, 16px);
+  font-weight: 500;
+  font-family: $font2;
+}
+
+p {
+  font-size: clamp(13px, 2.2vw, 18px);
+  font-family: $font2;
+}
+
+a {
+  text-decoration: none;
+  font-family: $font2;
+}

@@ -1,0 +1,13 @@
+@import "../styles/mixin.scss";
+@import "../styles/variables.scss";
+
+.coming-soon {
+  @include setup_size(100vw, 100vh);
+  @include flex_center(column);
+  background: url(../images/bg/coming-soon.webp) no-repeat center center;
+  background-size: cover;
+
+  & > * {
+    transform: translateY(-10vh);
+  }
+}
