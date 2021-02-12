@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Frontend - Wispril ITB 2021 Official Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[www.wisprilitb.com](https://wisprilitb.com/)
 
-## Available Scripts
+## Short Desc
 
-In the project directory, you can run:
+TBA
 
-### `npm start`
+## Quick Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- install [NodeJS](https://nodejs.org/en/). If unsure, download the LTS version.
+- Install [Git](https://git-scm.com/).
+- clone this repository
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+git clone https://github.com/paradewisudaitb/Frontend frontend-wispril
+cd frontend-wispril
+git remote add origin https://github.com/paradewisudaitb/Frontend
+npm install
+```
 
-### `npm test`
+- add the development branch
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+git checkout -b development
+git pull origin development
+```
 
-### `npm run build`
+## Development Mode
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To enter the develpment branch, open your terminal and enter
+Make sure you are on the development branch before you start coding, unless you are trying to merge the branch directly to the master branch, which is unlikely.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+git checkout development
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run the React App on your local server, run
+`npm start`
+A new tab [http://localhost:3000](http://localhost:3000) will be opened on your browser.
+If an error regarding NPM dependencies occurs, try
+`npm install` or `npm cache clean --force`
+Run `Ctrl+C` on your terminal to close the server.
 
-### `npm run eject`
+To push your code to the development branch on Github,
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+git add .
+git commit -m "meaningful message"
+git push origin development
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You can check the development site on [staging.wisprilitb.com](https://staging.wisprilitb.com/). Your latest push should be live in 5-10 minutes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Tech Stack
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React
+- Golang
