@@ -1,0 +1,33 @@
+@import "../styles/mixin.scss";
+@import "../styles/variables.scss";
+
+.H1,
+.H2 {
+  background: linear-gradient(180deg, #ffeeb4 0%, #ffdd63 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.H3 {
+  color: $white;
+}
+
+// .H1 {
+//   -webkit-filter: drop-shadow(0.4vw 0.4vw $black);
+//   filter: drop-shadow(0.4vw 0.4vw $black);
+// }
+
+// .H2 {
+//   -webkit-filter: drop-shadow(0.3vw 0.3vw $black);
+//   filter: drop-shadow(0.3vw 0.3vw $black);
+// }
+
+$headings: 3;
+@for $i from 1 through $headings {
+  .H#{$i} {
+    $translation: #{0.7 - 0.1 * $i}vh;
+    -webkit-filter: drop-shadow($translation $translation $black);
+    filter: drop-shadow($translation $translation $black);
+  }
+}

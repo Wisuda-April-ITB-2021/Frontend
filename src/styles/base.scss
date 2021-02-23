@@ -1,6 +1,5 @@
 // INIT
-@import "./variables.scss";
-@import "./mixin.scss";
+@import "./variables";
 
 * {
   margin: 0;
@@ -39,80 +38,43 @@
 h1,
 h2,
 h3 {
-  letter-spacing: 0.03em;
-}
-
-h1,
-h2 {
-  background: linear-gradient(180deg, #ffeeb4 0%, #ffdd63 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-h4,
-h5,
-h6,
-p {
-  color: $white;
+  letter-spacing: 1px;
 }
 
 h1 {
-  font-size: clamp(54px, 5.5vw, 100px);
+  font-size: clamp(44px, 5.5vw, 100px);
   font-family: $font1;
-  transform: skewY(-2deg);
 }
 h2 {
-  font-size: clamp(30px, 3vw, 54px);
+  font-size: clamp(28px, 3.5vw, 54px);
   font-family: $font1;
 }
 h3 {
-  font-size: clamp(24px, 2.5vw, 44px);
+  font-size: clamp(22px, 2.5vw, 48px);
   font-family: $font1-italic;
-  color: $lightGreen;
 }
 h4 {
-  font-size: clamp(20px, 2.2vw, 36px);
+  font-size: clamp(22px, 2.2vw, 36px);
   font-weight: 300;
-  font-family: $font1;
+  font-family: $font2-bold;
 }
 h5 {
-  font-size: clamp(16px, 1.4vw, 18px);
+  font-size: clamp(14px, 2.1vw, 16px);
   font-weight: 300;
-  font-family: $font1;
+  font-family: $font2-italic;
 }
 h6 {
-  font-size: clamp(10px, 1.2vw, 14px);
+  font-size: clamp(12px, 2vw, 16px);
   font-weight: 500;
   font-family: $font2;
-  $translation: 0.1vh;
-  -webkit-filter: drop-shadow($translation $translation $black-transparent);
-  filter: drop-shadow($translation $translation $black-transparent);
 }
 
-p,
-a {
-  font-size: clamp(14px, 1.5vw, 18px);
+p {
+  font-size: clamp(13px, 2.2vw, 18px);
   font-family: $font2;
 }
 
 a {
   text-decoration: none;
-  color: $yellow;
-}
-
-$headings: 5;
-@for $i from 1 through $headings {
-  h#{$i} {
-    $translation: #{0.7 - 0.115 * $i}vh;
-    -webkit-filter: drop-shadow($translation $translation $black);
-    filter: drop-shadow($translation $translation $black);
-  }
-}
-
-p,
-a {
-  $translation: 0.125vh;
-  -webkit-filter: drop-shadow($translation $translation $black-transparent);
-  filter: drop-shadow($translation $translation $black-transparent);
+  font-family: $font2;
 }
