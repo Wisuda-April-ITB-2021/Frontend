@@ -1,0 +1,58 @@
+@import "../styles/mixin.scss";
+@import "../styles/variables.scss";
+
+.list {
+    position: relative;
+    list-style: none;
+}
+
+.bullet {
+    width: clamp(19.09px,1.68vw,21.48px);
+    height: clamp(19.09px,1.68vw,21.48px);
+    -webkit-border-radius: clamp(19.09px,1.68vw,21.48px);
+    -moz-border-radius: clamp(19.09px,1.68vw,21.48px);
+    border-radius: clamp(19.09px,1.68vw,21.48px);
+    background-color: $yellow;
+    position: absolute;
+    top: clamp(0.90px,0.08vw,1.02px);
+}
+
+.listItem {
+    &:first-child {
+        &:before {
+            // prevent line going above list
+            top: clamp(7.27px,0.64vw,8.18px);
+        }
+    }
+    &:last-child {
+        &:before {
+            // prevent line going below list
+            height: clamp(7.27px,0.64vw,8.18px);
+        }
+    }
+    &:before {
+        //line
+        content: "";
+        position: absolute;
+        left: clamp(9.54px,0.84vw,10.74px);
+        border-left: 1px solid $yellow;
+        height: 100%;
+    }
+
+    position: relative;
+}
+
+.listItemWrapper {
+    position: relative;
+    //space for bullet
+    padding-left: clamp(26.37px,2.32vw,29.66px);
+    padding-bottom: clamp(40.01px,3.52vw,45.01px);
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
