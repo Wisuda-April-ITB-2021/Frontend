@@ -2,58 +2,67 @@ import { lazy } from "react";
 
 // import lazy
 
-const ApresiasiPage = lazy(() =>
-  import("../pages/Galeri/ApresiasiPage").then((module) => ({
-    default: module.ApresiasiPage,
-  }))
-);
-
-// const ComingSoon = lazy(() =>
-//   import("../pages/Galeri/ComingSoon").then((module) => ({
-//     default: module.ComingSoon,
+// const ApresiasiPage = lazy(() =>
+//   import("../pages/Galeri/ApresiasiPage").then((module) => ({
+//     default: module.ApresiasiPage,
 //   }))
 // );
 
-const GaleriWisudawan = lazy(() =>
-  import("../pages/Galeri/GaleriWisudawan").then((module) => ({
-    default: module.GaleriWisudawan,
-  }))
-);
+// // const ComingSoon = lazy(() =>
+// //   import("../pages/Galeri/ComingSoon").then((module) => ({
+// //     default: module.ComingSoon,
+// //   }))
+// // );
 
-const OrganisasiPage = lazy(() =>
-  import("../pages/Galeri/OrganisasiPage").then((module) => ({
-    default: module.OrganisasiPage,
-  }))
-);
+// const GaleriWisudawan = lazy(() =>
+//   import("../pages/Galeri/GaleriWisudawan").then((module) => ({
+//     default: module.GaleriWisudawan,
+//   }))
+// );
 
-const WisudawanPage = lazy(() =>
-  import("../pages/Galeri/WisudawanPage").then((module) => ({
-    default: module.WisudawanPage,
-  }))
-);
+// const OrganisasiPage = lazy(() =>
+//   import("../pages/Galeri/OrganisasiPage").then((module) => ({
+//     default: module.OrganisasiPage,
+//   }))
+// );
 
-const EventPage = lazy(() =>
-  import("../pages/Landing/EventPage").then((module) => ({
-    default: module.EventPage,
-  }))
-);
+// const WisudawanPage = lazy(() =>
+//   import("../pages/Galeri/WisudawanPage").then((module) => ({
+//     default: module.WisudawanPage,
+//   }))
+// );
 
-const HomePage = lazy(() =>
-  import("../pages/Landing/HomePage").then((module) => ({
-    default: module.HomePage,
-  }))
-);
+// const EventPage = lazy(() =>
+//   import("../pages/Landing/EventPage").then((module) => ({
+//     default: module.EventPage,
+//   }))
+// );
 
-const Panellum = lazy(() =>
-  import("../pages/Landing/Panellum").then((module) => ({
-    default: module.Panellum,
-  }))
-);
+// const HomePage = lazy(() =>
+//   import("../pages/Landing/HomePage").then((module) => ({
+//     default: module.HomePage,
+//   }))
+// );
+
+// const Panellum = lazy(() =>
+//   import("../pages/Landing/Panellum").then((module) => ({
+//     default: module.Panellum,
+//   }))
+// );
+
+import { Panellum } from "../pages/Landing/Panellum";
+import { HomePage } from "../pages/Landing/HomePage";
+import { EventPage } from "../pages/Landing/EventPage";
+import { WisudawanPage } from "../pages/Galeri/WisudawanPage";
+import { OrganisasiPage } from "../pages/Galeri/OrganisasiPage";
+import { GaleriWisudawan } from "../pages/Galeri/GaleriWisudawan";
+import { ApresiasiPage } from "../pages/Galeri/ApresiasiPage";
 
 // define pages
+// Kalo mau redirect routes pake ini aja biar ga hardcoded
 
 export const PANELLUM_PAGE = {
-  label: "",
+  label: "Panellum",
   path: "/",
   component: Panellum,
 };
@@ -96,25 +105,27 @@ export const GALERI_WISUDAWAN = {
 
 export const WISUDAWAN_PAGE = {
   label: "",
-  path: "/galeri-wisudawan/:slug/:wisudawan-id",
+  path: "/galeri-wisudawan/:slug/:wisudawan_id",
   component: WisudawanPage,
 };
+
+// routes to be used
 
 export const NavbarRoutes = [
   PANELLUM_PAGE,
   HOME_PAGE,
   EVENT_PAGE,
-  APRESIASI_ORGANISASI,
+  APRESIASI_PAGE,
   ORGANISASI_PAGE,
 ];
 
 export const AllRoutes = [
-  PANELLUM_PAGE,
   HOME_PAGE,
   EVENT_PAGE,
   APRESIASI_PAGE,
   APRESIASI_ORGANISASI,
   ORGANISASI_PAGE,
-  GALERI_WISUDAWAN,
+  GALERI_WISUDAWAN, //jangan kebalik sama wisudawan_page, nanti masalah. ini harus sebelumnya
   WISUDAWAN_PAGE,
+  PANELLUM_PAGE,
 ];

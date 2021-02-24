@@ -3,14 +3,11 @@ import { Route } from "react-router-dom";
 
 const AppRoute = ({ component: Component, path }) => {
   return (
-    <Route
-      path={path}
-      render={(props) => (
-        <Suspense fallback={""}>
-          <Component {...props} />
-        </Suspense>
-      )}
-    />
+    <Route exact={path === "/"} path={path}>
+      <Suspense fallback={""}>
+        <Component />
+      </Suspense>
+    </Route>
   );
 };
 
