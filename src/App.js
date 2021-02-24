@@ -1,9 +1,10 @@
 import { ComingSoon } from "./pages/ComingSoon";
+import { VisiMisi } from "./pages/VisiMisi";
 
 function App() {
   return (
     <div className="App">
-      <ComingSoon />
+          <VisiMisi />
     </div>
   );
 }
