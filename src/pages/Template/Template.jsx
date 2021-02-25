@@ -8,13 +8,12 @@ import { Navbar } from "../../components/Template/Navbar";
 export const Template = ({ children, nofooter }) => {
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <motion.div
         initial="initial"
         animate="in"
         exit="out"
         variants={pageVariants}
-        transition={pageTransition}
       >
         {children}
       </motion.div>

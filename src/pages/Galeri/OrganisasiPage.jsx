@@ -1,6 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { pageVariants } from "../Template/variants";
 import { Template } from "../Template/Template";
 import "./OrganisasiPage.scss";
 
@@ -8,14 +6,7 @@ import "./OrganisasiPage.scss";
 export const OrganisasiPage = () => {
   return (
     <Template>
-      <motion.div
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={pageVariants}
-      >
-        OrganisasiPage
-      </motion.div>
+      <div>OrganisasiPage</div>
     </Template>
   );
 };

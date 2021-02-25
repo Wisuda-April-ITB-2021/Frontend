@@ -1,12 +1,12 @@
 import React from "react";
 import "./Navbar.scss";
-import { AllRoutes } from "../../routes/routes";
+import { NavbarRoutes } from "../../routes/routes";
 import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   return (
     <nav className="navbar">
-      {AllRoutes.map((route) => (
+      {NavbarRoutes.map((route) => (
         <NavLink
           exact={route.path === "/"}
           className="navbar-link"
