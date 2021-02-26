@@ -1,0 +1,57 @@
+.navlink-dropdown {
+  $triangle-height: 15px;
+  .navlink-dropdown-close {
+    @include setup_size(200vw, 120vh);
+    position: fixed;
+    left: -100vw;
+    top: -20vh;
+    z-index: -1;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 15px;
+    -webkit-filter: drop-shadow($shadow-blur);
+    filter: drop-shadow($shadow-blur);
+    top: -1 * $triangle-height;
+    border-left: ($triangle-height / 1.5) solid transparent;
+    border-right: ($triangle-height / 1.5) solid transparent;
+    border-bottom: $triangle-height solid $darkBlueTransparent;
+  }
+  position: absolute;
+  z-index: 91;
+  top: calc(100% + 20px);
+  right: 0;
+  background: $darkBlue;
+  backdrop-filter: blur(2px);
+  background-color: $darkBlueTransparent;
+  border-radius: $border-radius;
+  padding: $border-radius 0;
+  box-shadow: $shadow-blur;
+  filter: drop-shadow($shadow-blur);
+  &-container {
+    position: relative;
+  }
+  &-link {
+    display: block;
+    padding: 5px 25px 5px 20px;
+    transition: $bg-transition;
+    h5 {
+      transition: $text-transition;
+    }
+    &-active {
+      background: $blueTransparent;
+      h5 {
+        color: $yellow;
+      }
+    }
+    &:hover {
+      background: $blue;
+      h5 {
+        color: $yellow;
+      }
+    }
+  }
+}

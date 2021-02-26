@@ -1,0 +1,32 @@
+.navlink {
+  @include flex_center(row);
+  position: relative;
+  height: 100%;
+  padding: 10px;
+  $svg-transform: scale(0.5) translateY(3px);
+  svg {
+    transform: $svg-transform;
+  }
+  svg,
+  path {
+    fill: $lightGreen;
+    transition: fill $transition-duration $transition-tween, $default-transition;
+  }
+  h5 {
+    color: $lightGreen;
+    transition: $text-transition;
+  }
+  .nav-icon-rotated {
+    transform: $svg-transform rotate(-180deg);
+  }
+  &-active,
+  &:hover {
+    h5 {
+      color: $white;
+    }
+    svg,
+    path {
+      fill: $white;
+    }
+  }
+}

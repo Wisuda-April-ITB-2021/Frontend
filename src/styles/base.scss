@@ -6,6 +6,29 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  &::-webkit-scrollbar {
+    width: 10px; /* width of the entire scrollbar */
+  }
+  &::-webkit-scrollbar-track {
+    background: $darkBlue; /* color of the tracking area */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $blue; /* color of the scroll thumb */
+    border-radius: 0; /* roundness of the scroll thumb */
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: $blue;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+html,
+body {
+  @include setup_size(100%, 100%);
+  background: $black;
 }
 
 // IMPORT FONTS
@@ -90,10 +113,16 @@ h6 {
   filter: drop-shadow($translation $translation $black-transparent);
 }
 
+*,
 p,
 a {
   font-size: clamp(14px, 1.5vw, 18px);
   font-family: $font2;
+}
+
+*,
+p {
+  color: $white;
 }
 
 a {

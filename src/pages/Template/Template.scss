@@ -1,0 +1,12 @@
+@import "../../styles/mixin.scss";
+@import "../../styles/variables.scss";
+
+.template {
+  @include setup_size(100%, 100%);
+  min-height: 100vh;
+  background: $black;
+  overflow-x: hidden;
+  &-content {
+    margin-top: $navbar-height;
+  }
+}

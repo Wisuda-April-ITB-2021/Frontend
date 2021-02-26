@@ -81,42 +81,70 @@ export const EVENT_PAGE = {
 
 export const APRESIASI_PAGE = {
   label: "Apresiasi",
-  path: "/apresiasi/:slug",
+  path: "/apresiasi/:group",
   component: OrganisasiPage,
 };
 
 export const APRESIASI_ORGANISASI = {
   label: "",
-  path: "/apresiasi/:slug/details",
+  path: "/apresiasi/:group/:id",
   component: ApresiasiPage,
 };
 
 export const ORGANISASI_PAGE = {
   label: "Galeri Wisudawan",
-  path: "/galeri-wisudawan/:slug",
+  path: "/galeri-wisudawan/:group",
   component: OrganisasiPage,
 };
 
 export const GALERI_WISUDAWAN = {
   label: "",
-  path: "/galeri-wisudawan/:slug/details",
+  path: "/galeri-wisudawan/:group/:id",
   component: GaleriWisudawan,
 };
 
 export const WISUDAWAN_PAGE = {
   label: "",
-  path: "/galeri-wisudawan/:slug/:wisudawan_id",
+  path: "/galeri-wisudawan/:group/:id/:wisudawan_id",
   component: WisudawanPage,
 };
+
+const dropdownRoutes = [
+  {
+    label: "HMJ",
+    path: "/hmj",
+  },
+  {
+    label: "UKM",
+    path: "/ukm",
+  },
+  {
+    label: "Lainnya",
+    path: "/etc",
+  },
+];
 
 // routes to be used
 
 export const NavbarRoutes = [
-  PANELLUM_PAGE,
-  HOME_PAGE,
-  EVENT_PAGE,
-  APRESIASI_PAGE,
-  ORGANISASI_PAGE,
+  {
+    content: HOME_PAGE,
+  },
+  {
+    content: EVENT_PAGE,
+  },
+  {
+    isCollapsible: true,
+    content: APRESIASI_PAGE,
+    children: dropdownRoutes,
+    parentPath: "/apresiasi",
+  },
+  {
+    isCollapsible: true,
+    content: ORGANISASI_PAGE,
+    children: dropdownRoutes,
+    parentPath: "/galeri-wisudawan",
+  },
 ];
 
 export const AllRoutes = [

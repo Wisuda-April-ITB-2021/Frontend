@@ -4,7 +4,6 @@ import ReactGA from "react-ga";
 
 import { AnimatedRoutes } from "./routes/AnimatedRoutes";
 import { AllRoutes, HOME_PAGE } from "./routes/routes";
-import { Navbar } from "./components/Template/Navbar";
 
 function App() {
   // Analytics

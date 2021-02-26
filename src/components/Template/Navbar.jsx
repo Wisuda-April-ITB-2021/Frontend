@@ -1,22 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.scss";
-import { NavbarRoutes } from "../../routes/routes";
-import { NavLink } from "react-router-dom";
+
+import Logo from "../../images/logo/logo-polos-sm.png";
+import { NavbarLinks } from "./NavbarLinks";
+
+const checkIsMobile = () => {
+  const testExp = new RegExp(
+    "Android|webOS|iPhone|iPad|" +
+      "BlackBerry|Windows Phone|" +
+      "Opera Mini|IEMobile|Mobile",
+    "i"
+  );
+  return testExp.test(navigator.userAgent);
+};
 
 export const Navbar = () => {
+  const [isOpen, setOpen] = useState(false);
+  const isMobile = checkIsMobile();
+  const toogleOpen = () => setOpen((prev) => !prev);
   return (
     <nav className="navbar">
-      {NavbarRoutes.map((route) => (
-        <NavLink
-          exact={route.path === "/"}
-          className="navbar-link"
-          activeClassName="navbar-link-active"
-          key={route.path}
-          to={route.path}
-        >
-          {route.label}
-        </NavLink>
-      ))}
+      <Link to="/" className="navbar-logo">
+        <img src={Logo} alt="navbar-logo" />
+        <h4>WISPRIL 2021</h4>
+      </Link>
+      <div className="navbar-button" onClick={toogleOpen}>
+        <div className="navbar-line" />
+      </div>
+      {(isOpen || !isMobile) && <NavbarLinks />}
     </nav>
   );
 };
