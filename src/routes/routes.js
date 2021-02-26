@@ -92,21 +92,21 @@ export const APRESIASI_ORGANISASI = {
 };
 
 export const ORGANISASI_PAGE = {
-  label: "Galeri Wisudawan",
-  path: "/galeri-wisudawan/:group",
-  component: OrganisasiPage,
+	label: "Galeri Wisudawan",
+	path: "/galeri-wisudawan/organisasi/:id",
+	component: OrganisasiPage,
 };
 
 export const GALERI_WISUDAWAN = {
-  label: "",
-  path: "/galeri-wisudawan/:group/:id",
-  component: GaleriWisudawan,
+	label: "",
+	path: "/galeri-wisudawan/organisasi/",
+	component: GaleriWisudawan,
 };
 
 export const WISUDAWAN_PAGE = {
-  label: "",
-  path: "/galeri-wisudawan/:group/:id/:wisudawan_id",
-  component: WisudawanPage,
+	label: "",
+	path: "/galeri-wisudawan/wisudawan/:wisudawan_id",
+	component: WisudawanPage,
 };
 
 const dropdownRoutes = [

@@ -145,3 +145,41 @@ a {
   -webkit-filter: drop-shadow($translation $translation $black-transparent);
   filter: drop-shadow($translation $translation $black-transparent);
 }
+
+.tooltip{
+  @include setup_size(100%,100%);
+  position: relative;
+  display: inline-block;
+
+  .tooltip-text{
+    position: absolute;
+    width: 75%;
+    padding : 10% 5% 5% 5%;
+    left : 50%;
+    transform: translateX(-50%);
+    color : $blue;
+    background-color: $darkBlue;
+    clip-path: polygon(0% 15%, 40% 15%, 50% 0%, 60% 15%, 100% 15%, 100% 100%, 0% 100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .show, &:hover{
+    .tooltip-text{
+      visibility: visible;
+      opacity: 1;
+    }
+    .no-error{
+      opacity: 0;
+    }
+  }
+
+  .no-error{
+    opacity: 0;
+  }
+
+  p{
+    font-size: 0.85vw;
+    margin-bottom: 2.5%;
+  }
+}
