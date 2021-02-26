@@ -5,7 +5,7 @@ const Tooltip = ({text, children}) => (
 		{children}
 		<div className={`tooltip-text ${text.length ? "" : "no-error"}`}>
 			{Array.isArray(text) ? (
-				text.map((row, idx) => <p key={idx}>•{row}</p>)
+				text.map((row, idx) => <p key={idx}>• {row}</p>)
 			) : (
 				<p>text</p>
 			)}
