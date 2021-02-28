@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 @import "../../styles/mixin.scss";
 @import "./NavbarLinks.scss";
-@import "./NavbarDropdown.scss";
+@import "./CollapsibleNav.scss";
 
 .navbar {
   @include setup_size(100vw, $navbar-height);

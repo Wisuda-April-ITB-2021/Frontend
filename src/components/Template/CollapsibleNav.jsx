@@ -14,7 +14,7 @@ export const CollapsibleNav = ({ route, children, parentPath }) => {
     <div className="navlink-dropdown-container">
       <NavLink
         exact={route.path === "/"}
-        className="navlink"
+        className={`navlink ${isOpen && "navlink-active"}`}
         activeClassName="navlink navlink-active"
         onClick={toogleOpen}
         to={route.path}

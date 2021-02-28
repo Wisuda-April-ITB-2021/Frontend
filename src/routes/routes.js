@@ -1,4 +1,4 @@
-import { lazy } from "react";
+// import { lazy } from "react";
 
 // import lazy
 
@@ -53,10 +53,10 @@ import { lazy } from "react";
 import { Panellum } from "../pages/Landing/Panellum";
 import { HomePage } from "../pages/Landing/HomePage";
 import { EventPage } from "../pages/Landing/EventPage";
-import { WisudawanPage } from "../pages/Galeri/WisudawanPage";
-import { OrganisasiPage } from "../pages/Galeri/OrganisasiPage";
-import { GaleriWisudawan } from "../pages/Galeri/GaleriWisudawan";
-import { ApresiasiPage } from "../pages/Galeri/ApresiasiPage";
+import { WisudawanPage } from "../pages/GaleriWisudawan/WisudawanPage";
+import { OrganisasiPage } from "../pages/Shared/OrganisasiPage";
+import { GaleriWisudawanPage } from "../pages/GaleriWisudawan/GaleriWisudawanPage";
+import { ApresiasiPage } from "../pages/Apresiasi/ApresiasiPage";
 
 // define pages
 // Kalo mau redirect routes pake ini aja biar ga hardcoded
@@ -79,50 +79,52 @@ export const EVENT_PAGE = {
   component: EventPage,
 };
 
-export const APRESIASI_PAGE = {
+export const APRESIASI_INDEX = {
   label: "Apresiasi",
-  path: "/apresiasi/:group",
+  path: "/apresiasi/:organisasi",
   component: OrganisasiPage,
 };
 
-export const APRESIASI_ORGANISASI = {
+export const APRESIASI_PAGE = {
   label: "",
-  path: "/apresiasi/:group/:id",
+  path: "/apresiasi/:organisasi/:organisasi_id",
   component: ApresiasiPage,
 };
 
-export const ORGANISASI_PAGE = {
-	label: "Galeri Wisudawan",
-	path: "/galeri-wisudawan/organisasi/:id",
-	component: OrganisasiPage,
+export const GALERI_WISUDAWAN_INDEX = {
+  label: "Galeri Wisudawan",
+  path: "/galeri-wisudawan/:organisasi",
+  component: OrganisasiPage,
 };
 
-export const GALERI_WISUDAWAN = {
-	label: "",
-	path: "/galeri-wisudawan/organisasi/",
-	component: GaleriWisudawan,
+export const GALERI_WISUDAWAN_PAGE = {
+  label: "",
+  path: "/galeri-wisudawan/:organisasi/:organisasi_id",
+  component: GaleriWisudawanPage,
 };
 
 export const WISUDAWAN_PAGE = {
-	label: "",
-	path: "/galeri-wisudawan/wisudawan/:wisudawan_id",
-	component: WisudawanPage,
+  label: "",
+  path: "/galeri-wisudawan/wisudawan/:wisudawan-id",
+  component: WisudawanPage,
 };
 
-const dropdownRoutes = [
-  {
-    label: "HMJ",
-    path: "/hmj",
-  },
-  {
-    label: "UKM",
-    path: "/ukm",
-  },
-  {
-    label: "Lainnya",
-    path: "/etc",
-  },
-];
+const HMJ = {
+  label: "HMJ",
+  path: "/hmj",
+};
+const UKM = {
+  label: "UKM",
+  path: "/ukm",
+};
+const ETC = {
+  label: "Lainnya",
+  path: "/etc",
+};
+const FAKULTAS = {
+  label: "Fakultas",
+  path: "/fakultas",
+};
 
 // routes to be used
 
@@ -135,25 +137,27 @@ export const NavbarRoutes = [
   },
   {
     isCollapsible: true,
-    content: APRESIASI_PAGE,
-    children: dropdownRoutes,
+    content: APRESIASI_INDEX,
+    children: [FAKULTAS, UKM, ETC],
     parentPath: "/apresiasi",
   },
   {
     isCollapsible: true,
-    content: ORGANISASI_PAGE,
-    children: dropdownRoutes,
+    content: GALERI_WISUDAWAN_INDEX,
+    children: [HMJ, UKM, ETC],
     parentPath: "/galeri-wisudawan",
   },
 ];
 
 export const AllRoutes = [
+  PANELLUM_PAGE,
   HOME_PAGE,
   EVENT_PAGE,
+  // APRESIASI_ORGANISASI,
+  APRESIASI_INDEX,
   APRESIASI_PAGE,
-  APRESIASI_ORGANISASI,
-  ORGANISASI_PAGE,
-  GALERI_WISUDAWAN, //jangan kebalik sama wisudawan_page, nanti masalah. ini harus sebelumnya
+  // ORGANISASI_PAGE,
+  GALERI_WISUDAWAN_INDEX, //jangan kebalik sama wisudawan_page, nanti masalah. ini harus sebelumnya
+  GALERI_WISUDAWAN_PAGE,
   WISUDAWAN_PAGE,
-  PANELLUM_PAGE,
 ];
