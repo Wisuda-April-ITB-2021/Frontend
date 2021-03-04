@@ -4,6 +4,7 @@
   height: 100%;
   padding: 10px;
   $svg-transform: scale(0.5) translateY(3px);
+  transition: $default-transition;
   svg {
     transform: $svg-transform;
   }
@@ -22,11 +23,38 @@
   &-active,
   &:hover {
     h5 {
+      transition: $text-transition;
       color: $white;
     }
     svg,
     path {
       fill: $white;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint) {
+  .navlink {
+    @include setup_size(100vw, auto);
+    justify-content: flex-start;
+    background: $darkBlue;
+    h5 {
+      color: $white;
+    }
+    svg,
+    path {
+      fill: $white;
+    }
+    &-active,
+    &:hover {
+      background: $blueTransparent;
+      h5 {
+        color: $yellow;
+      }
+      svg,
+      path {
+        fill: $yellow;
+      }
     }
   }
 }
