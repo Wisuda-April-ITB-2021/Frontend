@@ -5,7 +5,7 @@ import "./ApresiasiPage.scss";
 export const ApresiasiPage = () => {
   return (
     <Template>
-      <div>Page Apresiasi</div>
+      <div>Apresiasi Page </div>
     </Template>
   );
 };

@@ -14,16 +14,14 @@ function App() {
   // components
   return (
     <div className="App">
-      <AnimatedRoutes exitBeforeEnter initial={false}>
-        {AllRoutes.map(({ path, component: Component }) => (
-          <Route key={path} path={path}>
-            <Suspense fallback={""}>
-              <Component />
-            </Suspense>
-          </Route>
-        ))}
-        <Redirect to={HOME_PAGE.path} />
-      </AnimatedRoutes>
+      <Suspense fallback={""}>
+        <AnimatedRoutes exitBeforeEnter initial={false}>
+          {AllRoutes.map(({ path, component: Component }) => (
+            <Route exact key={path} path={path} render={() => <Component />} />
+          ))}
+          <Redirect to={HOME_PAGE.path} />
+        </AnimatedRoutes>
+      </Suspense>
     </div>
   );
 }
