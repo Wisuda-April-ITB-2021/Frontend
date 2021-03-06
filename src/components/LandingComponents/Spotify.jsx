@@ -3,7 +3,7 @@ import "./Spotify.scss";
 
 export const Spotify = (props) => {
     return(
-        <iframe
+        <iframe className="spotipai"
             src={props.link}  // spotipai
             width="300"
             height="380"
