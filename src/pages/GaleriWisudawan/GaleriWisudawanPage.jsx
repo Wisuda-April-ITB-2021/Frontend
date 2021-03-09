@@ -1,11 +1,10 @@
 import React from "react";
 import { Template } from "../Template/Template";
-import "./ApresiasiPage.scss";
 
-export const ApresiasiPage = () => {
+export const GaleriWisudawanPage = () => {
   return (
     <Template>
-      <div>Page Apresiasi</div>
+      <div>GaleriWisudawan Page</div>
     </Template>
   );
 };

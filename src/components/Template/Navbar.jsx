@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 
@@ -12,23 +12,41 @@ const checkIsMobile = () => {
       "Opera Mini|IEMobile|Mobile",
     "i"
   );
-  return testExp.test(navigator.userAgent);
+  const smallWindow = window.innerWidth < 700;
+  return testExp.test(navigator.userAgent) || smallWindow;
 };
 
 export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
-  const isMobile = checkIsMobile();
+  const [isMobile, setIsMobile] = useState(checkIsMobile());
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(checkIsMobile());
+      setOpen(false);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+
   const toogleOpen = () => setOpen((prev) => !prev);
   return (
     <nav className="navbar">
+      <div
+        className="navbar-close-overlay"
+        style={{ display: isOpen ? "block" : "none" }}
+        onClick={toogleOpen}
+      />
       <Link to="/" className="navbar-logo">
         <img src={Logo} alt="navbar-logo" />
         <h4>WISPRIL 2021</h4>
       </Link>
+      <NavbarLinks isOpen={isOpen} isMobile={isMobile} />
+      <div className="navbar-background" />
       <div className="navbar-button" onClick={toogleOpen}>
-        <div className="navbar-line" />
+        <div className={`navbar-line ${isOpen && "navbar-line-active"}`} />
       </div>
-      {(isOpen || !isMobile) && <NavbarLinks />}
     </nav>
   );
 };

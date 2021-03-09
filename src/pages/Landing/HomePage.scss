@@ -1,0 +1,148 @@
+@import "../../styles/mixin.scss";
+@import "../../styles/variables.scss";
+
+.logo-wrap {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: auto;
+  width: clamp(406.5px, 35.76vw, 457.281px);
+  text-align: center;
+
+  @media screen and (max-width: 600px) {
+    width: clamp(0px, 67.75vw, 406.5px);
+  }
+
+  .button {
+    width: clamp(227.38px, 19.89vw, 255.79px);
+    margin: auto;
+
+    @media screen and (max-width: 600px) {
+      width: clamp(0px, 37.896vw, 227.38px);
+    }
+  }
+
+  .logo {
+    margin: auto;
+    margin-bottom: clamp(14.55px, 1.28vw, 16.36px);
+    width: clamp(240px, 17.5vw, 320px);
+    text-align: center;
+
+    @media screen and (max-width: 600px) {
+      width: clamp(0px, 29.555vw, 177.33px);
+    }
+  }
+}
+
+.logo-desc {
+  margin-bottom: clamp(27.28px, 2.4vw, 30.69px);
+}
+
+.parallax {
+  @include setup_size(100%, calc(100vh - 70px));
+  position: relative;
+  margin-bottom: 2.5em;
+
+  .left-component {
+    @include setup_size(20%, fit-content);
+    position: absolute;
+    bottom: 10%;
+
+    .capung {
+      position: absolute;
+      opacity: 0.9;
+      left: 20%;
+      width: 40%;
+    }
+
+    .rumput-kiri {
+      position: relative;
+      bottom: 10%;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  .awan-gelap-atas,
+  .awan-cerah-bawah,
+  .bintang-bawah-awan,
+  .base-langit {
+    @include setup_size(100%, 100%);
+    position: absolute;
+  }
+
+  .awan-gelap-atas,
+  .awan-cerah-bawah {
+    top: 0;
+  }
+
+  .bintang-bawah-awan {
+    bottom: 0;
+  }
+
+  .batu {
+    position: absolute;
+    right: 7.5%;
+    bottom: -5%;
+    width: 30%;
+  }
+
+  .rumput-kanan {
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    width: 20%;
+  }
+
+  .rerumputan {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  @media (max-width: 800px) {
+    .batu {
+      width: 37.5%;
+    }
+
+    .rerumputan {
+      height: 70%;
+    }
+
+    .rumput-kanan {
+      width: 25%;
+    }
+
+    .left-component {
+      width: 22.5%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .batu {
+      width: 42.5%;
+      bottom: -2.5%;
+    }
+
+    .rumput-kanan {
+      width: 27.5%;
+    }
+
+    .left-component {
+      width: 25%;
+    }
+
+    .logo {
+      width: clamp(200px, 20vw, 320px);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .batu {
+      bottom: 0;
+    }
+  }
+}

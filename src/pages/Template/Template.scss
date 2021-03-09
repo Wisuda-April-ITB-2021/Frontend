@@ -7,6 +7,15 @@
   background: $black;
   overflow-x: hidden;
   &-content {
-    margin-top: $navbar-height;
+    margin: $navbar-height auto 0;
+    width: 60vw;
+  }
+}
+
+@media only screen and (max-width: $breakpoint) {
+  .template {
+    &-content {
+      width: 90vw;
+    }
   }
 }
