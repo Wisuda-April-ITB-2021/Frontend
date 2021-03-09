@@ -10,11 +10,11 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
     transition: all ease 0.4s;
     
-    margin: 3vw;
+    margin: 1vw;
     padding: 3vw 3vw;
     height: 32vw;
     width: 24vw;
-    border-radius: 10%;
+    border-radius: 20px;
 
     .mainImage{
         width: 15vw;
@@ -86,11 +86,10 @@
 
 @media only screen and (max-width: 720px){
     .wisudawanCard{
-        margin: 3vw;
-        padding: 3vw 3vw;
-        height: 40vw;
-        width: 30vw;
-        // border-radius: 10%;
+        margin: 1.6vw;
+        padding: 1vw 2vw;
+        height: 52vw;
+        width: 40vw;
     
         .mainImage{
             width: 20vw;
@@ -99,18 +98,18 @@
         }
     
         .cardBackground{
-            width: 25vw;
+            width: 27vw;
             padding: 2vw;
-            bottom: 6vw;
-            left: 4vw;
+            bottom: 12vw;
+            left: 7.5vw;
         }
     
         h4{
-            font-size: 2.5vw;
+            font-size: 3vw;
         }
     
         p{
-            font-size: 1.5vw;
+            font-size: 2.5vw;
             padding: 0 2vw;
         }
 
