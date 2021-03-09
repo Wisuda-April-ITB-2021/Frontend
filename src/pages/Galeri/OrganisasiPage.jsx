@@ -1,7 +1,8 @@
 import React from "react";
 import { Template } from "../Template/Template";
 import "./OrganisasiPage.scss";
-import CardContainer from "../../components/Template/Cards/CardContainer.jsx"
+import OrganisasiCardContainer from "../../components/Template/Cards/OrganisasiCardContainer.jsx"
+import WisudawanCardContainer from "../../components/Template/Cards/WisudawanCardContainer.jsx"
 
 // Page ini dipake buat both apresiasi sama galeri wisudawan. Nanti baca URL nya aja dari routes.js.
 export const OrganisasiPage = () => {
@@ -9,7 +10,10 @@ export const OrganisasiPage = () => {
     <Template>
       <div className='OrganisasiPageContainer'>
         <h1>Himpunan Mahasiswa</h1>
-        <CardContainer />
+        <OrganisasiCardContainer /> 
+        <h1>Wisudawan</h1>
+        <WisudawanCardContainer />
+
       </div>
 
       {/* <div>OrganisasiPage</div>

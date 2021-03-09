@@ -1,0 +1,69 @@
+.organisasiCard{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+
+    background-image: url('./img/org-card.svg');
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
+    transition: all ease 0.4s;
+    
+    margin: 3vw 20px;
+    width: 17vw;
+    height: 23vw;
+    border-radius: 20px;
+    padding: 10vw 2vw;
+
+    img.ornamentCard{
+        position: absolute;
+        top:-10%;
+        right: -10%;
+        width: 8vw;
+    }
+
+    .mainImage{
+        width: 15vw;
+        padding: 1vw;
+    }
+
+    h4{
+        font-size: 1.5vw;
+    }
+
+}
+
+.organisasiCard:hover{
+    background-color: #3999c985;
+}
+
+
+
+
+@media only screen and (max-width:720px){
+    .organisasiCard{
+        // margin: 2vw 30px;
+        margin: 3vw 20px;
+        width: 30vw;
+        height: 42vw;
+        padding: 12vw 1vw;
+
+        img.ornamentCard{
+            position: absolute;
+            top:-10%;
+            right: -10%;
+            width: 16vw;
+        }
+
+        .mainImage{
+            width: 25vw;
+            padding: 1vw;
+        }
+
+        h4{
+            font-size: 2.5vw;
+        }
+}
+
+}
