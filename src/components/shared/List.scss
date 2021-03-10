@@ -6,15 +6,17 @@
   list-style: none;
 }
 
+$bullet-size: 10px;
+
 .bullet {
-  width: clamp(19.09px, 1.68vw, 21.48px);
-  height: clamp(19.09px, 1.68vw, 21.48px);
-  -webkit-border-radius: clamp(19.09px, 1.68vw, 21.48px);
-  -moz-border-radius: clamp(19.09px, 1.68vw, 21.48px);
-  border-radius: clamp(19.09px, 1.68vw, 21.48px);
+  width: $bullet-size;
+  height: $bullet-size;
+  -webkit-border-radius: $bullet-size;
+  -moz-border-radius: $bullet-size;
+  border-radius: $bullet-size;
   background-color: $yellow;
   position: absolute;
-  top: clamp(0.9px, 0.08vw, 1.02px);
+  top: 7px;
 }
 
 .listItem {
@@ -34,8 +36,8 @@
     //line
     content: "";
     position: absolute;
-    left: clamp(9.54px, 0.84vw, 10.74px);
-    border-left: 1px solid $yellow;
+    left: 4.75px;
+    border-left: 1.5px solid $yellow;
     height: 100%;
   }
 
@@ -45,8 +47,8 @@
 .listItemWrapper {
   position: relative;
   //space for bullet
-  padding-left: clamp(26.37px, 2.32vw, 29.66px);
-  padding-bottom: clamp(40.01px, 3.52vw, 45.01px);
+  padding-left: 27.5px;
+  padding-bottom: 25px;
 }
 
 .dot {

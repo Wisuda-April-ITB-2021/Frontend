@@ -7,7 +7,7 @@ import { Navbar } from "../../components/Template/Navbar";
 
 import "./Template.scss";
 
-export const Template = ({ children, nofooter }) => {
+export const Template = ({ children, nofooter, nocontain }) => {
   return (
     <div className="template">
       <Navbar />
@@ -17,9 +17,28 @@ export const Template = ({ children, nofooter }) => {
         exit="out"
         variants={pageVariants}
       >
-        <div className="template-content">{children}</div>
+        <div className={`template${nocontain ? "-header" : "-content"}`}>
+          {children}
+        </div>
       </motion.div>
       {!nofooter && <Footer />}
+      <div className="firefly-wrap">
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+        <div className="firefly"></div>
+      </div>
     </div>
   );
 };

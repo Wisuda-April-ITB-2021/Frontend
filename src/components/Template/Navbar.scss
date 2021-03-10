@@ -11,7 +11,7 @@
   position: fixed;
   z-index: 89;
   background-color: $darkBlueTransparent;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(10px);
   // box-shadow: $shadow-blur;
   filter: drop-shadow($shadow-blur);
   transition: $default-transition;

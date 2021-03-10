@@ -9,19 +9,22 @@ import React from "react";
 import "./List.scss";
 
 export const List = (props) => {
-    return (
-        <ul className="list" {...props}>{props.children}</ul>
-    );
+  return (
+    <ul className="list" {...props}>
+      {props.children}
+    </ul>
+  );
 };
 
 export const ListItem = (props) => {
-    var { title, ...other } = props
-    return (
-        <li className="listItem" {...other}>
-            <div className="bullet" />
-            <div className="listItemWrapper">
-                <h5>{title}</h5><p style={{ marginTop: "clamp(6.36px,0.56vw,7.16px)" }}>{props.children}</p>
-            </div>
-        </li>
-    );
+  var { title, ...other } = props;
+  return (
+    <li className="listItem" {...other}>
+      <div className="bullet" />
+      <div className="listItemWrapper">
+        <h5>{title}</h5>
+        <p style={{ marginTop: "8px" }}>{props.children}</p>
+      </div>
+    </li>
+  );
 };
