@@ -1,3 +1,6 @@
+@import "../../styles/mixin.scss";
+@import "../../styles/variables.scss";
+
 .OrganisasiPageContainer{
     display: flex;
     flex-direction: column;
@@ -11,3 +14,69 @@
     }
 }
 
+.carousel, .carousel-root{
+    width : 100%;
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+.carousel .slider-wrapper{
+    width: 80% !important;
+    background-color: transparent;
+    background: transparent;
+}
+
+.left-arrow,.right-arrow{
+    position: absolute;
+    top : 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+}
+.left-arrow{
+    left : 0;
+}
+
+.right-arrow{
+    right : 0;
+}
+
+.slide.selected{
+    transform:scale(1);
+}
+
+.slide{
+    @include flex_center(row);
+    transform:scale(0.5);
+    background: transparent !important;
+    transition: all 0.3s ease;
+}
+
+.suboptions-container{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin : 2vh 0;
+}
+
+.organisasi-tag{
+    width: fit-content;
+    display: inline-block;
+    padding : 1.5% 5%;
+    margin : 0.5vh 0.5vw;
+    border-radius: 16px;
+    background-color: $darkBlue;
+    cursor: pointer;
+}
+
+.active{
+    background-color: $blue;
+}
+
+@media only screen and (max-width: $breakpoint){
+    .organisasi-tag{
+        padding : 3% 5%;
+        margin : 1.5% 1%;
+        h5{font-size: clamp(10px, 1.2vw, 14px);}
+    }
+}
