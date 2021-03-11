@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <Suspense fallback={""}>
-        <AnimatedRoutes exitBeforeEnter initial={false}>
+        <AnimatedRoutes>
           {AllRoutes.map(({ path, component: Component }) => (
             <Route exact key={path} path={path} render={() => <Component />} />
           ))}

@@ -11,7 +11,7 @@ export const pageVariants = {
   },
   out: {
     opacity: 0,
-    y: 10,
+    y: -10,
     transition: { duration: 0.5 },
   },
 };

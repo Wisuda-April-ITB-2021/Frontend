@@ -43,7 +43,8 @@
 .parallax {
   @include setup_size(100%, calc(100vh - 70px));
   position: relative;
-  margin-bottom: 2.5em;
+  overflow: hidden;
+  // margin-bottom: 2.5em;
 
   .left-component {
     @include setup_size(20%, fit-content);
@@ -101,6 +102,18 @@
     bottom: 0;
     left: 0;
     width: 100%;
+  }
+
+  &::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    background: linear-gradient(
+      180deg,
+      rgba(43, 34, 35, 0) 80%,
+      rgba(43, 34, 35, 1) 100%
+    );
+    @include setup_size(100%, 100%);
   }
 
   @media (max-width: 800px) {

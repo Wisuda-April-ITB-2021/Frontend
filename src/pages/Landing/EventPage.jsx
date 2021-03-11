@@ -1,4 +1,5 @@
 import React from "react";
+import { List, ListItem } from "../../components/shared/List";
 import { Template } from "../Template/Template";
 import "./EventPage.scss";
 
