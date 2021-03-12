@@ -64,7 +64,7 @@ const Parallax = () => {
   const firstLayerOpacity = useTransform(
     scrollY,
     [0, parallaxHeight * 0.25],
-    [1, 0.1]
+    [0.5, 0.1]
   );
   const secondLayerOpacity = useTransform(
     scrollY,
@@ -191,7 +191,7 @@ const Parallax = () => {
         <img src={Logo} alt="Logo Wisuda April" className="logo" />
         <h6 className="logo-desc">
           <i>
-            “To be wise is to accept change. To be enlightened is to love
+            “To be wise is to accept change. <br /> To be enlightened is to love
             change.”
           </i>
         </h6>

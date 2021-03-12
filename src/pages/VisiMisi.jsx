@@ -17,12 +17,12 @@ export const VisiMisi = () => {
           </header>
           <section className="visi">
             <h3> VISI </h3>
-            <h6>
+            <p>
               {" "}
               “Perayaan Wisuda April yang mengapresiasi purnastudi melalui
               apresiasi terhadap perubahan potensi dengan berlandaskan empati,
               kolaborasi, dan integrasi”
-            </h6>
+            </p>
           </section>
           <section className="misi">
             <h3> MISI </h3>

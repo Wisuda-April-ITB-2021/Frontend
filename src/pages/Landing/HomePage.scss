@@ -38,6 +38,7 @@
 
 .logo-desc {
   margin-bottom: clamp(27.28px, 2.4vw, 30.69px);
+  filter: drop-shadow($shadow-blur);
 }
 
 .parallax {
