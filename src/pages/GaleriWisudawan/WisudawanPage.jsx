@@ -5,10 +5,10 @@ import "./WisudawanPage.scss";
 
 export const WisudawanPage = () => {
   return (
-    <Template>
-      <div>WisudawanPage</div>
-      <h3>Pojok Surat Cinta</h3>]
-      <MessageForm />
-    </Template>
-  );
+		<Template>
+			<div>WisudawanPageAAAAAAAAAAA</div>
+			<h3>Pojok Surat Cinta</h3>]
+			<MessageForm />
+		</Template>
+	);
 };

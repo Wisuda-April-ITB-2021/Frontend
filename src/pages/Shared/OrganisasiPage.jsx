@@ -5,8 +5,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import {Carousel} from "react-responsive-carousel";
 
 import {Template} from "../Template/Template";
-import OrganisasiCardContainer from "../../components/Template/Cards/OrganisasiCardContainer.jsx"
-import WisudawanCardContainer from "../../components/Template/Cards/WisudawanCardContainer.jsx"
+import OrganisasiCardContainer from "../../components/shared/Cards/OrganisasiCardContainer.jsx"
+import WisudawanCardContainer from "../../components/shared/Cards/WisudawanCardContainer.jsx"
 
 import {ReactComponent as LeftArrow} from "../../icons/leftArrow.svg";
 import {ReactComponent as RightArrow} from "../../icons/rightArrow.svg";
@@ -112,12 +112,12 @@ export const OrganisasiPage = () => {
         />
 
         <Accordion
-          title='Prestasi'
-          content='
+          title="Prestasi"
+          content="
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <br/>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          '
+          "
           image={imageAward}
         />
 			</div>
@@ -146,7 +146,10 @@ const OrganisasiCarousel = ({data, onChange, selected}) => (
 );
 
 const OrganisasiTag = ({text, active, onClick}) => (
-	<div className={active ? "organisasi-tag active" : "organisasi-tag"} onClick={()=>onClick(text)}>
+	<div
+		className={active ? "organisasi-tag active" : "organisasi-tag"}
+		onClick={()=>onClick(text)}
+	>
 		<h5>{text}</h5>
 	</div>
 );

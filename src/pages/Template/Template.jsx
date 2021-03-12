@@ -2,10 +2,30 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import { pageVariants, pageTransition } from "./variants";
-import { Footer } from "../../components/Template/Footer";
-import { Navbar } from "../../components/Template/Navbar";
+import { Footer } from "../../components/TemplateComponents/Footer";
+import { Navbar } from "../../components/TemplateComponents/Navbar";
 
 import "./Template.scss";
+
+const Fireflies = () => (
+  <div className="firefly-wrap">
+    <div className="firefly"></div>
+    <div className="firefly"></div>
+    <div className="firefly"></div>
+    <div className="firefly"></div>
+    <div className="firefly"></div>
+    <div className="firefly"></div>
+    <div className="firefly"></div>
+    <div className="firefly"></div>
+    <div className="firefly"></div>
+    <div className="firefly"></div>
+    <div className="firefly"></div>
+    <div className="firefly"></div>
+    <div className="firefly"></div>
+    <div className="firefly"></div>
+    <div className="firefly"></div>
+  </div>
+);
 
 export const Template = ({ children, nofooter, nocontain }) => {
   return (
@@ -22,23 +42,7 @@ export const Template = ({ children, nofooter, nocontain }) => {
         </div>
       </motion.div>
       {!nofooter && <Footer />}
-      <div className="firefly-wrap">
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-        <div className="firefly"></div>
-      </div>
+      {Fireflies}
     </div>
   );
 };
