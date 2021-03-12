@@ -105,7 +105,7 @@ export const GALERI_WISUDAWAN_PAGE = {
 
 export const WISUDAWAN_PAGE = {
   label: "",
-  path: "/galeri-wisudawan/wisudawan/:wisudawan-id",
+  path: "/galeri-wisudawan/wisudawan/:wisudawan_id",
   component: WisudawanPage,
 };
 
@@ -157,7 +157,7 @@ export const AllRoutes = [
   APRESIASI_INDEX,
   APRESIASI_PAGE,
   // ORGANISASI_PAGE,
-  GALERI_WISUDAWAN_INDEX, //jangan kebalik sama wisudawan_page, nanti masalah. ini harus sebelumnya
-  GALERI_WISUDAWAN_PAGE,
   WISUDAWAN_PAGE,
+  GALERI_WISUDAWAN_INDEX, //jangan kebalik sama wisudawan_page, nanti masalah. ini harus setelahnya
+  GALERI_WISUDAWAN_PAGE,
 ];

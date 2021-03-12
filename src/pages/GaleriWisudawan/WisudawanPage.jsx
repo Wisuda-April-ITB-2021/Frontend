@@ -7,7 +7,7 @@ export const WisudawanPage = () => {
   return (
     <Template>
       <div>WisudawanPage</div>
-      <h3>Pojok Surat Cinta</h3>]
+      <h3>Pojok Surat Cinta</h3>
       <MessageForm />
     </Template>
   );

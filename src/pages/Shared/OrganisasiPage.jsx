@@ -1,8 +1,8 @@
 import React from "react";
 import { Template } from "../Template/Template";
 import "./OrganisasiPage.scss";
-import OrganisasiCardContainer from "../../components/TemplateComponents/Cards/OrganisasiCardContainer.jsx";
-import WisudawanCardContainer from "../../components/TemplateComponents/Cards/WisudawanCardContainer.jsx";
+import OrganisasiCardContainer from "../../components/shared/Cards/OrganisasiCardContainer.jsx";
+import WisudawanCardContainer from "../../components/shared/Cards/WisudawanCardContainer.jsx";
 import Accordion from "../../components/GaleriComponents/Accordion";
 import imageHMJ from "../../components/GaleriComponents/AccordionAssets/image-hmj.png";
 import imageUnit from "../../components/GaleriComponents/AccordionAssets/image-unit.png";
