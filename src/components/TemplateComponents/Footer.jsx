@@ -1,10 +1,10 @@
 import React from "react";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaSpotify } from "react-icons/fa";
-import { SiLine } from "react-icons/si";
-import { SiTiktok } from "react-icons/si";
+import { ReactComponent as InstagramIcon } from "../../icons/instagram.svg";
+import { ReactComponent as LinkedinIcon } from "../../icons/linkedin.svg";
+import { ReactComponent as TwitterIcon } from "../../icons/twitter.svg";
+import { ReactComponent as SpotifyIcon } from "../../icons/spotify.svg";
+import { ReactComponent as LineIcon } from "../../icons/line.svg";
+import { ReactComponent as TiktokIcon } from "../../icons/tiktok.svg";
 import "./Footer.scss";
 
 import Logo from "../../images/logo/logo-polos-sm.png";
@@ -29,7 +29,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaInstagram className="social-media-icon instagram-icon" />
+            <InstagramIcon className="social-media-icon instagram-icon" />
           </a>
           <a
             href="https://twitter.com/paradewisudaitb"
@@ -37,7 +37,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaTwitter className="social-media-icon twitter-icon" />
+            <TwitterIcon className="social-media-icon twitter-icon" />
           </a>
           <a
             href="https://line.me/R/ti/p/%40mov0891c"
@@ -45,7 +45,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <SiLine className="social-media-icon line-icon" />
+            <LineIcon className="social-media-icon line-icon" />
           </a>
           <a
             href="https://open.spotify.com/user/huto1ycscch4bkj3fukhzssrr?si=49_xyAWdTFGzEPG-R1_-PQ&nd=1"
@@ -53,7 +53,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaSpotify className="social-media-icon spotify-icon" />
+            <SpotifyIcon className="social-media-icon spotify-icon" />
           </a>
           <a
             href="https://www.tiktok.com/@paradewisudaitb"
@@ -61,7 +61,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <SiTiktok className="social-media-icon tiktok-icon" />
+            <TiktokIcon className="social-media-icon tiktok-icon" />
           </a>
           <a
             href="http://linkedin.com/company/perayaan-wisuda-april-itb-2021"
@@ -69,7 +69,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin className="social-media-icon linkedin-icon" />
+            <LinkedinIcon className="social-media-icon linkedin-icon" />
           </a>
         </div>
       </div>

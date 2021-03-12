@@ -1,0 +1,282 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixin.scss";
+
+.footer {
+    @include setup_size(100vw, 225px);
+    align-items: center;
+    justify-content: space-evenly;
+    background-size: cover;
+    margin-top: 7vh;
+    background-color: $darkBlue;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: clamp(20px, 5vh, 120px);
+    &-text {
+      width: 100%;
+    }
+    &-wispril {
+        display: flex;
+        align-items: left;
+        justify-content: left;
+        flex-direction: row;
+        margin-top: -30px;
+        h4 {
+          font-size: clamp(24px, 2.2vw, 32px);
+          text-shadow: 2px 1px 0 rgba(43, 34, 35, 1);
+        }
+        img {
+            width: 7%;
+            margin-right: 7px;
+        }
+    }
+    #quote {
+        font-size: clamp(10px, 2.2vw, 17px);
+        margin-top: 10px;
+        text-shadow: 1px 1px 0 rgba(43, 34, 35, 1);
+    }
+    #cr {
+        font-size: clamp(8px, 2.2vw, 14px);
+        margin-top: 5px;
+    }
+    &-socialmedia {
+        @include flex_center(column);
+        align-items: flex-end;
+        margin-top: -30px;
+        font-size: 50%;
+        h4 {
+            text-shadow: 2px 1px 0 rgba(43, 34, 35, 1);
+            font-size: clamp(20px, 2.2vw, 26px);
+            font-weight: 300;
+        }
+    }
+    &-logo {
+        margin-top: 12px;
+        display: flex;
+        align-self: right;
+        justify-content: right;
+        a {
+            margin-inline: 7px;
+        }
+        .social-media-icon {
+            transition: all 0.2s ease-out;
+            &:hover {
+              cursor: pointer;
+              transform: translateY(-2px);
+            }
+          }
+        svg {
+            fill: $darkBlue;
+            cursor: pointer;
+        }
+        .instagram-icon { //belum selesai
+            width: clamp(27px, 2.5vw, 33px);
+            background: opacity(0);
+            transition: none;
+            animation: insta-fill-reverse 0.2s forwards;
+            &:hover {
+                animation: insta-fill 0.2s forwards;
+            }
+            border-radius: 10px;
+        }
+        .linkedin-icon {
+            width: clamp(26px, 2.5vw, 32px);
+            &:hover {
+                path {
+                    fill: #0e76a8;
+                }
+            }
+          }
+        .line-icon { // belum selesai
+            width: clamp(24px, 2.5vw, 30px);
+            border-radius: 5px;
+            &:hover {
+                path {
+                    fill: rgb(0, 185, 0);
+                }
+            }
+        }
+        .spotify-icon {
+            width: clamp(28px, 2.5vw, 34px);
+            &:hover {
+                path {
+                    fill: rgb(30, 215, 96);
+                }
+            }
+        }
+        .tiktok-icon {
+            width: clamp(24px, 2.5vw, 30px);
+            &:hover {
+                path {
+                    fill: $black;
+                }
+            }
+        }
+        .twitter-icon {
+            width: clamp(31px, 2.5vw, 37px);
+            &:hover {
+                path {
+                    fill: rgb(0, 172, 238);
+                }
+            }
+        }
+    }
+}
+
+@keyframes insta-fill {
+    0% {
+      transform: translateY(0px);
+    }
+    15% {
+      background: radial-gradient(
+        circle at 30% 107%,
+        rgba(253, 244, 151, 0.25) 0%,
+        rgba(253, 244, 151, 0.25) 5%,
+        rgba(253, 89, 73, 0.25) 45%,
+        rgba(214, 36, 159, 0.25) 60%,
+        rgba(40, 90, 235, 0.25) 90%
+        );
+    }
+    30% {
+      background: radial-gradient(
+        circle at 30% 107%,
+        rgba(253, 244, 151, 0.5) 0%,
+        rgba(253, 244, 151, 0.5) 5%,
+        rgba(253, 89, 73, 0.5) 45%,
+        rgba(214, 36, 159, 0.5) 60%,
+        rgba(40, 90, 235, 0.5) 90%
+        );
+    }
+    60% {
+      background: radial-gradient(
+        circle at 30% 107%,
+        rgba(253, 244, 151, 0.75) 0%,
+        rgba(253, 244, 151, 0.75) 5%,
+        rgba(253, 89, 73, 0.75) 45%,
+        rgba(214, 36, 159, 0.75) 60%,
+        rgba(40, 90, 235, 0.75) 90%
+        );
+    }
+    100% {
+      transform: translateY(-2px);
+      background: radial-gradient(
+        circle at 30% 107%,
+        rgba(253, 244, 151, 1) 0%,
+        rgba(253, 244, 151, 1) 5%,
+        rgba(253, 89, 73, 1) 45%,
+        rgba(214, 36, 159, 1) 60%,
+        rgba(40, 90, 235, 1) 90%
+        );
+    }
+}
+  
+@keyframes insta-fill-reverse {
+    0% {
+      transform: translateY(-2px);
+      background: radial-gradient(
+        circle at 30% 107%,
+        rgba(253, 244, 151, 1) 0%,
+        rgba(253, 244, 151, 1) 5%,
+        rgba(253, 89, 73, 1) 45%,
+        rgba(214, 36, 159, 1) 60%,
+        rgba(40, 90, 235, 1) 90%
+        );
+    }
+    40% {
+      background: radial-gradient(
+        circle at 30% 107%,
+        rgba(253, 244, 151, 0.75) 0%,
+        rgba(253, 244, 151, 0.75) 5%,
+        rgba(253, 89, 73, 0.75) 45%,
+        rgba(214, 36, 159, 0.75) 60%,
+        rgba(40, 90, 235, 0.75) 90%
+        );
+    }
+    70% {
+      background: radial-gradient(
+        circle at 30% 107%,
+        rgba(253, 244, 151, 0.5) 0%,
+        rgba(253, 244, 151, 0.5) 5%,
+        rgba(253, 89, 73, 0.5) 45%,
+        rgba(214, 36, 159, 0.5) 60%,
+        rgba(40, 90, 235, 0.5) 90%
+        );
+    }
+    85% {
+      background: radial-gradient(
+        circle at 30% 107%,
+        rgba(253, 244, 151, 0.25) 0%,
+        rgba(253, 244, 151, 0.25) 5%,
+        rgba(253, 89, 73, 0.25) 45%,
+        rgba(214, 36, 159, 0.25) 60%,
+        rgba(40, 90, 235, 0.25) 90%
+        );
+    }
+    100% {
+      transform: translateY(0px);
+    }
+}
+
+@media (max-width: 670px) {
+    .footer {
+        grid-template-columns: 0;
+        @include flex_center(column);
+        text-align: center;
+        height: 36vh;
+        &-wispril {
+          justify-content: center;
+          margin-top: 10px;
+          h4 {
+            font-size: 24px;
+          }
+          img {
+              display: none;
+          }
+        }
+        #quote {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        #cr {
+            margin-top: 10px;
+            font-size: 12px;
+        }
+        &-socialmedia {
+            margin-top: 30px;
+            display: block;
+            justify-self: center;
+            align-self: center;
+            h4 {
+              font-size: 18px;
+            }
+        }
+        &-logo {
+            margin-left: 0;
+            a.footer-icon {
+                margin-inline: -5px;
+            }
+              svg {
+                fill: $darkBlue;
+                margin: 0 15px;
+                cursor: pointer;
+            }
+              .instagram-icon {
+                width: 24px;
+            }
+              .linkedin-icon {
+                width: 23px;
+            }
+              .line-icon {
+                width: 21px;
+            }
+              .spotify-icon {
+                width: 25px;
+            }
+              .tiktok-icon {
+                width: 22px;
+            }
+              .twitter-icon {
+                width: 28px;
+            }
+        }
+    }
+}
