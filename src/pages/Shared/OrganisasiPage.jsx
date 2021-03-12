@@ -11,6 +11,12 @@ import WisudawanCardContainer from "../../components/Template/Cards/WisudawanCar
 import {ReactComponent as LeftArrow} from "../../icons/leftArrow.svg";
 import {ReactComponent as RightArrow} from "../../icons/rightArrow.svg";
 
+import Accordion from '../../components/GaleriComponents/Accordion'
+import imageHMJ from '../../components/GaleriComponents/AccordionAssets/image-hmj.png'
+import imageUnit from '../../components/GaleriComponents/AccordionAssets/image-unit.png'
+import imageAward from '../../components/GaleriComponents/AccordionAssets/image-award.png'
+
+
 import "./OrganisasiPage.scss";
 
 const options = [
@@ -91,6 +97,29 @@ export const OrganisasiPage = () => {
 				<OrganisasiCardContainer data={data} />
 				<h1>Wisudawan</h1>
 				<WisudawanCardContainer />
+				<h1>Accordion</h1>
+        <Accordion
+					title='HMME "Atmospharia" ITB'
+					content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+					image={imageHMJ}
+        />
+
+        <Accordion
+					title='Unit Kebudayaan Jepang'
+					content='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+					image={imageUnit}
+        />
+
+        <Accordion
+          title='Prestasi'
+          content='
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <br/>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          '
+          image={imageAward}
+        />
 			</div>
 		</Template>
 	);
