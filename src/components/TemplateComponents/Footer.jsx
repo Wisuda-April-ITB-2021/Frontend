@@ -14,7 +14,7 @@ export const Footer = () => {
     <div className="footer">
       <div className="footer-text">
         <div className="footer-wispril">
-          <img src={Logo} alt="footer-logo"/>
+          <img src={Logo} alt="footer-wispril"/>
           <h4>WISPRIL 2021</h4>
         </div>
         <p id="quote">The Light of Hope in Times of Change</p>
