@@ -54,6 +54,25 @@ $bullet-size: 10px;
     padding-bottom: 25px;
 }
 
+.listItemPost {
+    position: relative;
+
+    hr {
+        border: none;
+        border-top: 1px solid $blue;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+}
+
+.ListItemPostTopic {
+    color: $yellow;
+}
+
+.listItemPostWrapper {
+    position: relative;
+}
+
 .dot {
     height: 25px;
     width: 25px;
