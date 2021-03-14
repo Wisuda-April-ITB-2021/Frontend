@@ -37,4 +37,4 @@ Dipake buat nyusun react-router. Kalau mau liat navigasi, patokannya pake variab
 
 ### styles
 
-Dipake buat scss global dan asset terkait (misalnya font). Berhubungan sama styling, pakenya kebab-case ya (contohnya: homepage-container, button-icons-left). Jangan pake camelCase atau yang lain.
+Dipake buat scss global dan asset terkait (misalnya font). Berhubungan sama styling, pakenya kebab-case ya (contohnya: homepage-container, button-icons-left). Jangan pake camelCase atau yang lain. Terus ga harus semuanya pake clamp. Kalau selisihnya kecil kayak beberapa px doang langsung tembak angka aja berapa px gitu (mungkin kecuali font).

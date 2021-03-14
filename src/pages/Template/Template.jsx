@@ -42,7 +42,7 @@ export const Template = ({ children, nofooter, nocontain }) => {
         </div>
       </motion.div>
       {!nofooter && <Footer />}
-      {Fireflies}
+      {<Fireflies />}
     </div>
   );
 };

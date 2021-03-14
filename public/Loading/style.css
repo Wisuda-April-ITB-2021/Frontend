@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Westmeath;
+    src: url("./Westmeath.ttf");
+}
+
+.root-loading {
+    height: 100vh;
+    width: 100vw;
+    background: rgb(43, 34, 35); 
+    display: grid;
+    place-items: center;
+}
+
+.root-loading > * {
+    font-family: Westmeath;
+    letter-spacing: 0.2em;
+    display: grid;
+    place-items: center;
+}
+
+.root-loading-content img {
+    width: 10vw;
+    min-width: 200px;
+    animation: root-loading-animation 1.5s ease-in infinite;
+}
+
+.root-loading-content > * {
+    margin: 5px 0;
+}
+
+.root-loading-content h2 {
+    color: rgb(253, 253, 223);
+}
+
+.root-loading-content h4 {
+    color: rgb(196, 220, 201);
+}
+
+@keyframes root-loading-animation {
+    0% {
+      opacity: 0.5;
+      transform: translateY(-5px);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    100% {
+      opacity: 0.5;
+      transform: translateY(-5px);
+    }
+  }
