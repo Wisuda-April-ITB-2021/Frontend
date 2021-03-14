@@ -20,14 +20,17 @@
 .root-loading > * {
     font-family: Westmeath;
     letter-spacing: 0.2em;
+    text-align: center;
     display: grid;
     place-items: center;
+    padding: 10vw;
 }
 
 .root-loading-content img {
     width: 10vw;
     min-width: 200px;
     animation: root-loading-animation 1.5s ease-in infinite;
+    margin-bottom: 10px;
 }
 
 .root-loading-content > * {
