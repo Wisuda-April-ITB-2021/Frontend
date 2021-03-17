@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
-import {
-  motion,
-  useTransform,
-  useViewportScroll,
-  useMotionValue,
-} from "framer-motion";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
+import { Link } from "react-router-dom";
+
+import { EVENT_PAGE } from "../../routes/routes";
 import { Template } from "../Template/Template";
 import { VisiMisi } from "../VisiMisi";
 import Logo from "../../images/logo/Logo.png";
@@ -195,14 +193,9 @@ const Parallax = () => {
             change.”
           </i>
         </h6>
-        <Button
-          className="button"
-          onClick={() => {
-            alert("test");
-          }}
-        >
-          Go To Panellum
-        </Button>
+        <Link to={EVENT_PAGE.path}>
+          <Button className="button">Events</Button>
+        </Link>
       </motion.div>
     </div>
   );

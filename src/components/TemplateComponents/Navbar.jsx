@@ -22,7 +22,7 @@ export const Navbar = () => {
   useEffect(() => {
     function handleResize() {
       setIsMobile(checkIsMobile());
-      setOpen(false);
+      setOpen((prev) => !prev);
     }
     window.addEventListener("resize", handleResize);
     return () => {

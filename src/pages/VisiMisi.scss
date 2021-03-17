@@ -73,7 +73,7 @@
 
 .misi {
   ol {
-    text-align: justify;
+    text-align: left;
     li {
       padding-left: 0.5em;
       margin-bottom: 0.5em;
@@ -90,7 +90,7 @@
 
 @media screen and (max-width: $breakpoint) {
   .visi-misi {
-    width: clamp(0px, 95.79vw, 574.74px);
+    width: 100%;
     padding: 0 7.5vw;
   }
   .misi {

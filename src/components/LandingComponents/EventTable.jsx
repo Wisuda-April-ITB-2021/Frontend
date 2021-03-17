@@ -1,0 +1,33 @@
+import React from "react";
+import "./EventTable.scss";
+
+const DAFTAR_BULAN = {
+  0: "Januari",
+  1: "Februari",
+  2: "Maret",
+  3: "April",
+  4: "Mei",
+  5: "Juni",
+  // Cuma sampe sini soalnya harusnya acaranya ga bakal selama itu
+};
+
+const dateToText = (date) => {
+  const month = DAFTAR_BULAN[date.getMonth()];
+  return `${date.getDate()} ${month}`;
+};
+
+const Event = ({ isPastEvent, isComingSoon, isMainEvent, date, title }) => {
+  return (
+    <tr
+      className={`rundown${isComingSoon ? " rundown-coming-soon" : ""}${
+        isPastEvent ? " rundown-past-event" : ""
+      }${isMainEvent ? " rundown-main-event" : ""}`}
+    >
+      <td className="jam">{dateToText(date)}</td>
+      <td className="line"></td>
+      <td className="keterangan">{title}</td>
+    </tr>
+  );
+};
+
+export default Event;

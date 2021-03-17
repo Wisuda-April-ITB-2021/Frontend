@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Tooltip from "../shared/Tooltip";
 import { useLocation } from "react-router-dom";
+import { List, ListItemPost } from "../shared/List";
 import "./Message.scss";
 
 const MessageForm = () => {
@@ -53,4 +54,25 @@ const MessageForm = () => {
   );
 };
 
-export { MessageForm };
+const Messages = (props) => {
+
+    let messageList = null;
+    if (props.data) {
+        messageList = props.data.map(el => {
+            console.log(el)
+            return (
+               <ListItemPost title={el.title}>{el.body}</ListItemPost>
+            )
+        })
+    } else {
+        messageList = (<p>Loading placeholder</p>)
+    }
+
+    return (
+        <List>
+            { messageList}
+        </List>
+        )
+}
+
+export { MessageForm, Messages };
