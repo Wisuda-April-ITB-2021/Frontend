@@ -50,10 +50,6 @@
   padding-bottom: clamp(103.67px, 9.12vw, 116.622px);
   width: clamp(574.74px, 50.56vw, 646.53px);
   text-align: center;
-
-  @media screen and (max-width: 600px) {
-    width: clamp(0px, 95.79vw, 574.74px);
-  }
 }
 
 .visi,
@@ -61,7 +57,7 @@
   margin: auto;
   width: clamp(521.08px, 45.84vw, 568.17px);
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $breakpoint) {
     width: clamp(0px, 86.84vw, 521.08px);
   }
 
@@ -90,4 +86,23 @@
   max-width: 100vw;
   width: 100vw;
   overflow-x: hidden;
+}
+
+@media screen and (max-width: $breakpoint) {
+  .visi-misi {
+    width: clamp(0px, 95.79vw, 574.74px);
+    padding: 0 7.5vw;
+  }
+  .misi {
+    padding: 0 5vw;
+  }
+  .visi-misi-decor {
+    .visi-misi-ornamen-left,
+    .visi-misi-ornamen-right {
+      height: 40%;
+      bottom: 0%;
+      opacity: 0.4;
+      background-size: contain;
+    }
+  }
 }

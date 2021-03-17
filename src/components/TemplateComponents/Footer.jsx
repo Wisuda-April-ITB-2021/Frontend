@@ -17,8 +17,8 @@ export const Footer = () => {
           <img src={Logo} alt="footer-wispril" />
           <h4>WISPRIL 2021</h4>
         </div>
-        <p id="quote">The Light of Hope in Times of Change</p>
-        <p id="cr">© Perayaan Wisuda April ITB 2021</p>
+        <p className="quote">The Light of Hope in Times of Change</p>
+        <p className="cr">© Perayaan Wisuda April ITB 2021</p>
       </div>
       <div className="footer-socialmedia">
         <h4>FIND US ON SOCIAL MEDIA</h4>
