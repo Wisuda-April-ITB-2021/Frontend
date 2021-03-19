@@ -3,15 +3,43 @@
 
 .template {
   @include setup_size(100%, 100%);
+  position: relative;
   min-height: 100vh;
   background: $black;
-  overflow-x: hidden;
+  overflow: hidden;
   &-header {
     margin-top: $navbar-height;
   }
   &-content {
     margin: $navbar-height auto 0;
     width: 60vw;
+  }
+  .hidden {
+    display: none;
+  }
+  .background,
+  .left-ornament,
+  .right-ornament {
+    position: absolute;
+  }
+  .background {
+    width: 100%;
+    z-index: 0;
+  }
+  .ornament {
+    opacity: 0.75;
+  }
+  .left-ornament,
+  .right-ornament {
+    bottom: 50%;
+    transform: translateY(50%);
+    opacity: 0.75;
+  }
+  .left-ornament {
+    left: 0;
+  }
+  .right-ornament {
+    right: 0;
   }
 }
 
