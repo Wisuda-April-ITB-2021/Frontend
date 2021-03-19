@@ -5,11 +5,20 @@ import { pageVariants, pageTransition } from "./variants";
 import { Footer } from "../../components/Template/Footer";
 import { Navbar } from "../../components/Template/Navbar";
 
+import LeftOrnamen from "../../images/decoration/home-ornamen-left.webp";
+import RightOrnamen from "../../images/decoration/home-ornamen-right.webp";
+import OrnamentBackground from "../../images/bg/bg-long-ornament.png";
+import Background from "../../images/bg/bg-long-black.png";
+
 import "./Template.scss";
 
 export const Template = ({ children, nofooter, nocontain }) => {
   return (
     <div className="template">
+      <img src={Background} alt="Background" className={`background${nocontain ? " hidden" : ""}`}/>
+      <img src={OrnamentBackground} alt="Background Ornament" className={`background ornament${nocontain ? " hidden" : ""}`}/>
+      {/* <img src={LeftOrnamen} alt="Background" className={`left-ornament${nocontain ? " hidden" : ""}`}/>
+      <img src={RightOrnamen} alt="Background" className={`right-ornament${nocontain ? " hidden" : ""}`}/> */}
       <Navbar />
       <motion.div
         initial="initial"

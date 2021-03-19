@@ -23,7 +23,6 @@ import RumputKiri from "../../images/decoration/rumput-1.png";
 
 const Parallax = () => {
   const [parallaxHeight, setParallaxHeight] = useState(0);
-  const [parallaxWidth, setParallaxWidth] = useState(0);
   const variants = {
     bottomInitial: {
       opacity: 0,
@@ -54,9 +53,6 @@ const Parallax = () => {
   useEffect(() => {
     setParallaxHeight(
       document.getElementsByClassName("parallax")[0].clientHeight
-    );
-    setParallaxWidth(
-      document.getElementsByClassName("parallax")[0].clientWidth
     );
   }, []);
 
@@ -91,15 +87,7 @@ const Parallax = () => {
     [0, parallaxHeight * 0.75],
     [0, parallaxHeight / 5]
   );
-  const fourthLayerPosition = useTransform(
-    scrollY,
-    [0, parallaxHeight],
-    [0, parallaxHeight / 5]
-  );
 
-  // React.useEffect(() => {
-  //   scrollY.onChange(v => console.log(v, parallaxH));
-  // }, [scrollY]);
   return (
     <div className="parallax">
       <motion.img
