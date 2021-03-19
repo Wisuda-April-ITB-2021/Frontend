@@ -1,10 +1,17 @@
 import React from "react";
 import "./Button.scss";
 
-export const Button = (props) => {
-    return (
-        <div className="button" {...props}><span className="span">{props.children}</span></div>
-    );
+export const Button = ({ active, children, onClick }) => {
+  return (
+    <button
+      className={`button${active ? " button-active" : ""}`}
+      onClick={onClick}
+    >
+      <span className="span">
+        <h5>{children}</h5>
+      </span>
+    </button>
+  );
 };
 
 export default Button;

@@ -16,7 +16,14 @@ const dateToText = (date) => {
   return `${date.getDate()} ${month}`;
 };
 
-const Event = ({ isPastEvent, isComingSoon, isMainEvent, date, title }) => {
+const Event = ({
+  isPastEvent,
+  isComingSoon,
+  isMainEvent,
+  date,
+  title,
+  getUpcomingText,
+}) => {
   return (
     <tr
       className={`rundown${isComingSoon ? " rundown-coming-soon" : ""}${
@@ -25,7 +32,10 @@ const Event = ({ isPastEvent, isComingSoon, isMainEvent, date, title }) => {
     >
       <td className="jam">{dateToText(date)}</td>
       <td className="line"></td>
-      <td className="keterangan">{title}</td>
+      <td className="keterangan">
+        {title}
+        {isComingSoon && getUpcomingText(date)}
+      </td>
     </tr>
   );
 };

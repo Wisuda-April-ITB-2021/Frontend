@@ -57,6 +57,7 @@ import { WisudawanPage } from "../pages/GaleriWisudawan/WisudawanPage";
 import { OrganisasiPage } from "../pages/Shared/OrganisasiPage";
 import { GaleriWisudawanPage } from "../pages/GaleriWisudawan/GaleriWisudawanPage";
 import { ApresiasiPage } from "../pages/Apresiasi/ApresiasiPage";
+import { GamesPage } from "../pages/Landing/GamesPage";
 
 // define pages
 // Kalo mau redirect routes pake ini aja biar ga hardcoded
@@ -77,6 +78,12 @@ export const EVENT_PAGE = {
   label: "Events",
   path: "/events",
   component: EventPage,
+};
+
+export const GAMES_PAGE = {
+  label: "Games",
+  path: "/games",
+  component: GamesPage,
 };
 
 export const APRESIASI_INDEX = {
@@ -136,6 +143,9 @@ export const NavbarRoutes = [
     content: EVENT_PAGE,
   },
   {
+    content: GAMES_PAGE,
+  },
+  {
     isCollapsible: true,
     content: APRESIASI_INDEX,
     children: [FAKULTAS, UKM, ETC],
@@ -153,10 +163,11 @@ export const AllRoutes = [
   PANELLUM_PAGE,
   HOME_PAGE,
   EVENT_PAGE,
-  // APRESIASI_ORGANISASI,
+  GAMES_PAGE,
+
   APRESIASI_INDEX,
   APRESIASI_PAGE,
-  // ORGANISASI_PAGE,
+
   WISUDAWAN_PAGE,
   GALERI_WISUDAWAN_INDEX, //jangan kebalik sama wisudawan_page, nanti masalah. ini harus setelahnya
   GALERI_WISUDAWAN_PAGE,

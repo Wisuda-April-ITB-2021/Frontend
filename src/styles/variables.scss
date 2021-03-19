@@ -24,6 +24,9 @@ $breakpoint: 700px; // ubah di navbar juga
 $navbar-height: 70px;
 $transition-duration: 250ms;
 
+$page-padding-top: 50px;
+$page-padding-top-mobile: 20px;
+
 $transition-tween: ease-in-out;
 $default-transition: opacity $transition-duration $transition-tween,
   transform $transition-duration $transition-tween;

@@ -1,7 +1,12 @@
 import React from "react";
 import { Template } from "../Template/Template";
 import Event from "../../components/LandingComponents/EventTable.jsx";
-import { EVENTS, isPastEvent, findUpcomingEvent } from "./EventContent";
+import {
+  EVENTS,
+  isPastEvent,
+  findUpcomingEvent,
+  getUpcomingText,
+} from "./EventContent";
 import "../../components/LandingComponents/EventTable.scss";
 import "./EventPage.scss";
 
@@ -30,6 +35,7 @@ export const EventPage = () => {
                 isMainEvent={row.main}
                 isPastEvent={isPastEvent(row)}
                 isComingSoon={row.title === comingSoonEvent}
+                getUpcomingText={getUpcomingText}
                 title={row.title}
               />
             ))}

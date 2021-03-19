@@ -19,8 +19,8 @@ import imageAward from "../../components/GaleriComponents/AccordionAssets/image-
 import "./OrganisasiPage.scss";
 
 const options = [
-  { title: "Himpunan Mahasiswa", url: "hmj", idx: 0 },
-  { title: "Unit Mahasiswa", url: "ukm", idx: 1 },
+  { title: "Himpunan (HMJ)", url: "hmj", idx: 0 },
+  { title: "Unit (UKM)", url: "ukm", idx: 1 },
   { title: "Lainnya", url: "etc", idx: 2 },
 ];
 // Page ini dipake buat both apresiasi sama galeri wisudawan. Nanti baca URL nya aja dari routes.js.

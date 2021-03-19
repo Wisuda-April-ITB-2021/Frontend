@@ -5,9 +5,9 @@
   @include flex_center(column);
   position: relative;
 
-  background-image: url("./img/org-card.svg");
+  background-image: url("../../../images/bg/card-bg.jpg");
   background-size: cover;
-  
+
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
   transition: all ease 0.4s;
 

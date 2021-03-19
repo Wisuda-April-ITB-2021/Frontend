@@ -1,82 +1,76 @@
-.wisudawanCard{
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    justify-content: space-evenly;
+.wisudawanCard {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  justify-content: space-evenly;
 
-    background-image: url('./img/galeri-card.svg');
-    background-size: cover;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
-    transition: all ease 0.4s;
-    
-    margin: 1vw;
-    padding: 3vw 3vw;
-    height: 32vw;
-    width: 24vw;
-    border-radius: 20px;
+  background-image: url("../../../images/bg/card-bg.jpg");
+  background-size: cover;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
+  transition: all ease 0.4s;
 
-    .mainImage{
-        width: 15vw;
-        border-radius: 50%;
+  margin: 1vw;
+  padding: 3vw 3vw;
+  height: 32vw;
+  width: 24vw;
+  border-radius: 20px;
 
-    }
+  .mainImage {
+    width: 15vw;
+    border-radius: 50%;
+  }
 
-    .cardBackground{
-        width: 20vw;
-        padding: 2vw;
-        position: absolute; 
-        bottom: 7vw;
-        left: 3vw;
-        z-index: 2;
-    }
+  .cardBackground {
+    width: 20vw;
+    padding: 2vw;
+    position: absolute;
+    bottom: 7vw;
+    left: 3vw;
+    z-index: 2;
+  }
 
-    h4{
-        font-size: 1.4vw;
-    }
+  h4 {
+    font-size: 1.4vw;
+  }
 
-    p{
-        text-align: center;
-        font-size: 1.2vw;
-        padding: 0 2vw;
-    }
-
+  p {
+    text-align: center;
+    font-size: 1.2vw;
+    padding: 0 2vw;
+  }
 }
 
-.wisudawanCard:hover{
-    background-color: #3999c985;
+.wisudawanCard:hover {
+  background-color: #3999c985;
 }
 
+@media only screen and (max-width: 720px) {
+  .wisudawanCard {
+    margin: 1.6vw;
+    height: 52vw;
+    width: 40vw;
 
-@media only screen and (max-width: 720px){
-    .wisudawanCard{
-        margin: 1.6vw;
-        padding: 1vw 2vw;
-        height: 52vw;
-        width: 40vw;
-    
-        .mainImage{
-            width: 20vw;
-            border-radius: 50%;
-    
-        }
-    
-        .cardBackground{
-            width: 27vw;
-            padding: 2vw;
-            bottom: 12vw;
-            left: 7.5vw;
-        }
-    
-        h4{
-            font-size: 3vw;
-        }
-    
-        p{
-            font-size: 2.5vw;
-            padding: 0 2vw;
-        }
+    .mainImage {
+      width: 20vw;
+      border-radius: 50%;
+    }
 
-}
+    .cardBackground {
+      width: 27vw;
+      padding: 2vw;
+      bottom: 12vw;
+      left: 7.5vw;
+    }
+
+    h4 {
+      font-size: 3vw;
+    }
+
+    p {
+      font-size: 2.5vw;
+      padding: 0 2vw;
+    }
+  }
 }
