@@ -3,47 +3,48 @@
 
 .footer {
   @include setup_size(100vw, 225px);
+  align-items: center;
   position: relative;
   z-index: 2;
-  align-items: center;
   justify-content: space-evenly;
   background-size: cover;
   margin-top: 7vh;
   background-color: $darkBlue;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: clamp(20px, 5vh, 120px);
+  padding: 0 2.5%;
   &-text {
     width: 100%;
+    .quote {
+      margin-top: 5px;
+      text-shadow: 1px 1px 0 rgba(43, 34, 35, 1);
+    }
+    .cr {
+      font-size: clamp(8px, 2.2vw, 14px);
+      margin-top: 5px;
+    }
   }
   &-wispril {
     display: flex;
-    align-items: left;
     justify-content: left;
     flex-direction: row;
     margin-top: -30px;
     h4 {
-      font-size: clamp(24px, 2.2vw, 32px);
       text-shadow: 2px 1px 0 rgba(43, 34, 35, 1);
+      align-self: center;
     }
     img {
-      width: 5%;
+      display: block;
+      height: 42px;
       margin-right: 7px;
+      justify-self: center;
+      align-self: center;
     }
-  }
-  #quote {
-    font-size: clamp(10px, 2.2vw, 17px);
-    margin-top: 10px;
-    text-shadow: 1px 1px 0 rgba(43, 34, 35, 1);
-  }
-  #cr {
-    font-size: clamp(8px, 2.2vw, 14px);
-    margin-top: 10px;
   }
   &-socialmedia {
     @include flex_center(column);
     align-items: flex-end;
-    margin-top: -14px;
+    margin-top: -30px;
     font-size: 50%;
     h4 {
       text-shadow: 2px 1px 0 rgba(43, 34, 35, 1);
@@ -52,12 +53,12 @@
     }
   }
   &-logo {
-    margin-top: 15px;
+    margin-top: 12px;
     display: flex;
     align-self: right;
     justify-content: right;
     a {
-      margin-inline: 7px;
+      margin-left: 14px;
     }
     .social-media-icon {
       transition: all 0.2s ease-out;
@@ -66,15 +67,16 @@
         transform: translateY(-2px);
       }
     }
-    svg {
-      fill: $darkBlue;
+    svg,
+    path {
+      transition: all 0.2s ease-out;
+      fill: $white;
       cursor: pointer;
     }
     .instagram-icon {
-      fill: #d4d4d4;
-      font-size: clamp(27px, 2.5vw, 33px); //33
       background: opacity(0);
       transition: none;
+      margin-top: -3px;
       animation: insta-fill-reverse 0.2s forwards;
       &:hover {
         animation: insta-fill 0.2s forwards;
@@ -82,49 +84,61 @@
       border-radius: 10px;
     }
     .linkedin-icon {
-      font-size: clamp(26px, 2.5vw, 32px);
-      fill: #d4d4d4;
       &:hover {
-        fill: #2867b2;
+        path {
+          fill: #0e76a8;
+        }
+        rect {
+          fill: #ffffff;
+          fill-opacity: 100%;
+        }
       }
     }
     .line-icon {
-      font-size: clamp(24px, 2.5vw, 30px);
-      background: #d4d4d4;
-      padding: 3px;
-      border-radius: 8px;
+      border-radius: 6px;
       &:hover {
-        background: rgb(0, 185, 0);
-        fill: #d4d4d4;
+        path {
+          fill: rgb(0, 185, 0);
+        }
+        rect {
+          fill: $white;
+          fill-opacity: 100%;
+        }
       }
     }
     .spotify-icon {
-      font-size: clamp(28px, 2.5vw, 34px);
-      fill: #d4d4d4;
-      padding: 3px;
-      border-radius: 8px;
       &:hover {
-        fill: rgb(30, 215, 96);
-        background: #191414;
+        path {
+          fill: #1db954;
+        }
+        circle {
+          fill: #191414;
+          fill-opacity: 100%;
+        }
       }
     }
     .tiktok-icon {
-      font-size: clamp(24px, 2.5vw, 30px);
-      background: #d4d4d4;
-      padding: 3px;
-      border-radius: 8px;
       &:hover {
-        background: $black;
-        fill: $white;
+        path {
+          &.main {
+            fill: #010101;
+          }
+          &.red {
+            fill: #ee1d52;
+            fill-opacity: 100%;
+          }
+          &.blue {
+            fill: #69c9d0;
+            fill-opacity: 100%;
+          }
+        }
       }
     }
     .twitter-icon {
-      font-size: clamp(31px, 2.5vw, 37px);
-      fill: #d4d4d4;
-      padding: 3px;
-      border-radius: 8px;
       &:hover {
-        fill: rgb(0, 172, 238);
+        path {
+          fill: rgb(0, 172, 238);
+        }
       }
     }
   }
@@ -224,15 +238,15 @@
   }
 }
 
-@media (max-width: 670px) {
+@media (max-width: $breakpoint) {
   .footer {
     grid-template-columns: 0;
     @include flex_center(column);
     text-align: center;
-    height: 36vh;
+    height: fit-content;
     &-wispril {
       justify-content: center;
-      margin-top: 2px;
+      margin-top: 25px;
       h4 {
         font-size: 24px;
       }
@@ -249,7 +263,8 @@
       font-size: 12px;
     }
     &-socialmedia {
-      margin-top: 40px;
+      margin-top: 30px;
+      margin-bottom: 25px;
       display: block;
       justify-self: center;
       align-self: center;
@@ -268,22 +283,24 @@
         cursor: pointer;
       }
       .instagram-icon {
-        font-size: 27px;
+        width: 32px;
       }
       .linkedin-icon {
-        font-size: 26px;
+        width: 27px;
       }
       .line-icon {
-        font-size: 24px;
+        width: 27px;
+        border-radius: 8px;
+        border-radius: 7px;
       }
       .spotify-icon {
-        font-size: 28px;
+        width: 29px;
       }
       .tiktok-icon {
-        font-size: 24px;
+        width: 26px;
       }
       .twitter-icon {
-        font-size: 31px;
+        width: 30px;
       }
     }
   }

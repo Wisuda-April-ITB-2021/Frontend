@@ -1,29 +1,32 @@
 @import "../../styles/mixin.scss";
 @import "../../styles/variables.scss";
 
-.button {
-  background: $darkBlue;
-  box-shadow: 0px 6px 10px -8px rgba(43, 34, 35, 0.35);
-  border-radius: clamp(22.74px, 1.99vw, 25.58px);
-  border-width: 0px;
-  padding-left: clamp(18.5px, 1.85vw, 33.3px);
-  padding-right: clamp(18.5px, 1.85vw, 33.3px);
-  height: clamp(45.47px, 4vw, 51.15px);
-  line-height: clamp(45.47px, 4vw, 51.15px);
-  cursor: pointer;
-  // vendor prop
-  -webkit-transition: background-color 300ms ease-out;
-  -ms-transition: background-color 300ms ease-out;
-  transition: background-color 300ms ease-out;
-  text-align: center;
+$button-transition: background-color $transition-duration $transition-tween, $default-transition;
 
-  &:hover {
-    background: $blue;
-  }
+.button {
+    background: $darkBlue;
+    box-shadow: 0px 6px 10px -8px $black-transparent;
+    border-radius: clamp(23px, 2vw, 26px);
+    border-width: 0px;
+    padding-left: clamp(19px, 1.9vw, 33px);
+    padding-right: clamp(19px, 1.9vw, 33px);
+    height: clamp(45px, 4vw, 51px);
+    line-height: clamp(45px, 4vw, 51px);
+    cursor: pointer;
+    // vendor prop
+    -webkit-transition: $button-transition;
+    -ms-transition: $button-transition;
+    transition: $button-transition;
+    text-align: center;
+
+    &:hover {
+        background: $blue;
+        transform: translateY(-5px);
+    }
 }
 
 .span {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
 }

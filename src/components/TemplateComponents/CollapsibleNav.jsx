@@ -7,7 +7,7 @@ import "./Navbar.scss";
 export const CollapsibleNav = ({ route, children, parentPath, isMobile }) => {
   const ref = useRef();
   const [isOpen, setOpen] = useState(isMobile);
-  const [height, setHeight] = useState("100px"); // ini hasil coba-coba, jangan ditiru
+  const [height, setHeight] = useState("110px"); // ini hasil coba-coba, jangan ditiru
   const toogleOpen = (e) => {
     e.preventDefault();
     setOpen((prev) => !prev);

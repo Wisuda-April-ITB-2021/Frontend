@@ -38,6 +38,7 @@
 
 .logo-desc {
   margin-bottom: clamp(27.28px, 2.4vw, 30.69px);
+  filter: drop-shadow($shadow-blur);
 }
 
 .parallax {
@@ -116,28 +117,40 @@
     @include setup_size(100%, 100%);
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: $breakpoint) {
+    .awan-gelap-atas,
+    .awan-cerah-bawah,
+    .bintang-bawah-awan,
+    .base-langit {
+      @include setup_size(150%, 100%);
+      left: -25%;
+    }
+
     .batu {
       width: 37.5%;
     }
 
     .rerumputan {
-      height: 70%;
+      width: 150%;
+      height: 100%;
+      left: -25%;
     }
 
     .rumput-kanan {
       width: 25%;
+      right: -5%;
     }
 
     .left-component {
-      width: 22.5%;
+      width: 30%;
+      bottom: 5%;
     }
   }
 
   @media (max-width: 600px) {
     .batu {
       width: 42.5%;
-      bottom: -2.5%;
+      // bottom: -2.5%;
     }
 
     .rumput-kanan {

@@ -1,12 +1,12 @@
 import React from 'react'
 import WisudawanCard from './WisudawanCard'
 import './WisudawanCardContainer.scss'
-import mainImage  from '../Cards/img/wisudawan1.png'
-import mainImage2 from '../Cards/img/wisudawan2.png'
-import mainImage3 from '../Cards/img/wisudawan3.png'
-import mainImage4 from '../Cards/img/wisudawan4.png'
-import mainImage5 from '../Cards/img/wisudawan5.png'
-import mainImage6 from '../Cards/img/wisudawan6.png'
+import mainImage  from './img/wisudawan1.png'
+import mainImage2 from './img/wisudawan2.png'
+import mainImage3 from './img/wisudawan3.png'
+import mainImage4 from './img/wisudawan4.png'
+import mainImage5 from './img/wisudawan5.png'
+import mainImage6 from './img/wisudawan6.png'
 
 
 const WisudawanCardContainer = () => {

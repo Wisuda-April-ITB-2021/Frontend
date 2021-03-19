@@ -52,7 +52,7 @@
 }
 
 // Fireflies particles - - - - - - - - - - - - (https://codepen.io/mikegolus/pen/Jegvym)
-$quantity: 10;
+$quantity: 12;
 
 .firefly {
   position: absolute;
@@ -146,5 +146,10 @@ $quantity: 10;
     &-content {
       width: 90vw;
     }
+  }
+  .firefly {
+    width: 0.4vh;
+    height: 0.4vh;
+    margin: -0.2vh 0 0 9.8vh;
   }
 }
