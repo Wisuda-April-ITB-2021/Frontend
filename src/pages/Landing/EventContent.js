@@ -39,7 +39,7 @@ export const EVENTS = [
 ];
 
 export const isPastEvent = (event) => {
-  return calculateDays(event.date) < -1;
+  return calculateDays(event.date) < 0;
 };
 
 export const findUpcomingEvent = (events) => {

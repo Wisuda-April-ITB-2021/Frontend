@@ -13,6 +13,23 @@
   &-content {
     margin: $navbar-height auto 0;
     width: 60vw;
+    position: relative;
+    z-index: 2;
+
+    &::before {
+      content: "";
+      @include setup_size(100%, 100%);
+      background: linear-gradient(
+        90deg,
+        rgba(45, 44, 52, 0) 0%,
+        rgb(45, 44, 52) 30%,
+        rgba(45, 44, 52, 1) 70%,
+        rgba(45, 44, 52, 0) 100%
+      );
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
   }
   .hidden {
     display: none;
