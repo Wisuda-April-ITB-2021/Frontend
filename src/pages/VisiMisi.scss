@@ -57,10 +57,6 @@
   margin: auto;
   width: clamp(521.08px, 45.84vw, 568.17px);
 
-  @media screen and (max-width: $breakpoint) {
-    width: clamp(0px, 86.84vw, 521.08px);
-  }
-
   h3 {
     margin-top: clamp(43.65px, 3.84vw, 49.1px);
     margin-bottom: clamp(14.55px, 1.28vw, 16.36px);
@@ -89,6 +85,11 @@
 }
 
 @media screen and (max-width: $breakpoint) {
+  .visi,
+  .misi {
+    width: 86.84vw;
+    max-width: 521.08px;
+  }
   .visi-misi {
     width: 100%;
     padding: 0 7.5vw;
