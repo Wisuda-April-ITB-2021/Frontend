@@ -12,7 +12,8 @@
   text-align: center;
 
   @media screen and (max-width: 600px) {
-    width: clamp(0px, 67.75vw, 406.5px);
+    width: 67.75vw;
+    max-width: 406.5px;
   }
 
   .button {
@@ -20,7 +21,8 @@
     margin: auto;
 
     @media screen and (max-width: 600px) {
-      width: clamp(0px, 37.896vw, 227.38px);
+      width: 37.896vw;
+      max-width: 227.38px;
     }
   }
 
@@ -31,7 +33,8 @@
     text-align: center;
 
     @media screen and (max-width: 600px) {
-      width: clamp(0px, 29.555vw, 177.33px);
+      width: 29.555vw;
+      max-width: 177.33px;
     }
   }
 }
