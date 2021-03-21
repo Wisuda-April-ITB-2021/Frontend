@@ -1,0 +1,50 @@
+@import "../styles/mixin.scss";
+
+$grid__bp-md: 768;
+
+.container {
+    max-width: $grid__bp-md * 1px;
+    margin: 0 auto;
+    position: relative;
+    &--fluid {
+        margin: 0;
+        max-width: 100%;
+        align-items: center;
+    }
+    &__row {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+    &__col {
+        flex-basis: (100 / 4 ) * 1%;
+        align-items: center;
+    }
+}
+
+.container {
+    background-color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    width : 100%;
+    align-items: center;
+    &__row {
+        align-items: center;
+        background-color: white;
+        width: 100%;
+        display:flex;
+        justify-content: center;
+    }
+    &__col {
+        align-items: center;
+        height: 30px;
+        background-color: white;
+        outline: 	1px solid white;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}

@@ -1,0 +1,29 @@
+.WisudawanFilter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    form{
+        position: relative;
+        h3{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        input[type="text"]{
+            background: #2F3C4F;
+            opacity: 0.5;
+            border-radius: 25px;
+            color: #FDFDDF;
+            width: 458px;
+            height: 50px;
+            padding-left: 50px;
+            box-shadow: none;
+            border: none;
+        }
+        .search-icon{
+            position: absolute;
+            left: 12px;
+            margin-top: 13px;
+        }
+    }
+}

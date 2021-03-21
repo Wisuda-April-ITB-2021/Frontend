@@ -1,0 +1,61 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixin.scss";
+
+.organisasiCard {
+  @include flex_center(column);
+  position: relative;
+
+  background-image: url("../../../images/bg/card-bg.jpg");
+  background-size: cover;
+
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
+  transition: all ease 0.4s;
+
+  margin: 1vw;
+  width: 17.5vw;
+  height: 25vw;
+  padding: 5vh 2vw;
+  border-radius: 16px;
+  cursor: pointer;
+
+  img.ornamentCard {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 8vw;
+  }
+
+  .mainImage {
+    width: 15vw;
+    padding: 1vw;
+  }
+
+  h4 {
+    font-size: 1.5vw;
+  }
+}
+
+.organisasiCard:hover {
+  background-color: $darkBlueTransparent;
+}
+
+@media only screen and (max-width: 600px) {
+  .organisasiCard {
+    // margin: 2vw 30px;
+    @include setup_size(40vw, 50vw);
+    margin: 2vw;
+    padding: 1vw 2vw;
+
+    img.ornamentCard {
+      width: 20vw;
+    }
+
+    .mainImage {
+      width: 30vw;
+    }
+
+    h4 {
+      font-size: 3vw;
+    }
+  }
+}

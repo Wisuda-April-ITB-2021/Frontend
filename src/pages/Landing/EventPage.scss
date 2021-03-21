@@ -1,0 +1,26 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixin.scss";
+
+.event-page {
+  @include flex_center(column);
+  padding-top: $page-padding-top;
+  h1,
+  p {
+    text-align: center;
+  }
+  p {
+    margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: $breakpoint) {
+  .event-page {
+    padding-top: $page-padding-top-mobile;
+    p {
+      padding: 0 20px 0;
+    }
+    h1 {
+      padding: 20px 20px 10px;
+    }
+  }
+}

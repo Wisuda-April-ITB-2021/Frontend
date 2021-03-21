@@ -1,0 +1,35 @@
+@import "../../styles/mixin.scss";
+@import "../../styles/variables.scss";
+
+$button-transition: background-color $transition-duration $transition-tween,
+  $default-transition;
+
+.button {
+  background: $darkBlue;
+  box-shadow: 0px 6px 10px -8px $black-transparent;
+  border-radius: clamp(23px, 2vw, 26px);
+  border-width: 0px;
+  padding: 0 30px;
+  height: clamp(45px, 4vw, 51px);
+  line-height: clamp(45px, 4vw, 51px);
+  cursor: pointer;
+  // vendor prop
+  -webkit-transition: $button-transition;
+  -ms-transition: $button-transition;
+  transition: $button-transition;
+  text-align: center;
+
+  &-active {
+    background: $blue;
+  }
+  &:hover {
+    background: $blue;
+    transform: translateY(-5px);
+  }
+}
+
+.span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}

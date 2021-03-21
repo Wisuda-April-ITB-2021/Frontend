@@ -6,8 +6,8 @@
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
 
+  <!-- favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -18,19 +18,30 @@
   <meta name="msapplication-TileColor" content="#2f3c4f">
   <meta name="theme-color" content="#ffffff">
 
+  <!-- meta -->
   <meta name="keywords"
     content="Wispril, Wispril ITB, Wispril ITB 2021, Wispril 2021, Wisuda April, Wisuda April ITB, Wisuda April ITB 2021" />
   <meta property="og:url" content="https://www.wisprilitb.com" />
   <meta property="og:image" content="%PUBLIC_URL%/android-chrome-192x192.png" />
   <meta property="og:description"
-    content="Akun resmi Perayaan Wisuda April ITB 2021. #CahayaApresiasi #WisprilLights" />
+    content="Website resmi Perayaan Wisuda April ITB 2021, The Light of Hope in Times of Change. #CahayaApresiasi #WisprilLights" />
+
+  <link rel="stylesheet" href="%PUBLIC_URL%/Loading/style.css">
 
   <title>Wisuda April ITB 2021</title>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+  <div id="root">
+    <div class="root-loading">
+      <div class="root-loading-content">
+        <img src="%PUBLIC_URL%/Loading/Logo.png" alt="Logo Wispril 2021">
+        <h2>Perayaan Wisuda April ITB 2021</h2>
+        <h4>Loading, please wait...</h4>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
