@@ -50,3 +50,12 @@
     cursor: pointer;
   }
 }
+
+@media only screen and (max-width: $breakpoint) {
+  .message-form{
+    display: grid !important;
+    h6{margin-bottom: 2.5px;}
+    input, textarea, button{font-size: clamp(14px, 1.2vw, 14px);}
+    .message,.sender,.message-send{padding : 5vw;}
+  }
+}

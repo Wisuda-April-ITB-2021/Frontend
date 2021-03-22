@@ -1,0 +1,28 @@
+@import "../../styles/mixin.scss";
+@import "../../styles/variables.scss";
+
+.wisudawan-page-specific{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap : 5vh;
+  &>*:not(.message-form){@include flex_center(column);}
+  h3{margin-bottom : 2.5vh;}
+}
+
+.bio{
+  .name{text-align: center;}
+  img{height: 50vh; max-width: 100%;}
+  .desc{margin-top : 2vh; text-align: center;}
+}
+
+@media only screen and (max-width: $breakpoint) {
+  .wisudawan-page-specific{
+    gap : 2.5vh;
+    h3{margin-bottom : 1.5vh;}
+  }
+
+  .bio{
+    img{height: 35vh;}
+    .desc{margin-top : 1vh;}
+  }
+}

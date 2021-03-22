@@ -43,6 +43,10 @@
   }
 }
 
+.template-content{
+  position: relative !important;
+}
+
 .firefly-wrap {
   @include setup_size(100vw, 100vh);
   position: fixed;
