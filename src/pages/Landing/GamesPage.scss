@@ -2,9 +2,13 @@
 @import "../../styles/mixin.scss";
 
 .games {
-  &-container h1 {
-    padding-top: $page-padding-top;
-    text-align: center;
+  &-container {
+    position: relative;
+    z-index: 1;
+    h1 {
+      padding-top: $page-padding-top;
+      text-align: center;
+    }
   }
   &-switch {
     @include flex_center(row);

@@ -9,7 +9,7 @@
   background: $darkBlue;
   border-radius: $border-radius;
   overflow: hidden;
-  padding: 25px;
+  padding-top: 25px;
   filter: drop-shadow($shadow-blur);
   &::before {
     @include setup_size(100%, 100%);
@@ -21,6 +21,12 @@
     position: absolute;
     opacity: 0.5;
     z-index: -1;
+  }
+  &-button {
+    transform: translateY(-80%);
+    &:hover {
+      transform: translateY(-90%);
+    }
   }
 }
 

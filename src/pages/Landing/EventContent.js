@@ -39,7 +39,7 @@ export const EVENTS = [
 ];
 
 export const isPastEvent = (event) => {
-  return calculateDays(event.date) < 0;
+  return calculateDays(event.date) < -1;
 };
 
 export const findUpcomingEvent = (events) => {
@@ -61,13 +61,14 @@ export const calculateDays = (date) => {
 
 export const getUpcomingText = (date) => {
   const days = calculateDays(date);
+  console.log(days);
   let text = "";
-  if (days === 0) {
+  if (days === -1) {
     text = "Hari ini";
-  } else if (days === 1) {
+  } else if (days === 0) {
     text = "Besok";
   } else {
-    text = `${days} hari lagi`;
+    text = `${days + 1} hari lagi`;
   }
   return `\xa0\xa0\xa0[ ${text} ]`;
 };

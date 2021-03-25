@@ -1,0 +1,93 @@
+@import "../../../styles/mixin.scss";
+@import "../../../styles/variables.scss";
+
+.picrew-menu-container {
+  @include setup_size(100%, 60vh);
+  background: $darkBlue;
+  box-shadow: $shadow-blur;
+}
+
+.picrew-menu-main {
+  width: 100%;
+  display: flex;
+  border-bottom: 2px solid $blue;
+  &-button {
+    @include setup_size(100px, 2.5rem);
+    flex-grow: 1;
+    background: none;
+    border: none;
+    transition: $bg-transition;
+    border-radius: 0;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover,
+    &-active {
+      background: $blue;
+    }
+    h5 {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.picrew-menu-sub {
+  @include setup_size(100%, 20vh);
+  max-height: 200px;
+  box-shadow: $shadow-blur;
+  padding: 0.25rem 4rem;
+  position: relative;
+  &-img {
+    &:hover {
+      cursor: pointer;
+    }
+    &::after {
+      transition: $default-transition;
+      content: "";
+      @include setup_size(60%, 5px);
+      background: $blue;
+      position: absolute;
+      bottom: 0;
+      left: 20%;
+      border-radius: 10px 10px 0 0;
+      opacity: 0;
+    }
+    &-active::after {
+      opacity: 1;
+    }
+    img {
+      transition: $default-transition;
+      height: 15vh;
+      max-height: 200px;
+      transform: scale(0.9);
+      &:hover {
+        transform: scale(0.95);
+      }
+    }
+  }
+}
+
+.picrew-submenu-button-container {
+  @include flex_center(column);
+  @include setup_size(3rem, 60%);
+  position: absolute;
+  filter: drop-shadow($shadow-blur);
+  svg path {
+    fill: $yellow;
+  }
+  &:first-of-type {
+    left: -2%;
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+  &:last-of-type {
+    right: -2%;
+    svg {
+      transform: rotate(-90deg);
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}

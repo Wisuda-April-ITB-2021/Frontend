@@ -37,10 +37,10 @@ export const Picrew = () => {
           <PicrewContent />
         </div>
       </div>
-      <PicrewMenu />
-      <Button active onClick={downloadPicrew}>
+      <Button className="picrew-button" active onClick={downloadPicrew}>
         Download
       </Button>
+      <PicrewMenu />
     </div>
   );
 };

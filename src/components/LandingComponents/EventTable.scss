@@ -16,7 +16,7 @@ table {
   top: 0px;
   border-radius: 0px;
   background-color: rgba(47, 60, 79, 0.3);
-  
+
   .jam {
     padding-left: 35px;
     height: 50px;
@@ -25,40 +25,42 @@ table {
     font-weight: normal;
     line-height: 22px;
     text-shadow: 1px 1px 0px $black;
-    color: #FDFDDF;
+    color: #fdfddf;
   }
-  
+
   .keterangan {
     padding-left: 20px;
     text-shadow: 1px 1px 0px $black;
     text-align: left;
   }
-  
+
   .line {
     border-left: 1px solid $yellow;
     height: 50px;
   }
 
   &-past-event {
-    .jam, .keterangan {
+    .jam,
+    .keterangan {
       text-decoration: line-through;
       opacity: 0.5;
     }
   }
   &-coming-soon {
     background: $darkBlue;
-    .jam, .keterangan {
+    .jam,
+    .keterangan {
       color: $yellow;
       font-weight: bold;
     }
   }
   &-main-event {
-    outline: 2px solid $darkBlue;
+    outline: 2px solid $blueTransparent;
   }
 }
 
 .rundown:first-child {
-  td:first-child{
+  td:first-child {
     border-top-left-radius: 25px;
   }
   td:last-child {
@@ -67,7 +69,7 @@ table {
 }
 
 .rundown:last-child {
-  td:first-child{
+  td:first-child {
     border-bottom-left-radius: 25px;
   }
   td:last-child {
@@ -79,7 +81,6 @@ table {
 //    border-radius: 3px;
 //    background-color: rgba(21, 51, 59, 0.644) !important;
 //  }
-
 
 @media only screen and (max-width: $breakpoint) {
   .ukurantabel {
@@ -97,8 +98,8 @@ table {
       padding: 10px 15px;
     }
     .line {
-        width: 1%;
-        border-left: 1px solid $yellow;
+      width: 1%;
+      border-left: 1px solid $yellow;
     }
   }
-}  
+}
