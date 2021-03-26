@@ -29,6 +29,7 @@
       position: fixed;
       left: 0;
       top: 0;
+      z-index: -1;
     }
   }
   .hidden {
@@ -158,6 +159,14 @@ $quantity: 12;
   }
 }
 
+@media only screen and (max-width: $breakpoint-tab) {
+  .template {
+    &-content {
+      width: 80vw;
+    }
+  }
+}
+
 @media only screen and (max-width: $breakpoint) {
   .template {
     &-content {
@@ -165,8 +174,8 @@ $quantity: 12;
     }
   }
   .firefly {
-    width: 0.4vh;
-    height: 0.4vh;
+    width: 0.6vh;
+    height: 0.6vh;
     margin: -0.2vh 0 0 9.8vh;
   }
 }

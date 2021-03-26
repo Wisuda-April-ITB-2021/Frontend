@@ -42,3 +42,33 @@
   @include flex_center(column);
   @include setup_size(100%, 100%);
 }
+
+@media only screen and (max-width: $breakpoint-tab) {
+  .picrew {
+    padding-top: 40px;
+    h3 {
+      margin-bottom: 0.5rem;
+    }
+    p {
+      margin-bottom: 1rem;
+      padding: 0 10%;
+    }
+  }
+  .picrew-container {
+    &-outer {
+      $size: 50vw;
+      width: $size;
+      height: $size;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tab) {
+  .picrew-container {
+    &-outer {
+      $size: 60vw;
+      width: $size;
+      height: $size;
+    }
+  }
+}

@@ -1,8 +1,12 @@
 @import "../../../styles/mixin.scss";
 @import "../../../styles/variables.scss";
 
+$menu-height: 80vh;
+$submenu-height: 20vh;
+$options-height: 50vh;
+
 .picrew-menu-container {
-  @include setup_size(100%, 60vh);
+  @include setup_size(100%, $menu-height);
   background: $darkBlue;
   box-shadow: $shadow-blur;
 }
@@ -32,7 +36,7 @@
 }
 
 .picrew-menu-sub {
-  @include setup_size(100%, 20vh);
+  @include setup_size(100%, $submenu-height);
   max-height: 200px;
   box-shadow: $shadow-blur;
   padding: 0.25rem 4rem;
@@ -89,5 +93,148 @@
   }
   &:hover {
     cursor: pointer;
+  }
+}
+
+.picrew-options {
+  @include setup_size(100%, $options-height);
+  // @include flex-center(row);
+  mask-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.72, rgba(0, 0, 0, 1)),
+    color-stop(0.97, rgba(0, 0, 0, 0))
+  );
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.25rem 2.5%;
+  overflow-y: scroll;
+  &-item {
+    margin: 0.5% 1%;
+    width: 18%;
+    aspect-ratio: 1 / 1;
+    transition: $default-transition;
+    filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.2));
+    transform: scale(0.975);
+    &:first-of-type {
+      // untuk delete icon
+      transform: scale(0.8);
+      &:hover {
+        transform: scale(0.85);
+      }
+    }
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.02);
+    }
+    img {
+      @include setup_size(100%, 100%);
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tab) {
+  $menu-height: 50vh;
+  $submenu-height: 15vh;
+  $options-height: 30vh;
+
+  .picrew-menu-container {
+    @include setup_size(100%, $menu-height);
+    background: $darkBlue;
+    box-shadow: $shadow-blur;
+  }
+
+  .picrew-menu-sub {
+    @include setup_size(100%, $submenu-height);
+    padding: 0.25rem 2rem;
+    &-img {
+      &::after {
+        @include setup_size(65%, 5px);
+      }
+      img {
+        height: 15vw;
+        max-height: 200px;
+        transform: scale(0.8);
+        &:hover {
+          transform: scale(0.85);
+        }
+      }
+    }
+  }
+
+  .picrew-submenu-button-container {
+    @include setup_size(2rem, 80%);
+    &:first-of-type {
+      left: -1.5%;
+    }
+    &:last-of-type {
+      right: -1.5%;
+    }
+  }
+
+  .picrew-options {
+    @include setup_size(100%, $options-height);
+    padding: 1.25rem 2.5%;
+    mask-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0.8, rgba(0, 0, 0, 1)),
+      color-stop(0.97, rgba(0, 0, 0, 0))
+    );
+    &-item {
+      margin: 0.5% 1%;
+      width: 18%;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint) {
+  $menu-height: 60vh;
+  $submenu-height: 15vh;
+  $options-height: 40vh;
+
+  .picrew-menu-container {
+    @include setup_size(100%, $menu-height);
+  }
+
+  .picrew-menu-sub {
+    @include setup_size(100%, $submenu-height);
+    padding: 0.25rem 1.5rem;
+    &-img {
+      &::after {
+        @include setup_size(65%, 5px);
+      }
+      img {
+        height: 20vw;
+      }
+    }
+  }
+
+  .picrew-submenu-button-container {
+    @include setup_size(1rem, 80%);
+    &:first-of-type {
+      left: 0;
+    }
+    &:last-of-type {
+      right: 0;
+    }
+  }
+
+  .picrew-options {
+    @include setup_size(100%, $options-height);
+    padding: 1.25rem 3% 2.5rem;
+    mask-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(0.8, rgba(0, 0, 0, 1)),
+      color-stop(0.92, rgba(0, 0, 0, 0))
+    );
+    &-item {
+      margin: 0.5% 1%;
+      width: 23%;
+    }
   }
 }

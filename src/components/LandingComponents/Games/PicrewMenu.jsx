@@ -19,6 +19,30 @@ const SUB_MENU = [
   TEMP_THUMB,
   TEMP_THUMB,
 ];
+const OPTIONS = [
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+  TEMP_IMG,
+];
 
 const MainMenu = ({ mainIdx, setMainIdx }) => {
   return (
@@ -39,10 +63,15 @@ const MainMenu = ({ mainIdx, setMainIdx }) => {
 };
 
 const responsive = {
-  allSize: {
+  desktop: {
     breakpoint: { max: 3000, min: 0 },
     items: 5,
     partialVisibilityGutter: 30,
+  },
+  mobile: {
+    breakpoint: { max: 800, min: 0 },
+    items: 4,
+    partialVisibilityGutter: 0,
   },
 };
 
@@ -79,6 +108,19 @@ const SubMenu = ({ subIdx, setSubIdx }) => {
   );
 };
 
+const Options = () => {
+  const items = [deleteIcon, ...OPTIONS];
+  return (
+    <div className="picrew-options">
+      {items.map((option, idx) => (
+        <div className="picrew-options-item" key={idx}>
+          <img src={option} alt="" />
+        </div>
+      ))}
+    </div>
+  );
+};
+
 export const PicrewMenu = () => {
   const [mainIdx, setMainIdx] = useState(0);
   const [subIdx, setSubIdx] = useState(0);
@@ -88,7 +130,7 @@ export const PicrewMenu = () => {
         <MainMenu mainIdx={mainIdx} setMainIdx={setMainIdx} />
         <SubMenu subIdx={subIdx} setSubIdx={setSubIdx} />
       </div>
-      <div className="picrew-options"></div>
+      <Options />
     </div>
   );
 };

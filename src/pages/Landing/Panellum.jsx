@@ -4,7 +4,7 @@ import "./Panellum.scss";
 
 export const Panellum = () => {
   return (
-    <Template>
+    <Template nofooter>
       <div>Panellum</div>
     </Template>
   );
