@@ -16,55 +16,37 @@ import imageHMJ from "../../components/GaleriComponents/AccordionAssets/image-hm
 import imageUnit from "../../components/GaleriComponents/AccordionAssets/image-unit.png";
 import imageAward from "../../components/GaleriComponents/AccordionAssets/image-award.png";
 
+import {
+	galeriOptions,
+	apresiasiOptions,
+	dummyData,
+	fakultasOptions,
+} from "./Util";
+
 import "./OrganisasiPage.scss";
 
-const options = [
-  { title: "Himpunan (HMJ)", url: "hmj", idx: 0 },
-  { title: "Unit (UKM)", url: "ukm", idx: 1 },
-  { title: "Lainnya", url: "etc", idx: 2 },
-];
 // Page ini dipake buat both apresiasi sama galeri wisudawan. Nanti baca URL nya aja dari routes.js.
 export const OrganisasiPage = () => {
   const location = useLocation().pathname.split("/");
+	const page = location[1];
   const location_key = location[location.length - 1];
-  const idx_key = options.filter((row) => row.url === location_key)[0].idx;
+  const targetOptions =
+		page === "galeri-wisudawan" ? galeriOptions : apresiasiOptions;
+	console.log(targetOptions);
+	const path = targetOptions.filter((row) => row.url === location_key)[0];
+	let idx_key;
+	if (path) {
+		idx_key = path.idx;
+	} else {
+		console.log("MASUK SINI BANG");
+		window.location.href = `/${page}/${targetOptions[0].url}`;
+	}
+	
+  const [options, setOptions] = useState(targetOptions);
 
-  const [subOptions, setSubOptions] = useState([
-    "FITB",
-    "FMIPA",
-    "FSRD",
-    "FTI",
-    "FTMD",
-    "FTSL",
-    "FTTM",
-    "SAPPK",
-    "SBM",
-    "SF",
-    "SITH",
-    "STEI",
-  ]);
-  const [data, setData] = useState([
-    {
-      text: "HMMME ATMOSPHAIRA ITB",
-      img: "https://picsum.photos/200",
-      url: "https://www.google.com",
-    },
-    {
-      text: "HMO TRITON ITB",
-      img: "https://picsum.photos/200",
-      url: "https://www.google.com",
-    },
-    {
-      text: "HMTG GEA ITB",
-      img: "https://picsum.photos/200",
-      url: "https://www.google.com",
-    },
-    {
-      text: "IMG ITB",
-      img: "https://picsum.photos/200",
-      url: "https://www.google.com",
-    },
-  ]);
+	const [subOptions, setSubOptions] = useState(fakultasOptions);
+
+	const [data, setData] = useState(dummyData);
   const [selectedOptions, setSelectedOptions] = useState(idx_key);
   const [selected, setSelected] = useState("FITB");
 
@@ -82,53 +64,30 @@ export const OrganisasiPage = () => {
   };
 
   return (
-    <Template>
-      <div className="OrganisasiPageContainer">
-        <OrganisasiCarousel
-          data={options}
-          url={location_key}
-          onChange={handleChangeOption}
-          selected={selectedOptions}
-        />
-        <div className="suboptions-container">
-          {subOptions.map((row, i) => (
-            <OrganisasiTag
-              text={row}
-              key={i}
-              active={row === selected}
-              onClick={setSelected}
-            />
-          ))}
-        </div>
-        <OrganisasiCardContainer data={data} />
-        <h1>Wisudawan</h1>
-        <WisudawanCardContainer />
-        <h1>Accordion</h1>
-        <Accordion
-          title='HMME "Atmospharia" ITB'
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          image={imageHMJ}
-        />
-
-        <Accordion
-          title="Unit Kebudayaan Jepang"
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          image={imageUnit}
-        />
-
-        <Accordion
-          title="Prestasi"
-          content="
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <br/>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          "
-          image={imageAward}
-        />
-      </div>
-    </Template>
-  );
+		<Template>
+			<div className='OrganisasiPageContainer'>
+				<OrganisasiCarousel
+					data={options}
+					url={location_key}
+					onChange={handleChangeOption}
+					selected={selectedOptions}
+				/>
+				<div className='suboptions-container'>
+					{subOptions.map((row, i) => (
+						<OrganisasiTag
+							text={row}
+							key={i}
+							active={row === selected}
+							onClick={setSelected}
+						/>
+					))}
+				</div>
+				<OrganisasiCardContainer data={data} />
+				<h1>Wisudawan</h1>
+				<WisudawanCardContainer />
+			</div>
+		</Template>
+	);
 };
 
 const OrganisasiCarousel = ({ data, onChange, selected }) => (
