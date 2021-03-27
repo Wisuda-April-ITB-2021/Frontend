@@ -77,7 +77,7 @@ export const WisudawanPage = () => {
 	}, []);
 
 	return (
-		<Template>
+		<Template isLong>
 			<div className='wisudawan-page-specific'>
 				<div className='bio'>
 					<div className='name'>
