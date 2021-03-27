@@ -10,7 +10,8 @@ class Path {
 		return `${this.main}-${this.sub}`;
 	}
 	getImg(data) {
-		return data[this.main][this.sub];
+		let target = data[this.main][this.sub];
+		return target == undefined ? "" : target.img;
 	}
 }
 
@@ -35,39 +36,19 @@ const levelData = {
 	"level-18": new Path("accessories", "etc"),
 };
 
-const data = {
-	base: {
-		bg: "",
-		skin: "",
-		"rambut-belakang": "",
-		"rambut-poni": "",
-	},
-	face: {
-		mata: "",
-		alis: "",
-		hidung: "",
-		mulut: "",
-		telinga: "",
-		janggut: "",
-		etc: "",
-	},
-	accessories: {
-		kepala: "",
-		jahim: "",
-		inner: "",
-		outer: "",
-		pose: "",
-		etc: "",
-	},
-};
-
-export const PicrewContent = () => {
+export const PicrewContent = ({data}) => {
+	console.log("INI DARI CONTENT");
+	console.log(data);
 	const images = [];
 	for (const [key, value] of Object.entries(levelData)) {
 		images.push(
-			<img className={key} src={value.getImg(data)} alt={value.getAlt()} />
+			<img
+				className={key}
+				src={value.getImg(data)}
+				alt={value.getAlt()}
+				key={value.getAlt()}
+			/>
 		);
-		console.log(`${key}: ${value}`);
 	}
 	return <div className='picrew-content'>{images}</div>;
 };
