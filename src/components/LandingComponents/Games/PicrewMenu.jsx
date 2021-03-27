@@ -116,16 +116,26 @@ const SubMenu = ({ mainMenu, subIdx, setSubIdx }) => {
 const Options = ({mainMenu, subIdx, onChange}) => {
   const subMenu = SUB_MENU[mainMenu][subIdx].name;
   let target = OPTIONS[mainMenu][subMenu];
-  const items = [deleteIcon, ...target];
   return (
-    <div className="picrew-options">
-      {items.map((option, idx) => (
-        <div className="picrew-options-item" key={idx} onClick={()=>onChange(option)}>
-          <img src={option.img} alt="" />
-        </div>
-      ))}
-    </div>
-  );
+		<div className='picrew-options'>
+			<div
+				className='picrew-options-item'
+				key={"delete"}
+				onClick={() => onChange("")}
+			>
+				<img src={deleteIcon} alt='delete-icon' />
+			</div>
+			{target.map((option, idx) => (
+				<div
+					className='picrew-options-item'
+					key={idx}
+					onClick={() => onChange(option)}
+				>
+					<img src={option.img} alt='' />
+				</div>
+			))}
+		</div>
+	);
 };
 
 export const PicrewMenu = ({onChange}) => {

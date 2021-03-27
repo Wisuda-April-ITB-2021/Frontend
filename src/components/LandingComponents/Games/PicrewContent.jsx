@@ -36,19 +36,19 @@ const levelData = {
   "level-18": new Path("accessories", "etc"),
 };
 
-export const PicrewContent = ({ data }) => {
-  console.log("INI DARI CONTENT");
-  console.log(data);
-  const images = [];
-  for (const [key, value] of Object.entries(levelData)) {
-    images.push(
-      <img
-        className={key}
-        src={value.getImg(data)}
-        alt={value.getAlt()}
-        key={value.getAlt()}
-      />
-    );
-  }
-  return <div className="picrew-content">{images}</div>;
+export const PicrewContent = ({data}) => {
+	const images = [];
+	for (const [key, value] of Object.entries(levelData)) {
+		value.getImg(data) !== undefined &&
+			value.getImg(data) !== "" &&
+			images.push(
+				<img
+					className={key}
+					src={value.getImg(data)}
+					alt={value.getAlt()}
+					key={value.getAlt()}
+				/>
+			);
+	}
+	return <div className='picrew-content'>{images}</div>;
 };
