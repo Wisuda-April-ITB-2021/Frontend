@@ -5,6 +5,7 @@ import "./Picrew.scss";
 import { PicrewContent } from "./PicrewContent";
 import { PicrewMenu } from "./PicrewMenu";
 import Button from "../../shared/Button";
+import { sendAnalyticsAction, PICREW_ACTION } from "../../../api/analytics";
 
 let dataTemplate = {
   base: {
@@ -54,6 +55,7 @@ export const Picrew = () => {
       // document.body.appendChild(canvas);
       const image = canvas.toDataURL("image/png");
       download(image, "wispril-avatar.png");
+      sendAnalyticsAction(PICREW_ACTION, "Download Picrew");
     });
   };
 

@@ -61,7 +61,6 @@ export const calculateDays = (date) => {
 
 export const getUpcomingText = (date) => {
   const days = calculateDays(date);
-  console.log(days);
   let text = "";
   if (days === -1) {
     text = "Hari ini";
