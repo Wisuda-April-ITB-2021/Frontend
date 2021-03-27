@@ -28,6 +28,12 @@
       transform: translateY(-90%);
     }
   }
+  .picrew-container-outer{
+    z-index: 0;
+  }
+  .picrew-button{
+    z-index: 1;
+  }
 }
 
 .picrew-container {
