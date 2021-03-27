@@ -9,6 +9,8 @@ import TEMP_IMG from "./temp-img/jam-gadang.jpg";
 import deleteIcon from "../../../icons/delete-picrew.svg";
 import { ReactComponent as Arrow } from "../../../icons/dropdown.svg";
 
+import ACCESSORIES from "../../../images/picrew/accessories/index.js";
+
 const MAIN_MENU = ["Base", "Face", "Accessories"];
 const SUB_MENU = [
   TEMP_THUMB,

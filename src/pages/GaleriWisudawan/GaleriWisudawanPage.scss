@@ -1,0 +1,17 @@
+@import "../../styles/mixin.scss";
+@import "../../styles/variables.scss";
+
+.galeri-wisudawan-container{
+  @include flex_center(column);
+  padding : 5vh 0;
+  text-align: center;
+  .organization-detail{
+    @include flex_center(column);
+    .desc{
+      padding : 0 20%;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint) {
+}

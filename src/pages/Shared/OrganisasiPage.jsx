@@ -6,24 +6,25 @@ import { Carousel } from "react-responsive-carousel";
 
 import { Template } from "../Template/Template";
 import OrganisasiCardContainer from "../../components/shared/Cards/OrganisasiCardContainer.jsx";
-import WisudawanCardContainer from "../../components/shared/Cards/WisudawanCardContainer.jsx";
 
 import { ReactComponent as LeftArrow } from "../../icons/leftArrow.svg";
 import { ReactComponent as RightArrow } from "../../icons/rightArrow.svg";
 
-import Accordion from "../../components/GaleriComponents/Accordion";
-import imageHMJ from "../../components/GaleriComponents/AccordionAssets/image-hmj.png";
-import imageUnit from "../../components/GaleriComponents/AccordionAssets/image-unit.png";
-import imageAward from "../../components/GaleriComponents/AccordionAssets/image-award.png";
+// import Accordion from "../../components/GaleriComponents/Accordion";
+// import imageHMJ from "../../components/GaleriComponents/AccordionAssets/image-hmj.png";
+// import imageUnit from "../../components/GaleriComponents/AccordionAssets/image-unit.png";
+// import imageAward from "../../components/GaleriComponents/AccordionAssets/image-award.png";
 
 import {
 	galeriOptions,
 	apresiasiOptions,
-	dummyData,
 	fakultasOptions,
-} from "./Util";
+  dummyHimpunan,
+} from "../Util";
 
 import "./OrganisasiPage.scss";
+
+
 
 // Page ini dipake buat both apresiasi sama galeri wisudawan. Nanti baca URL nya aja dari routes.js.
 export const OrganisasiPage = () => {
@@ -32,7 +33,6 @@ export const OrganisasiPage = () => {
   const location_key = location[location.length - 1];
   const targetOptions =
 		page === "galeri-wisudawan" ? galeriOptions : apresiasiOptions;
-	console.log(targetOptions);
 	const path = targetOptions.filter((row) => row.url === location_key)[0];
 	let idx_key;
 	if (path) {
@@ -43,10 +43,8 @@ export const OrganisasiPage = () => {
 	}
 	
   const [options, setOptions] = useState(targetOptions);
-
 	const [subOptions, setSubOptions] = useState(fakultasOptions);
-
-	const [data, setData] = useState(dummyData);
+	const [data, setData] = useState(dummyHimpunan);
   const [selectedOptions, setSelectedOptions] = useState(idx_key);
   const [selected, setSelected] = useState("FITB");
 
@@ -83,8 +81,6 @@ export const OrganisasiPage = () => {
 					))}
 				</div>
 				<OrganisasiCardContainer data={data} />
-				<h1>Wisudawan</h1>
-				<WisudawanCardContainer />
 			</div>
 		</Template>
 	);
