@@ -47,21 +47,24 @@
   .ornament {
     opacity: 0.75;
   }
-  .left-ornament,
-  .right-ornament {
-    bottom: 50%;
-    transform: translateY(50%);
-    opacity: 0.75;
+  .layer-1,
+  .layer-2,
+  .layer-3,
+  .layer-4 {
+    position: absolute;
   }
-  .left-ornament {
-    left: 0;
+
+  .layer-2 {
+    bottom: 0;
   }
-  .right-ornament {
-    right: 0;
+
+  .layer-3 {
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
-.template-content{
+.template-content {
   position: relative !important;
 }
 
@@ -175,6 +178,13 @@ $quantity: 12;
   .template {
     &-content {
       width: 90vw;
+    }
+    .layer-1,
+    .layer-4 {
+      top: 10%;
+    }
+    .layer-2 {
+      bottom: 15%;
     }
   }
   .firefly {

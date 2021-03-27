@@ -8,7 +8,7 @@ import "./GaleriWisudawanPage.scss";
 
 export const GaleriWisudawanPage = () => {
   return (
-		<Template>
+		<Template isLong>
 			<div className='galeri-wisudawan-container'>
 				<OrganizationSummary
 					title={`HMME "ASMOPHAIRA" ITB`}
