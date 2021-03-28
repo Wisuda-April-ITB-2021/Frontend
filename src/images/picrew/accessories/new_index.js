@@ -9,7 +9,7 @@ import INNER_THUMB from "./inner.png"
 import JAHIM_THUMB from "./jahim.png"
 import KEPALA_THUMB from "./kepala.png"
 import OUTER_THUMB from "./outer.png"
-//import POSE_THUMB from "./pose.png"
+import POSE_THUMB from "./pose.png"
 
 export default ACCESSORIES = [{
     image: ETC_THUMB,

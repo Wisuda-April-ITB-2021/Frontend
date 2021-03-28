@@ -1,94 +1,94 @@
-import SIDE_BANGS_LEFT+RIGHT_A_1 from "./side-bangs-left+right-a-1.png"
-import SIDE_BANGS_LEFT+RIGHT_A_10 from "./side-bangs-left+right-a-10.png"
-import SIDE_BANGS_LEFT+RIGHT_A_11 from "./side-bangs-left+right-a-11.png"
-import SIDE_BANGS_LEFT+RIGHT_A_2 from "./side-bangs-left+right-a-2.png"
-import SIDE_BANGS_LEFT+RIGHT_A_3 from "./side-bangs-left+right-a-3.png"
-import SIDE_BANGS_LEFT+RIGHT_A_4 from "./side-bangs-left+right-a-4.png"
-import SIDE_BANGS_LEFT+RIGHT_A_5 from "./side-bangs-left+right-a-5.png"
-import SIDE_BANGS_LEFT+RIGHT_A_6 from "./side-bangs-left+right-a-6.png"
-import SIDE_BANGS_LEFT+RIGHT_A_7 from "./side-bangs-left+right-a-7.png"
-import SIDE_BANGS_LEFT+RIGHT_A_8 from "./side-bangs-left+right-a-8.png"
-import SIDE_BANGS_LEFT+RIGHT_A_9 from "./side-bangs-left+right-a-9.png"
-import SIDE_BANGS_LEFT+RIGHT_B_1 from "./side-bangs-left+right-b-1.png"
-import SIDE_BANGS_LEFT+RIGHT_B_10 from "./side-bangs-left+right-b-10.png"
-import SIDE_BANGS_LEFT+RIGHT_B_11 from "./side-bangs-left+right-b-11.png"
-import SIDE_BANGS_LEFT+RIGHT_B_2 from "./side-bangs-left+right-b-2.png"
-import SIDE_BANGS_LEFT+RIGHT_B_3 from "./side-bangs-left+right-b-3.png"
-import SIDE_BANGS_LEFT+RIGHT_B_4 from "./side-bangs-left+right-b-4.png"
-import SIDE_BANGS_LEFT+RIGHT_B_5 from "./side-bangs-left+right-b-5.png"
-import SIDE_BANGS_LEFT+RIGHT_B_6 from "./side-bangs-left+right-b-6.png"
-import SIDE_BANGS_LEFT+RIGHT_B_7 from "./side-bangs-left+right-b-7.png"
-import SIDE_BANGS_LEFT+RIGHT_B_8 from "./side-bangs-left+right-b-8.png"
-import SIDE_BANGS_LEFT+RIGHT_B_9 from "./side-bangs-left+right-b-9.png"
-import SIDE_BANGS_LEFT+RIGHT_D_1 from "./side-bangs-left+right-d-1.png"
-import SIDE_BANGS_LEFT+RIGHT_D_10 from "./side-bangs-left+right-d-10.png"
-import SIDE_BANGS_LEFT+RIGHT_D_11 from "./side-bangs-left+right-d-11.png"
-import SIDE_BANGS_LEFT+RIGHT_D_2 from "./side-bangs-left+right-d-2.png"
-import SIDE_BANGS_LEFT+RIGHT_D_3 from "./side-bangs-left+right-d-3.png"
-import SIDE_BANGS_LEFT+RIGHT_D_4 from "./side-bangs-left+right-d-4.png"
-import SIDE_BANGS_LEFT+RIGHT_D_5 from "./side-bangs-left+right-d-5.png"
-import SIDE_BANGS_LEFT+RIGHT_D_6 from "./side-bangs-left+right-d-6.png"
-import SIDE_BANGS_LEFT+RIGHT_D_7 from "./side-bangs-left+right-d-7.png"
-import SIDE_BANGS_LEFT+RIGHT_D_8 from "./side-bangs-left+right-d-8.png"
-import SIDE_BANGS_LEFT+RIGHT_D_9 from "./side-bangs-left+right-d-9.png"
-import SIDE_BANGS_LEFT+RIGHT_E_1 from "./side-bangs-left+right-e-1.png"
-import SIDE_BANGS_LEFT+RIGHT_E_10 from "./side-bangs-left+right-e-10.png"
-import SIDE_BANGS_LEFT+RIGHT_E_11 from "./side-bangs-left+right-e-11.png"
-import SIDE_BANGS_LEFT+RIGHT_E_2 from "./side-bangs-left+right-e-2.png"
-import SIDE_BANGS_LEFT+RIGHT_E_3 from "./side-bangs-left+right-e-3.png"
-import SIDE_BANGS_LEFT+RIGHT_E_4 from "./side-bangs-left+right-e-4.png"
-import SIDE_BANGS_LEFT+RIGHT_E_5 from "./side-bangs-left+right-e-5.png"
-import SIDE_BANGS_LEFT+RIGHT_E_6 from "./side-bangs-left+right-e-6.png"
-import SIDE_BANGS_LEFT+RIGHT_E_7 from "./side-bangs-left+right-e-7.png"
-import SIDE_BANGS_LEFT+RIGHT_E_8 from "./side-bangs-left+right-e-8.png"
-import SIDE_BANGS_LEFT+RIGHT_E_9 from "./side-bangs-left+right-e-9.png"
-import SIDE_BANGS_LEFT+RIGHT_F_1 from "./side-bangs-left+right-f-1.png"
-import SIDE_BANGS_LEFT+RIGHT_F_10 from "./side-bangs-left+right-f-10.png"
-import SIDE_BANGS_LEFT+RIGHT_F_11 from "./side-bangs-left+right-f-11.png"
-import SIDE_BANGS_LEFT+RIGHT_F_2 from "./side-bangs-left+right-f-2.png"
-import SIDE_BANGS_LEFT+RIGHT_F_3 from "./side-bangs-left+right-f-3.png"
-import SIDE_BANGS_LEFT+RIGHT_F_4 from "./side-bangs-left+right-f-4.png"
-import SIDE_BANGS_LEFT+RIGHT_F_5 from "./side-bangs-left+right-f-5.png"
-import SIDE_BANGS_LEFT+RIGHT_F_6 from "./side-bangs-left+right-f-6.png"
-import SIDE_BANGS_LEFT+RIGHT_F_7 from "./side-bangs-left+right-f-7.png"
-import SIDE_BANGS_LEFT+RIGHT_F_8 from "./side-bangs-left+right-f-8.png"
-import SIDE_BANGS_LEFT+RIGHT_F_9 from "./side-bangs-left+right-f-9.png"
-import SIDE_BANGS_LEFT+RIGHT_G_1 from "./side-bangs-left+right-g-1.png"
-import SIDE_BANGS_LEFT+RIGHT_G_10 from "./side-bangs-left+right-g-10.png"
-import SIDE_BANGS_LEFT+RIGHT_G_11 from "./side-bangs-left+right-g-11.png"
-import SIDE_BANGS_LEFT+RIGHT_G_2 from "./side-bangs-left+right-g-2.png"
-import SIDE_BANGS_LEFT+RIGHT_G_3 from "./side-bangs-left+right-g-3.png"
-import SIDE_BANGS_LEFT+RIGHT_G_4 from "./side-bangs-left+right-g-4.png"
-import SIDE_BANGS_LEFT+RIGHT_G_5 from "./side-bangs-left+right-g-5.png"
-import SIDE_BANGS_LEFT+RIGHT_G_6 from "./side-bangs-left+right-g-6.png"
-import SIDE_BANGS_LEFT+RIGHT_G_7 from "./side-bangs-left+right-g-7.png"
-import SIDE_BANGS_LEFT+RIGHT_G_8 from "./side-bangs-left+right-g-8.png"
-import SIDE_BANGS_LEFT+RIGHT_G_9 from "./side-bangs-left+right-g-9.png"
-import SIDE_BANGS_LEFT+RIGHT_H_1 from "./side-bangs-left+right-h-1.png"
-import SIDE_BANGS_LEFT+RIGHT_H_10 from "./side-bangs-left+right-h-10.png"
-import SIDE_BANGS_LEFT+RIGHT_H_11 from "./side-bangs-left+right-h-11.png"
-import SIDE_BANGS_LEFT+RIGHT_H_2 from "./side-bangs-left+right-h-2.png"
-import SIDE_BANGS_LEFT+RIGHT_H_3 from "./side-bangs-left+right-h-3.png"
-import SIDE_BANGS_LEFT+RIGHT_H_4 from "./side-bangs-left+right-h-4.png"
-import SIDE_BANGS_LEFT+RIGHT_H_5 from "./side-bangs-left+right-h-5.png"
-import SIDE_BANGS_LEFT+RIGHT_H_6 from "./side-bangs-left+right-h-6.png"
-import SIDE_BANGS_LEFT+RIGHT_H_7 from "./side-bangs-left+right-h-7.png"
-import SIDE_BANGS_LEFT+RIGHT_H_8 from "./side-bangs-left+right-h-8.png"
-import SIDE_BANGS_LEFT+RIGHT_H_9 from "./side-bangs-left+right-h-9.png"
-import SIDE_BANGS_LEFT+RIGHT_I_1 from "./side-bangs-left+right-i-1.png"
-import SIDE_BANGS_LEFT+RIGHT_I_2 from "./side-bangs-left+right-i-2.png"
-import SIDE_BANGS_LEFT+RIGHT_I_3 from "./side-bangs-left+right-i-3.png"
-import SIDE_BANGS_LEFT+RIGHT_J_1 from "./side-bangs-left+right-j-1.png"
-import SIDE_BANGS_LEFT+RIGHT_J_10 from "./side-bangs-left+right-j-10.png"
-import SIDE_BANGS_LEFT+RIGHT_J_11 from "./side-bangs-left+right-j-11.png"
-import SIDE_BANGS_LEFT+RIGHT_J_2 from "./side-bangs-left+right-j-2.png"
-import SIDE_BANGS_LEFT+RIGHT_J_3 from "./side-bangs-left+right-j-3.png"
-import SIDE_BANGS_LEFT+RIGHT_J_4 from "./side-bangs-left+right-j-4.png"
-import SIDE_BANGS_LEFT+RIGHT_J_5 from "./side-bangs-left+right-j-5.png"
-import SIDE_BANGS_LEFT+RIGHT_J_6 from "./side-bangs-left+right-j-6.png"
-import SIDE_BANGS_LEFT+RIGHT_J_7 from "./side-bangs-left+right-j-7.png"
-import SIDE_BANGS_LEFT+RIGHT_J_8 from "./side-bangs-left+right-j-8.png"
-import SIDE_BANGS_LEFT+RIGHT_J_9 from "./side-bangs-left+right-j-9.png"
+import SIDE_BANGS_LEFT_RIGHT_A_1 from "./side-bangs-left+right-a-1.png"
+import SIDE_BANGS_LEFT_RIGHT_A_10 from "./side-bangs-left+right-a-10.png"
+import SIDE_BANGS_LEFT_RIGHT_A_11 from "./side-bangs-left+right-a-11.png"
+import SIDE_BANGS_LEFT_RIGHT_A_2 from "./side-bangs-left+right-a-2.png"
+import SIDE_BANGS_LEFT_RIGHT_A_3 from "./side-bangs-left+right-a-3.png"
+import SIDE_BANGS_LEFT_RIGHT_A_4 from "./side-bangs-left+right-a-4.png"
+import SIDE_BANGS_LEFT_RIGHT_A_5 from "./side-bangs-left+right-a-5.png"
+import SIDE_BANGS_LEFT_RIGHT_A_6 from "./side-bangs-left+right-a-6.png"
+import SIDE_BANGS_LEFT_RIGHT_A_7 from "./side-bangs-left+right-a-7.png"
+import SIDE_BANGS_LEFT_RIGHT_A_8 from "./side-bangs-left+right-a-8.png"
+import SIDE_BANGS_LEFT_RIGHT_A_9 from "./side-bangs-left+right-a-9.png"
+import SIDE_BANGS_LEFT_RIGHT_B_1 from "./side-bangs-left+right-b-1.png"
+import SIDE_BANGS_LEFT_RIGHT_B_10 from "./side-bangs-left+right-b-10.png"
+import SIDE_BANGS_LEFT_RIGHT_B_11 from "./side-bangs-left+right-b-11.png"
+import SIDE_BANGS_LEFT_RIGHT_B_2 from "./side-bangs-left+right-b-2.png"
+import SIDE_BANGS_LEFT_RIGHT_B_3 from "./side-bangs-left+right-b-3.png"
+import SIDE_BANGS_LEFT_RIGHT_B_4 from "./side-bangs-left+right-b-4.png"
+import SIDE_BANGS_LEFT_RIGHT_B_5 from "./side-bangs-left+right-b-5.png"
+import SIDE_BANGS_LEFT_RIGHT_B_6 from "./side-bangs-left+right-b-6.png"
+import SIDE_BANGS_LEFT_RIGHT_B_7 from "./side-bangs-left+right-b-7.png"
+import SIDE_BANGS_LEFT_RIGHT_B_8 from "./side-bangs-left+right-b-8.png"
+import SIDE_BANGS_LEFT_RIGHT_B_9 from "./side-bangs-left+right-b-9.png"
+import SIDE_BANGS_LEFT_RIGHT_D_1 from "./side-bangs-left+right-d-1.png"
+import SIDE_BANGS_LEFT_RIGHT_D_10 from "./side-bangs-left+right-d-10.png"
+import SIDE_BANGS_LEFT_RIGHT_D_11 from "./side-bangs-left+right-d-11.png"
+import SIDE_BANGS_LEFT_RIGHT_D_2 from "./side-bangs-left+right-d-2.png"
+import SIDE_BANGS_LEFT_RIGHT_D_3 from "./side-bangs-left+right-d-3.png"
+import SIDE_BANGS_LEFT_RIGHT_D_4 from "./side-bangs-left+right-d-4.png"
+import SIDE_BANGS_LEFT_RIGHT_D_5 from "./side-bangs-left+right-d-5.png"
+import SIDE_BANGS_LEFT_RIGHT_D_6 from "./side-bangs-left+right-d-6.png"
+import SIDE_BANGS_LEFT_RIGHT_D_7 from "./side-bangs-left+right-d-7.png"
+import SIDE_BANGS_LEFT_RIGHT_D_8 from "./side-bangs-left+right-d-8.png"
+import SIDE_BANGS_LEFT_RIGHT_D_9 from "./side-bangs-left+right-d-9.png"
+import SIDE_BANGS_LEFT_RIGHT_E_1 from "./side-bangs-left+right-e-1.png"
+import SIDE_BANGS_LEFT_RIGHT_E_10 from "./side-bangs-left+right-e-10.png"
+import SIDE_BANGS_LEFT_RIGHT_E_11 from "./side-bangs-left+right-e-11.png"
+import SIDE_BANGS_LEFT_RIGHT_E_2 from "./side-bangs-left+right-e-2.png"
+import SIDE_BANGS_LEFT_RIGHT_E_3 from "./side-bangs-left+right-e-3.png"
+import SIDE_BANGS_LEFT_RIGHT_E_4 from "./side-bangs-left+right-e-4.png"
+import SIDE_BANGS_LEFT_RIGHT_E_5 from "./side-bangs-left+right-e-5.png"
+import SIDE_BANGS_LEFT_RIGHT_E_6 from "./side-bangs-left+right-e-6.png"
+import SIDE_BANGS_LEFT_RIGHT_E_7 from "./side-bangs-left+right-e-7.png"
+import SIDE_BANGS_LEFT_RIGHT_E_8 from "./side-bangs-left+right-e-8.png"
+import SIDE_BANGS_LEFT_RIGHT_E_9 from "./side-bangs-left+right-e-9.png"
+import SIDE_BANGS_LEFT_RIGHT_F_1 from "./side-bangs-left+right-f-1.png"
+import SIDE_BANGS_LEFT_RIGHT_F_10 from "./side-bangs-left+right-f-10.png"
+import SIDE_BANGS_LEFT_RIGHT_F_11 from "./side-bangs-left+right-f-11.png"
+import SIDE_BANGS_LEFT_RIGHT_F_2 from "./side-bangs-left+right-f-2.png"
+import SIDE_BANGS_LEFT_RIGHT_F_3 from "./side-bangs-left+right-f-3.png"
+import SIDE_BANGS_LEFT_RIGHT_F_4 from "./side-bangs-left+right-f-4.png"
+import SIDE_BANGS_LEFT_RIGHT_F_5 from "./side-bangs-left+right-f-5.png"
+import SIDE_BANGS_LEFT_RIGHT_F_6 from "./side-bangs-left+right-f-6.png"
+import SIDE_BANGS_LEFT_RIGHT_F_7 from "./side-bangs-left+right-f-7.png"
+import SIDE_BANGS_LEFT_RIGHT_F_8 from "./side-bangs-left+right-f-8.png"
+import SIDE_BANGS_LEFT_RIGHT_F_9 from "./side-bangs-left+right-f-9.png"
+import SIDE_BANGS_LEFT_RIGHT_G_1 from "./side-bangs-left+right-g-1.png"
+import SIDE_BANGS_LEFT_RIGHT_G_10 from "./side-bangs-left+right-g-10.png"
+import SIDE_BANGS_LEFT_RIGHT_G_11 from "./side-bangs-left+right-g-11.png"
+import SIDE_BANGS_LEFT_RIGHT_G_2 from "./side-bangs-left+right-g-2.png"
+import SIDE_BANGS_LEFT_RIGHT_G_3 from "./side-bangs-left+right-g-3.png"
+import SIDE_BANGS_LEFT_RIGHT_G_4 from "./side-bangs-left+right-g-4.png"
+import SIDE_BANGS_LEFT_RIGHT_G_5 from "./side-bangs-left+right-g-5.png"
+import SIDE_BANGS_LEFT_RIGHT_G_6 from "./side-bangs-left+right-g-6.png"
+import SIDE_BANGS_LEFT_RIGHT_G_7 from "./side-bangs-left+right-g-7.png"
+import SIDE_BANGS_LEFT_RIGHT_G_8 from "./side-bangs-left+right-g-8.png"
+import SIDE_BANGS_LEFT_RIGHT_G_9 from "./side-bangs-left+right-g-9.png"
+import SIDE_BANGS_LEFT_RIGHT_H_1 from "./side-bangs-left+right-h-1.png"
+import SIDE_BANGS_LEFT_RIGHT_H_10 from "./side-bangs-left+right-h-10.png"
+import SIDE_BANGS_LEFT_RIGHT_H_11 from "./side-bangs-left+right-h-11.png"
+import SIDE_BANGS_LEFT_RIGHT_H_2 from "./side-bangs-left+right-h-2.png"
+import SIDE_BANGS_LEFT_RIGHT_H_3 from "./side-bangs-left+right-h-3.png"
+import SIDE_BANGS_LEFT_RIGHT_H_4 from "./side-bangs-left+right-h-4.png"
+import SIDE_BANGS_LEFT_RIGHT_H_5 from "./side-bangs-left+right-h-5.png"
+import SIDE_BANGS_LEFT_RIGHT_H_6 from "./side-bangs-left+right-h-6.png"
+import SIDE_BANGS_LEFT_RIGHT_H_7 from "./side-bangs-left+right-h-7.png"
+import SIDE_BANGS_LEFT_RIGHT_H_8 from "./side-bangs-left+right-h-8.png"
+import SIDE_BANGS_LEFT_RIGHT_H_9 from "./side-bangs-left+right-h-9.png"
+import SIDE_BANGS_LEFT_RIGHT_I_1 from "./side-bangs-left+right-i-1.png"
+import SIDE_BANGS_LEFT_RIGHT_I_2 from "./side-bangs-left+right-i-2.png"
+import SIDE_BANGS_LEFT_RIGHT_I_3 from "./side-bangs-left+right-i-3.png"
+import SIDE_BANGS_LEFT_RIGHT_J_1 from "./side-bangs-left+right-j-1.png"
+import SIDE_BANGS_LEFT_RIGHT_J_10 from "./side-bangs-left+right-j-10.png"
+import SIDE_BANGS_LEFT_RIGHT_J_11 from "./side-bangs-left+right-j-11.png"
+import SIDE_BANGS_LEFT_RIGHT_J_2 from "./side-bangs-left+right-j-2.png"
+import SIDE_BANGS_LEFT_RIGHT_J_3 from "./side-bangs-left+right-j-3.png"
+import SIDE_BANGS_LEFT_RIGHT_J_4 from "./side-bangs-left+right-j-4.png"
+import SIDE_BANGS_LEFT_RIGHT_J_5 from "./side-bangs-left+right-j-5.png"
+import SIDE_BANGS_LEFT_RIGHT_J_6 from "./side-bangs-left+right-j-6.png"
+import SIDE_BANGS_LEFT_RIGHT_J_7 from "./side-bangs-left+right-j-7.png"
+import SIDE_BANGS_LEFT_RIGHT_J_8 from "./side-bangs-left+right-j-8.png"
+import SIDE_BANGS_LEFT_RIGHT_J_9 from "./side-bangs-left+right-j-9.png"
 import SIDE_BANGS_LEFT_A_1 from "./side-bangs-left-a-1.png"
 import SIDE_BANGS_LEFT_A_10 from "./side-bangs-left-a-10.png"
 import SIDE_BANGS_LEFT_A_11 from "./side-bangs-left-a-11.png"
@@ -407,97 +407,97 @@ import WHAT_NOT_J_7 from "./what-not-j-7.png"
 import WHAT_NOT_J_8 from "./what-not-j-8.png"
 import WHAT_NOT_J_9 from "./what-not-j-9.png"
 export default BASE = [
-    SIDE_BANGS_LEFT+RIGHT_A_1, 
-    SIDE_BANGS_LEFT+RIGHT_A_10, 
-    SIDE_BANGS_LEFT+RIGHT_A_11, 
-    SIDE_BANGS_LEFT+RIGHT_A_2, 
-    SIDE_BANGS_LEFT+RIGHT_A_3, 
-    SIDE_BANGS_LEFT+RIGHT_A_4, 
-    SIDE_BANGS_LEFT+RIGHT_A_5, 
-    SIDE_BANGS_LEFT+RIGHT_A_6, 
-    SIDE_BANGS_LEFT+RIGHT_A_7, 
-    SIDE_BANGS_LEFT+RIGHT_A_8, 
-    SIDE_BANGS_LEFT+RIGHT_A_9, 
-    SIDE_BANGS_LEFT+RIGHT_B_1, 
-    SIDE_BANGS_LEFT+RIGHT_B_10, 
-    SIDE_BANGS_LEFT+RIGHT_B_11, 
-    SIDE_BANGS_LEFT+RIGHT_B_2, 
-    SIDE_BANGS_LEFT+RIGHT_B_3, 
-    SIDE_BANGS_LEFT+RIGHT_B_4, 
-    SIDE_BANGS_LEFT+RIGHT_B_5, 
-    SIDE_BANGS_LEFT+RIGHT_B_6, 
-    SIDE_BANGS_LEFT+RIGHT_B_7, 
-    SIDE_BANGS_LEFT+RIGHT_B_8, 
-    SIDE_BANGS_LEFT+RIGHT_B_9, 
-    SIDE_BANGS_LEFT+RIGHT_D_1, 
-    SIDE_BANGS_LEFT+RIGHT_D_10, 
-    SIDE_BANGS_LEFT+RIGHT_D_11, 
-    SIDE_BANGS_LEFT+RIGHT_D_2, 
-    SIDE_BANGS_LEFT+RIGHT_D_3, 
-    SIDE_BANGS_LEFT+RIGHT_D_4, 
-    SIDE_BANGS_LEFT+RIGHT_D_5, 
-    SIDE_BANGS_LEFT+RIGHT_D_6, 
-    SIDE_BANGS_LEFT+RIGHT_D_7, 
-    SIDE_BANGS_LEFT+RIGHT_D_8, 
-    SIDE_BANGS_LEFT+RIGHT_D_9, 
-    SIDE_BANGS_LEFT+RIGHT_E_1, 
-    SIDE_BANGS_LEFT+RIGHT_E_10, 
-    SIDE_BANGS_LEFT+RIGHT_E_11, 
-    SIDE_BANGS_LEFT+RIGHT_E_2, 
-    SIDE_BANGS_LEFT+RIGHT_E_3, 
-    SIDE_BANGS_LEFT+RIGHT_E_4, 
-    SIDE_BANGS_LEFT+RIGHT_E_5, 
-    SIDE_BANGS_LEFT+RIGHT_E_6, 
-    SIDE_BANGS_LEFT+RIGHT_E_7, 
-    SIDE_BANGS_LEFT+RIGHT_E_8, 
-    SIDE_BANGS_LEFT+RIGHT_E_9, 
-    SIDE_BANGS_LEFT+RIGHT_F_1, 
-    SIDE_BANGS_LEFT+RIGHT_F_10, 
-    SIDE_BANGS_LEFT+RIGHT_F_11, 
-    SIDE_BANGS_LEFT+RIGHT_F_2, 
-    SIDE_BANGS_LEFT+RIGHT_F_3, 
-    SIDE_BANGS_LEFT+RIGHT_F_4, 
-    SIDE_BANGS_LEFT+RIGHT_F_5, 
-    SIDE_BANGS_LEFT+RIGHT_F_6, 
-    SIDE_BANGS_LEFT+RIGHT_F_7, 
-    SIDE_BANGS_LEFT+RIGHT_F_8, 
-    SIDE_BANGS_LEFT+RIGHT_F_9, 
-    SIDE_BANGS_LEFT+RIGHT_G_1, 
-    SIDE_BANGS_LEFT+RIGHT_G_10, 
-    SIDE_BANGS_LEFT+RIGHT_G_11, 
-    SIDE_BANGS_LEFT+RIGHT_G_2, 
-    SIDE_BANGS_LEFT+RIGHT_G_3, 
-    SIDE_BANGS_LEFT+RIGHT_G_4, 
-    SIDE_BANGS_LEFT+RIGHT_G_5, 
-    SIDE_BANGS_LEFT+RIGHT_G_6, 
-    SIDE_BANGS_LEFT+RIGHT_G_7, 
-    SIDE_BANGS_LEFT+RIGHT_G_8, 
-    SIDE_BANGS_LEFT+RIGHT_G_9, 
-    SIDE_BANGS_LEFT+RIGHT_H_1, 
-    SIDE_BANGS_LEFT+RIGHT_H_10, 
-    SIDE_BANGS_LEFT+RIGHT_H_11, 
-    SIDE_BANGS_LEFT+RIGHT_H_2, 
-    SIDE_BANGS_LEFT+RIGHT_H_3, 
-    SIDE_BANGS_LEFT+RIGHT_H_4, 
-    SIDE_BANGS_LEFT+RIGHT_H_5, 
-    SIDE_BANGS_LEFT+RIGHT_H_6, 
-    SIDE_BANGS_LEFT+RIGHT_H_7, 
-    SIDE_BANGS_LEFT+RIGHT_H_8, 
-    SIDE_BANGS_LEFT+RIGHT_H_9, 
-    SIDE_BANGS_LEFT+RIGHT_I_1, 
-    SIDE_BANGS_LEFT+RIGHT_I_2, 
-    SIDE_BANGS_LEFT+RIGHT_I_3, 
-    SIDE_BANGS_LEFT+RIGHT_J_1, 
-    SIDE_BANGS_LEFT+RIGHT_J_10, 
-    SIDE_BANGS_LEFT+RIGHT_J_11, 
-    SIDE_BANGS_LEFT+RIGHT_J_2, 
-    SIDE_BANGS_LEFT+RIGHT_J_3, 
-    SIDE_BANGS_LEFT+RIGHT_J_4, 
-    SIDE_BANGS_LEFT+RIGHT_J_5, 
-    SIDE_BANGS_LEFT+RIGHT_J_6, 
-    SIDE_BANGS_LEFT+RIGHT_J_7, 
-    SIDE_BANGS_LEFT+RIGHT_J_8, 
-    SIDE_BANGS_LEFT+RIGHT_J_9, 
+    SIDE_BANGS_LEFT_RIGHT_A_1, 
+    SIDE_BANGS_LEFT_RIGHT_A_10, 
+    SIDE_BANGS_LEFT_RIGHT_A_11, 
+    SIDE_BANGS_LEFT_RIGHT_A_2, 
+    SIDE_BANGS_LEFT_RIGHT_A_3, 
+    SIDE_BANGS_LEFT_RIGHT_A_4, 
+    SIDE_BANGS_LEFT_RIGHT_A_5, 
+    SIDE_BANGS_LEFT_RIGHT_A_6, 
+    SIDE_BANGS_LEFT_RIGHT_A_7, 
+    SIDE_BANGS_LEFT_RIGHT_A_8, 
+    SIDE_BANGS_LEFT_RIGHT_A_9, 
+    SIDE_BANGS_LEFT_RIGHT_B_1, 
+    SIDE_BANGS_LEFT_RIGHT_B_10, 
+    SIDE_BANGS_LEFT_RIGHT_B_11, 
+    SIDE_BANGS_LEFT_RIGHT_B_2, 
+    SIDE_BANGS_LEFT_RIGHT_B_3, 
+    SIDE_BANGS_LEFT_RIGHT_B_4, 
+    SIDE_BANGS_LEFT_RIGHT_B_5, 
+    SIDE_BANGS_LEFT_RIGHT_B_6, 
+    SIDE_BANGS_LEFT_RIGHT_B_7, 
+    SIDE_BANGS_LEFT_RIGHT_B_8, 
+    SIDE_BANGS_LEFT_RIGHT_B_9, 
+    SIDE_BANGS_LEFT_RIGHT_D_1, 
+    SIDE_BANGS_LEFT_RIGHT_D_10, 
+    SIDE_BANGS_LEFT_RIGHT_D_11, 
+    SIDE_BANGS_LEFT_RIGHT_D_2, 
+    SIDE_BANGS_LEFT_RIGHT_D_3, 
+    SIDE_BANGS_LEFT_RIGHT_D_4, 
+    SIDE_BANGS_LEFT_RIGHT_D_5, 
+    SIDE_BANGS_LEFT_RIGHT_D_6, 
+    SIDE_BANGS_LEFT_RIGHT_D_7, 
+    SIDE_BANGS_LEFT_RIGHT_D_8, 
+    SIDE_BANGS_LEFT_RIGHT_D_9, 
+    SIDE_BANGS_LEFT_RIGHT_E_1, 
+    SIDE_BANGS_LEFT_RIGHT_E_10, 
+    SIDE_BANGS_LEFT_RIGHT_E_11, 
+    SIDE_BANGS_LEFT_RIGHT_E_2, 
+    SIDE_BANGS_LEFT_RIGHT_E_3, 
+    SIDE_BANGS_LEFT_RIGHT_E_4, 
+    SIDE_BANGS_LEFT_RIGHT_E_5, 
+    SIDE_BANGS_LEFT_RIGHT_E_6, 
+    SIDE_BANGS_LEFT_RIGHT_E_7, 
+    SIDE_BANGS_LEFT_RIGHT_E_8, 
+    SIDE_BANGS_LEFT_RIGHT_E_9, 
+    SIDE_BANGS_LEFT_RIGHT_F_1, 
+    SIDE_BANGS_LEFT_RIGHT_F_10, 
+    SIDE_BANGS_LEFT_RIGHT_F_11, 
+    SIDE_BANGS_LEFT_RIGHT_F_2, 
+    SIDE_BANGS_LEFT_RIGHT_F_3, 
+    SIDE_BANGS_LEFT_RIGHT_F_4, 
+    SIDE_BANGS_LEFT_RIGHT_F_5, 
+    SIDE_BANGS_LEFT_RIGHT_F_6, 
+    SIDE_BANGS_LEFT_RIGHT_F_7, 
+    SIDE_BANGS_LEFT_RIGHT_F_8, 
+    SIDE_BANGS_LEFT_RIGHT_F_9, 
+    SIDE_BANGS_LEFT_RIGHT_G_1, 
+    SIDE_BANGS_LEFT_RIGHT_G_10, 
+    SIDE_BANGS_LEFT_RIGHT_G_11, 
+    SIDE_BANGS_LEFT_RIGHT_G_2, 
+    SIDE_BANGS_LEFT_RIGHT_G_3, 
+    SIDE_BANGS_LEFT_RIGHT_G_4, 
+    SIDE_BANGS_LEFT_RIGHT_G_5, 
+    SIDE_BANGS_LEFT_RIGHT_G_6, 
+    SIDE_BANGS_LEFT_RIGHT_G_7, 
+    SIDE_BANGS_LEFT_RIGHT_G_8, 
+    SIDE_BANGS_LEFT_RIGHT_G_9, 
+    SIDE_BANGS_LEFT_RIGHT_H_1, 
+    SIDE_BANGS_LEFT_RIGHT_H_10, 
+    SIDE_BANGS_LEFT_RIGHT_H_11, 
+    SIDE_BANGS_LEFT_RIGHT_H_2, 
+    SIDE_BANGS_LEFT_RIGHT_H_3, 
+    SIDE_BANGS_LEFT_RIGHT_H_4, 
+    SIDE_BANGS_LEFT_RIGHT_H_5, 
+    SIDE_BANGS_LEFT_RIGHT_H_6, 
+    SIDE_BANGS_LEFT_RIGHT_H_7, 
+    SIDE_BANGS_LEFT_RIGHT_H_8, 
+    SIDE_BANGS_LEFT_RIGHT_H_9, 
+    SIDE_BANGS_LEFT_RIGHT_I_1, 
+    SIDE_BANGS_LEFT_RIGHT_I_2, 
+    SIDE_BANGS_LEFT_RIGHT_I_3, 
+    SIDE_BANGS_LEFT_RIGHT_J_1, 
+    SIDE_BANGS_LEFT_RIGHT_J_10, 
+    SIDE_BANGS_LEFT_RIGHT_J_11, 
+    SIDE_BANGS_LEFT_RIGHT_J_2, 
+    SIDE_BANGS_LEFT_RIGHT_J_3, 
+    SIDE_BANGS_LEFT_RIGHT_J_4, 
+    SIDE_BANGS_LEFT_RIGHT_J_5, 
+    SIDE_BANGS_LEFT_RIGHT_J_6, 
+    SIDE_BANGS_LEFT_RIGHT_J_7, 
+    SIDE_BANGS_LEFT_RIGHT_J_8, 
+    SIDE_BANGS_LEFT_RIGHT_J_9, 
     SIDE_BANGS_LEFT_A_1, 
     SIDE_BANGS_LEFT_A_10, 
     SIDE_BANGS_LEFT_A_11, 
