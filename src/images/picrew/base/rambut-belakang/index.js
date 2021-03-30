@@ -208,7 +208,8 @@ import O_6 from "./o-6.png"
 import O_7 from "./o-7.png"
 import O_8 from "./o-8.png"
 import O_9 from "./o-9.png"
-export default BASE = [
+
+const BASE = [
     A_1, 
     A_10, 
     A_11, 
@@ -420,3 +421,5 @@ export default BASE = [
     O_8, 
     O_9
 ]
+
+export default BASE

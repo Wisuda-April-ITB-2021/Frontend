@@ -55,7 +55,7 @@ import TRIANGLE_MEDIUM_1 from './triangle-medium-1.png'
 import TRIANGLE_MEDIUM_2 from './triangle-medium-2.png'
 import TRIANGLE_TAN from './triangle-tan.png'
 
-export default HIDUNG = [
+const HIDUNG = [
     BOX_DARK,
     BOX_FAIR,
     BOX_GREY,
@@ -112,3 +112,5 @@ export default HIDUNG = [
     TRIANGLE_MEDIUM_2,
     TRIANGLE_TAN
 ]
+
+export default HIDUNG

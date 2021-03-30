@@ -5,7 +5,8 @@ import LIGHT from "./light.png"
 import MEDIUM_1 from "./medium-1.png"
 import MEDIUM_2 from "./medium-2.png"
 import TAN from "./tan.png"
-export default BASE = [
+
+const BASE = [
     DARK, 
     FAIR, 
     GREY, 
@@ -14,3 +15,5 @@ export default BASE = [
     MEDIUM_2, 
     TAN
 ]
+
+export default BASE

@@ -406,7 +406,8 @@ import WHAT_NOT_J_6 from "./what-not-j-6.png"
 import WHAT_NOT_J_7 from "./what-not-j-7.png"
 import WHAT_NOT_J_8 from "./what-not-j-8.png"
 import WHAT_NOT_J_9 from "./what-not-j-9.png"
-export default BASE = [
+
+const BASE = [
     SIDE_BANGS_LEFT_RIGHT_A_1, 
     SIDE_BANGS_LEFT_RIGHT_A_10, 
     SIDE_BANGS_LEFT_RIGHT_A_11, 
@@ -816,3 +817,5 @@ export default BASE = [
     WHAT_NOT_J_8, 
     WHAT_NOT_J_9
 ]
+
+export default BASE

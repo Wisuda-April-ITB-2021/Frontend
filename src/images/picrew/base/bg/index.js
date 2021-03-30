@@ -8,7 +8,7 @@ import MERAH from "./merah.jpg"
 import POHON from "./pohon.jpg"
 import SABUGA from "./sabuga.jpg"
 import SARAGA from "./saraga.jpg"
-export default BASE = [
+const BASE = [
     BIRU, 
     GADANG, 
     HIJAU, 
@@ -20,3 +20,5 @@ export default BASE = [
     SABUGA, 
     SARAGA
 ]
+
+export default BASE

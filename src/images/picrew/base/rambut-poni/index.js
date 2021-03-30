@@ -151,7 +151,7 @@ import P_6 from "./p-6.png"
 import P_7 from "./p-7.png"
 import P_8 from "./p-8.png"
 import P_9 from "./p-9.png"
-export default BASE = [
+const BASE = [
     A_1, 
     A_10, 
     A_2, 
@@ -306,3 +306,5 @@ export default BASE = [
     P_8, 
     P_9
 ]
+
+export default BASE

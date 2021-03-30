@@ -50,7 +50,7 @@ import WHITE_10 from "./white-10.png"
 import WHITE_11 from "./white-11.png"
 import WHITE_12 from "./white-12.png"
 
-export default ALIS = [
+const ALIS = [
     BLACK_1,
     BLACK_2,
     BLACK_3,
@@ -103,3 +103,5 @@ export default ALIS = [
     WHITE_11,
     WHITE_12
 ]
+
+export default ALIS

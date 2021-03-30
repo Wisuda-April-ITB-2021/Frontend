@@ -35,7 +35,7 @@ import SWIRL_PINK from './swirl-pink.png'
 import SWIRL_VR from './swirl-vr.png'
 
 
-export default ETC = [
+const ETC = [
     ACROSS_BERRY,
     ACROSS_BURGUNDY,
     ACROSS_CHERRY,
@@ -71,3 +71,5 @@ export default ETC = [
     SWIRL_PINK,
     SWIRL_VR
 ]
+
+export default ETC
