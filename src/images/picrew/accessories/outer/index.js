@@ -30,7 +30,7 @@ import VEST_3 from "./vest-3.png"
 import VEST_4 from "./vest-4.png"
 import VEST_5 from "./vest-5.png"
 
-export default OUTER = [
+export default [
 	CARDI_1,
 	CARDI_2,
 	CARDI_3,
@@ -61,5 +61,5 @@ export default OUTER = [
 	VEST_2,
 	VEST_3,
 	VEST_4,
-	VEST_5
-]
+	VEST_5,
+];

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import html2canvas from "html2canvas";
 
 import "./Picrew.scss";
@@ -58,16 +58,10 @@ export const Picrew = () => {
   };
 
   const handleChangeData = (main, sub, img) => {
-    console.log("MASUK SINI BANG");
     let target = { ...data };
     target[main][sub] = img;
     setData(target);
   };
-
-  useEffect(() => {
-    console.log("DATA CHANGED!");
-    console.log(data);
-  }, [data]);
 
   return (
     <div className="picrew">

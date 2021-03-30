@@ -1,18 +1,34 @@
-import INNER_SHIRTS_01 from "../compressed/accessories/inner/shirts_01.png";
-import INNER_SHIRTS_02 from "../compressed/accessories/inner/shirts_02.png";
+import ETC from "./etc"
+import INNER from "./inner"
+import JAHIM from "./jahim"
+import KEPALA from "./kepala"
+import OUTER from "./outer"
+//import POSE from "./pose"
+import ETC_THUMB from "./etc.png"
+import INNER_THUMB from "./inner.png"
+import JAHIM_THUMB from "./jahim.png"
+import KEPALA_THUMB from "./kepala.png"
+import OUTER_THUMB from "./outer.png"
+import POSE_THUMB from "./pose.png"
 
-import {asset} from "../util";
-
-const ACCESSORIES = {
-	inner: [
-		asset("shirts01", INNER_SHIRTS_01),
-		asset("shirts02", INNER_SHIRTS_02),
-	],
-	outer: [],
-	jahim: [],
-	kepala: [],
-	pose: [],
-	etc: [],
-};
-
-export default ACCESSORIES;
+export default {
+    etc:{
+    image: ETC_THUMB,
+    assets: ETC,
+}, inner:{
+    image: INNER_THUMB,
+    assets: INNER
+}, jahim:{
+    image: JAHIM_THUMB,
+    assets: JAHIM,
+}, kepala:{
+    image: KEPALA_THUMB,
+    assets: KEPALA,
+}, outer:{
+    image: OUTER_THUMB,
+    assets: OUTER
+}//, pose  {
+//     image: POSE_THUMB
+//     assets: POSE
+// }
+}
