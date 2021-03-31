@@ -73,7 +73,7 @@ const Accordion = (props) => {
         animate={isOpen ? "closed" : "opened"}
         transition={{ duration: 0.12 }}
       >
-        <div className="accordionText">{props.content}</div>
+        {props.children}
       </motion.div>
     </div>
   );

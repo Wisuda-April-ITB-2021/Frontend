@@ -3,9 +3,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./PicrewMenu.scss";
 
-import TEMP_THUMB from "./temp-img/bg.png";
-import TEMP_IMG from "./temp-img/jam-gadang.jpg";
-
 import deleteIcon from "../../../icons/delete-picrew.svg";
 import { ReactComponent as Arrow } from "../../../icons/dropdown.svg";
 
@@ -13,48 +10,35 @@ import ACCESSORIES from "../../../images/picrew/accessories/index.js";
 import BASE from "../../../images/picrew/base/index.js";
 import FACE from "../../../images/picrew/face/index.js";
 
-const subMenu = (name, img) => {
-  return { name, img };
-};
+class Menu {
+  constructor(name, content) {
+    this.name = name;
+    this.content = content;
+  }
 
-const MAIN_MENU = ["Base", "Face", "Accessories"];
-const SUB_MENU = {
-  base: [
-    subMenu("bg", TEMP_THUMB),
-    subMenu("skin", TEMP_THUMB),
-    subMenu("rambut-belakang", TEMP_THUMB),
-    subMenu("rambut-poni", TEMP_THUMB),
-    subMenu("etc", TEMP_THUMB),
-  ],
-  face: [
-    subMenu("mata", TEMP_THUMB),
-    subMenu("alis", TEMP_THUMB),
-    subMenu("hidung", TEMP_THUMB),
-    subMenu("mulut", TEMP_THUMB),
-    subMenu("telinga", TEMP_THUMB),
-    subMenu("janggut", TEMP_THUMB),
-    subMenu("etc", TEMP_THUMB),
-  ],
-  accessories: [
-    subMenu("kepala", TEMP_THUMB),
-    subMenu("jahim", TEMP_THUMB),
-    subMenu("inner", TEMP_THUMB),
-    subMenu("outer", TEMP_THUMB),
-    subMenu("pose", TEMP_THUMB),
-    subMenu("etc", TEMP_THUMB),
-  ],
-};
+  getSubMenus() {
+    return Object.keys(this.content);
+  }
 
-const OPTIONS = {
-  base: BASE,
-  face: FACE,
-  accessories: ACCESSORIES,
-};
+  getImages(option) {
+    return this.content[option] ? this.content[option].assets : {};
+  }
+
+  getThumb(option) {
+    return this.content[option] ? this.content[option].image : "";
+  }
+}
+
+const MENU_DB = [
+  new Menu("Base", BASE),
+  new Menu("Face", FACE),
+  new Menu("Accessories", ACCESSORIES),
+];
 
 const MainMenu = ({ mainIdx, setMainIdx }) => {
   return (
     <div className="picrew-menu-main">
-      {MAIN_MENU.map((menu, idx) => (
+      {MENU_DB.map((menu, idx) => (
         <button
           className={`picrew-menu-main-button${
             mainIdx === idx ? " picrew-menu-main-button-active" : ""
@@ -62,7 +46,7 @@ const MainMenu = ({ mainIdx, setMainIdx }) => {
           key={idx}
           onClick={() => setMainIdx(idx)}
         >
-          <h5>{menu}</h5>
+          <h5>{menu.name}</h5>
         </button>
       ))}
     </div>
@@ -90,7 +74,22 @@ const CustomArrow = ({ onClick }) => {
   );
 };
 
-const SubMenu = ({ mainMenu, subIdx, setSubIdx }) => {
+const SubMenu = ({ mainIdx, subIdx, setSubIdx }) => {
+  const submenu = MENU_DB[mainIdx].content;
+  const SubmenuComponents = [];
+  Object.entries(submenu).forEach(([key, value], idx) => {
+    SubmenuComponents.push(
+      <div
+        className={`picrew-menu-sub-img${
+          idx === subIdx ? " picrew-menu-sub-img-active" : ""
+        }`}
+        key={key}
+        onClick={() => setSubIdx(idx)}
+      >
+        <img src={value.image} alt={`thumbnail-${idx}`} />
+      </div>
+    );
+  });
   return (
     <div className="picrew-menu-sub">
       <Carousel
@@ -99,27 +98,15 @@ const SubMenu = ({ mainMenu, subIdx, setSubIdx }) => {
         customRightArrow={<CustomArrow />}
         customLeftArrow={<CustomArrow />}
       >
-        {SUB_MENU[mainMenu].map((data, idx) => (
-          <div
-            className={`picrew-menu-sub-img${
-              idx === subIdx ? " picrew-menu-sub-img-active" : ""
-            }`}
-            key={idx}
-            onClick={() => setSubIdx(idx)}
-          >
-            <img src={data.img} alt={data.name} />
-          </div>
-        ))}
+        {SubmenuComponents}
       </Carousel>
     </div>
   );
 };
 
-const Options = ({ mainMenu, subIdx, onChange }) => {
-  const subMenu = SUB_MENU[mainMenu][subIdx].name;
-  let target = OPTIONS[mainMenu][subMenu];
-  console.log(OPTIONS[mainMenu]);
-  console.log(subMenu);
+const Options = ({ mainIdx, subIdx, onChange }) => {
+  const subMenu = MENU_DB[mainIdx].getSubMenus();
+  let target = MENU_DB[mainIdx].getImages(subMenu[subIdx]);
   return (
     <div className="picrew-options">
       <div
@@ -135,7 +122,7 @@ const Options = ({ mainMenu, subIdx, onChange }) => {
           key={idx}
           onClick={() => onChange(option)}
         >
-          <img src={option.img} alt="" />
+          <img src={option} alt={`options-${idx}`} />
         </div>
       ))}
     </div>
@@ -147,23 +134,24 @@ export const PicrewMenu = ({ onChange }) => {
   const [subIdx, setSubIdx] = useState(0);
 
   const handleChangeOptions = (target) => {
-    const main = MAIN_MENU[mainIdx].toLowerCase();
-    const sub = SUB_MENU[main][subIdx].name;
+    const main = MENU_DB[mainIdx].name.toLowerCase();
+    const sub = MENU_DB[mainIdx].getSubMenus()[subIdx];
     onChange(main, sub, target);
+  };
+
+  const handleChangeMain = (target) => {
+    setSubIdx(0);
+    setMainIdx(target);
   };
 
   return (
     <div className="picrew-menu-container">
       <div className="picrew-menu">
-        <MainMenu mainIdx={mainIdx} setMainIdx={setMainIdx} />
-        <SubMenu
-          mainMenu={MAIN_MENU[mainIdx].toLowerCase()}
-          subIdx={subIdx}
-          setSubIdx={setSubIdx}
-        />
+        <MainMenu mainIdx={mainIdx} setMainIdx={handleChangeMain} />
+        <SubMenu mainIdx={mainIdx} subIdx={subIdx} setSubIdx={setSubIdx} />
       </div>
       <Options
-        mainMenu={MAIN_MENU[mainIdx].toLowerCase()}
+        mainIdx={mainIdx}
         subIdx={subIdx}
         onChange={handleChangeOptions}
       />

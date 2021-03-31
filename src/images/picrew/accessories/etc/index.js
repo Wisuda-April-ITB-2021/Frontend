@@ -9,7 +9,7 @@ import KALUNG_2 from "./kalung-2.png"
 import KALUNG_3 from "./kalung-3.png"
 import TINDIK_HIDUNG from "./tindik-hidung.png"
 
-export default ETC = [
+export default [
 	ANTING,
 	CHOKER_BUNGA,
 	FRECKLESS_1,
@@ -19,5 +19,5 @@ export default ETC = [
 	KALUNG_1,
 	KALUNG_2,
 	KALUNG_3,
-	TINDIK_HIDUNG
-]
+	TINDIK_HIDUNG,
+];

@@ -42,7 +42,7 @@ import STEI_HMIF from "./stei-hmif.png"
 import STEI_IMT from "./stei-imt.png"
 import TOGA from "./toga.png"
 
-export default JAHIM = [
+export default [
 	FITB_HMME,
 	FITB_HMO,
 	FITB_HMTG,
@@ -85,5 +85,5 @@ export default JAHIM = [
 	STEI_HME,
 	STEI_HMIF,
 	STEI_IMT,
-	TOGA
-]
+	TOGA,
+];

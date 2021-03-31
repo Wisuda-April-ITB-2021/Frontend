@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import html2canvas from "html2canvas";
 
 import "./Picrew.scss";
@@ -43,33 +43,28 @@ export const Picrew = () => {
     a.click();
   };
 
-  const downloadPicrew = () => {
+  const getImage = () => {
     const target = document.querySelector(".picrew-container");
     console.log(target);
-    html2canvas(target, {
+    return html2canvas(target, {
       scrollX: 0,
       scrollY: -window.pageYOffset,
       backgroundColor: null,
       scale: 1080 / target.scrollHeight,
-    }).then((canvas) => {
-      // document.body.appendChild(canvas);
-      const image = canvas.toDataURL("image/png");
-      download(image, "wispril-avatar.png");
-      sendAnalyticsAction(PICREW_ACTION, "Download Picrew");
-    });
+    }).then((canvas) => canvas.toDataURL("image/png"));
+  };
+
+  const downloadPicrew = async () => {
+    const image = await getImage();
+    download(image, "wispril-avatar.png");
+    sendAnalyticsAction(PICREW_ACTION, "Download Picrew");
   };
 
   const handleChangeData = (main, sub, img) => {
-    console.log("MASUK SINI BANG");
     let target = { ...data };
     target[main][sub] = img;
     setData(target);
   };
-
-  useEffect(() => {
-    console.log("DATA CHANGED!");
-    console.log(data);
-  }, [data]);
 
   return (
     <div className="picrew">

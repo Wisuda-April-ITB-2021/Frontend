@@ -35,7 +35,7 @@ import TURBAN_2 from "./turban-2.png"
 import TURBAN_3 from "./turban-3.png"
 import TURBAN_4 from "./turban-4.png"
 
-export default KEPALA = [
+export default [
 	BANDO_1,
 	BANDO_2,
 	BANDO_3,
@@ -71,5 +71,5 @@ export default KEPALA = [
 	TURBAN_1,
 	TURBAN_2,
 	TURBAN_3,
-	TURBAN_4
-]
+	TURBAN_4,
+];

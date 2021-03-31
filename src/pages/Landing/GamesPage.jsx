@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import { Picrew } from "../../components/LandingComponents/Games/Picrew";
 import { GatherTown } from "../../components/LandingComponents/Games/GatherTown";
+import { Majalah } from "../../components/LandingComponents/Games/Majalah";
 import { Template } from "../Template/Template";
 import "./GamesPage.scss";
 import Button from "../../components/shared/Button";
@@ -15,6 +16,10 @@ const GAMES = [
   {
     title: "Gather Town",
     Component: <GatherTown />,
+  },
+  {
+    title: "Mercusuar",
+    Component: <Majalah />,
   },
 ];
 

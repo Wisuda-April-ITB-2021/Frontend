@@ -29,7 +29,7 @@ import VNECK_4 from "./vneck-4.png"
 import VNECK_5 from "./vneck-5.png"
 import VNECK_6 from "./vneck-6.png"
 
-export default INNER = [
+export default [
 	BASIC_1,
 	BASIC_2,
 	BASIC_3,
@@ -59,5 +59,5 @@ export default INNER = [
 	VNECK_3,
 	VNECK_4,
 	VNECK_5,
-	VNECK_6
-]
+	VNECK_6,
+];

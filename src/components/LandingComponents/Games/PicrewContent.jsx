@@ -11,7 +11,7 @@ class Path {
   }
   getImg(data) {
     let target = data[this.main][this.sub];
-    return target == undefined ? "" : target.img;
+    return target == undefined ? "" : target;
   }
 }
 
@@ -36,19 +36,27 @@ const levelData = {
   "level-18": new Path("accessories", "pose"),
 };
 
-export const PicrewContent = ({data}) => {
-	const images = [];
-	for (const [key, value] of Object.entries(levelData)) {
-		value.getImg(data) !== undefined &&
-			value.getImg(data) !== "" &&
-			images.push(
-				<img
-					className={key}
-					src={value.getImg(data)}
-					alt={value.getAlt()}
-					key={value.getAlt()}
-				/>
-			);
-	}
-	return <div className='picrew-content'>{images}</div>;
+export const PicrewContent = ({ data }) => {
+  const images = [];
+  for (const [key, value] of Object.entries(levelData)) {
+    value.getImg(data) !== undefined &&
+      value.getImg(data) !== "" &&
+      images.push(
+        <img
+          className={key}
+          src={value.getImg(data)}
+          alt={value.getAlt()}
+          key={value.getAlt()}
+        />
+      );
+  }
+  return (
+    <div className="picrew-content">
+      {images.length > 0 ? (
+        images
+      ) : (
+        <p>Susun avatarmu dari komponen-komponen di bawah!</p>
+      )}
+    </div>
+  );
 };

@@ -63,12 +63,9 @@ const generateList = (data) => (
 const generateAccordion = (data) => (
   <>
     {data.map((row, i) => (
-      <Accordion
-        title={row.title}
-        image={row.image}
-        content={generateList(row.content)}
-        key={i}
-      />
+      <Accordion title={row.title} image={row.image} key={i}>
+        {generateList(row.content)}
+      </Accordion>
     ))}
   </>
 );

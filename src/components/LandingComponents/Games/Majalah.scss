@@ -1,0 +1,26 @@
+@import "../../../styles/mixin.scss";
+@import "../../../styles/variables.scss";
+
+.majalah {
+  margin-top: 5vh;
+  text-align: center;
+  iframe {
+    margin-top: 2.5vh;
+    width: 60vw;
+    height: 80vh;
+  }
+}
+
+@media screen and (max-width: $breakpoint) {
+  .majalah {
+    margin-top: 3vh;
+    h3 {
+      padding: 0 5vw;
+    }
+    iframe {
+      margin-top: 2.5vh;
+      width: 90vw;
+      height: 70vh;
+    }
+  }
+}
