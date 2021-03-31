@@ -44,12 +44,7 @@ export const isPastEvent = (event) => {
 
 export const findUpcomingEvent = (events) => {
   const today = new Date();
-  const futureEvents = events.filter(
-    ({ date }) =>
-      date.getFullYear() > today.getFullYear() ||
-      date.getMonth() > today.getMonth() ||
-      date.getDate() > today.getDate()
-  );
+  const futureEvents = events.filter(({ date }) => date > today);
   return futureEvents[0];
 };
 
