@@ -73,7 +73,7 @@ export const Picrew = () => {
 
   return (
     <div className="picrew">
-      <h3>Piccrew</h3>
+      <h3>Wispril Avatar</h3>
       <p>Buat avatar Wisprilmu dan sebarkan keseruan ini di media sosial!</p>
       <div className="picrew-container-outer">
         <div className="picrew-container">

@@ -20,6 +20,7 @@ const dummyList = [
     title: "Wibu Parah",
     content:
       "Katanya sih udah ngabisin 1000 episode anime, trus suka koleksi figure-figure anime idol gitu",
+    image: imageHMJ,
   },
 ];
 
@@ -52,7 +53,7 @@ const dummyPrestasidanKarya = [
 const generateList = (data) => (
   <List>
     {data.map((row, i) => (
-      <ListItem title={row.title} key={i}>
+      <ListItem title={row.title} imageLink={row.image} key={i}>
         {row.content}
       </ListItem>
     ))}
@@ -81,7 +82,7 @@ export const WisudawanPage = () => {
   }, []);
 
   return (
-    <Template>
+    <Template isLong>
       <div className="wisudawan-page-specific">
         <div className="bio">
           <div className="name">

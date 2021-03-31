@@ -1,17 +1,27 @@
-import RAMBUT_BELAKANG_01 from "../compressed/base/rambut-belakang/back-hair-a-1.png";
-import RAMBUT_BELAKANG_02 from "../compressed/base/rambut-belakang/back-hair-a-2.png";
-
-import {asset} from "../util";
-
-const BASE = {
-	bg: [],
-	skin: [],
-	"rambut-belakang": [
-		asset("rambutBelakang01", RAMBUT_BELAKANG_01),
-		asset("rambutBelakang02", RAMBUT_BELAKANG_02),
-	],
-	"rambut-poni": [],
-	etc: [],
-};
-
+import BG from "./bg"
+import RAMBUT_BELAKANG from "./rambut-belakang"
+import RAMBUT_ETC from "./rambut-etc"
+import RAMBUT_PONI from "./rambut-poni"
+import SKIN from "./skin"
+import BG_THUMB from "./bg.png"
+import RAMBUT_BELAKANG_THUMB from "./rambut-belakang.png"
+import RAMBUT_ETC_THUMB from "./rambut-etc.png"
+import RAMBUT_PONI_THUMB from "./rambut-poni.png"
+import SKIN_THUMB from "./skin.png"
+const BASE = [{
+    image: BG_THUMB,
+    assets: BG,
+}, {
+    image: RAMBUT_BELAKANG_THUMB,
+    assets: RAMBUT_BELAKANG,
+}, {
+    image: RAMBUT_ETC_THUMB,
+    assets: RAMBUT_ETC,
+}, {
+    image: RAMBUT_PONI_THUMB,
+    assets: RAMBUT_PONI,
+}, {
+    image: SKIN_THUMB,
+    assets: SKIN,
+}]
 export default BASE;

@@ -1,0 +1,57 @@
+@import "../../styles/mixin.scss";
+@import "../../styles/variables.scss";
+
+.modal-image {
+  position: relative;
+  &-container {
+    @include setup_size(100vw, 100vh);
+    @include flex-center(column);
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+  }
+  img {
+    max-width: 80vw;
+    max-height: 80vh;
+    min-width: 200px;
+    min-height: 200px;
+    background: $darkBlueTransparent;
+    border-radius: $border-radius;
+  }
+  &-bg {
+    @include setup_size(100%, 100%);
+    position: absolute;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  &-close,
+  &-close::after {
+    @include setup_size(28px, 4px);
+    content: "";
+    background: $white;
+    z-index: 0;
+  }
+  &-close {
+    filter: drop-shadow($shadow-blur);
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    transform: rotate(45deg);
+    &:hover {
+      cursor: pointer;
+    }
+    &::before {
+      position: absolute;
+      transform: rotate(-45deg);
+      @include setup_size(30px, 30px);
+      content: "";
+      right: 0px;
+      top: -10px;
+    }
+    &::after {
+      position: absolute;
+      transform: rotate(90deg);
+    }
+  }
+}

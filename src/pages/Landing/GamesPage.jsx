@@ -9,7 +9,7 @@ import Button from "../../components/shared/Button";
 
 const GAMES = [
   {
-    title: "Picrew",
+    title: "Avatar Maker",
     Component: <Picrew />,
   },
   {
@@ -23,7 +23,7 @@ export const GamesPage = () => {
   return (
     <Template>
       <div className="games-container">
-        <h1>Wispril Games!</h1>
+        <h1>Wispril Products!</h1>
         <div className="games-switch">
           {GAMES.map((game, idx) => (
             <Button

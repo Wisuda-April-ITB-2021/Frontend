@@ -46,9 +46,9 @@ export const findUpcomingEvent = (events) => {
   const today = new Date();
   const futureEvents = events.filter(
     ({ date }) =>
-      date.getDate() >= today.getDate() &&
-      date.getMonth() >= today.getMonth() &&
-      date.getFullYear() >= today.getFullYear()
+      date.getFullYear() > today.getFullYear() ||
+      date.getMonth() > today.getMonth() ||
+      date.getDate() > today.getDate()
   );
   return futureEvents[0];
 };
