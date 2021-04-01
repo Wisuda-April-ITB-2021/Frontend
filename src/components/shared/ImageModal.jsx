@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./ImageModal.scss";
 
 export const ImageModal = ({ open, toogleOpen, src }) => {
-  console.log(open);
+  // console.log(open);
   return ReactDOM.createPortal(
     <AnimatePresence>
       {open && (

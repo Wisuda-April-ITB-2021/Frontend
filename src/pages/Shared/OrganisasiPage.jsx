@@ -16,35 +16,33 @@ import { ReactComponent as RightArrow } from "../../icons/rightArrow.svg";
 // import imageAward from "../../components/GaleriComponents/AccordionAssets/image-award.png";
 
 import {
-	galeriOptions,
-	apresiasiOptions,
-	fakultasOptions,
+  galeriOptions,
+  apresiasiOptions,
+  fakultasOptions,
   dummyHimpunan,
 } from "../Util";
 
 import "./OrganisasiPage.scss";
 
-
-
 // Page ini dipake buat both apresiasi sama galeri wisudawan. Nanti baca URL nya aja dari routes.js.
 export const OrganisasiPage = () => {
   const location = useLocation().pathname.split("/");
-	const page = location[1];
+  const page = location[1];
   const location_key = location[location.length - 1];
   const targetOptions =
-		page === "galeri-wisudawan" ? galeriOptions : apresiasiOptions;
-	const path = targetOptions.filter((row) => row.url === location_key)[0];
-	let idx_key;
-	if (path) {
-		idx_key = path.idx;
-	} else {
-		console.log("MASUK SINI BANG");
-		window.location.href = `/${page}/${targetOptions[0].url}`;
-	}
-	
+    page === "galeri-wisudawan" ? galeriOptions : apresiasiOptions;
+  const path = targetOptions.filter((row) => row.url === location_key)[0];
+  let idx_key;
+  if (path) {
+    idx_key = path.idx;
+  } else {
+    // console.log("MASUK SINI BANG");
+    window.location.href = `/${page}/${targetOptions[0].url}`;
+  }
+
   const [options, setOptions] = useState(targetOptions);
-	const [subOptions, setSubOptions] = useState(fakultasOptions);
-	const [data, setData] = useState(dummyHimpunan);
+  const [subOptions, setSubOptions] = useState(fakultasOptions);
+  const [data, setData] = useState(dummyHimpunan);
   const [selectedOptions, setSelectedOptions] = useState(idx_key);
   const [selected, setSelected] = useState("FITB");
 
@@ -62,28 +60,28 @@ export const OrganisasiPage = () => {
   };
 
   return (
-		<Template>
-			<div className='OrganisasiPageContainer'>
-				<OrganisasiCarousel
-					data={options}
-					url={location_key}
-					onChange={handleChangeOption}
-					selected={selectedOptions}
-				/>
-				<div className='suboptions-container'>
-					{subOptions.map((row, i) => (
-						<OrganisasiTag
-							text={row}
-							key={i}
-							active={row === selected}
-							onClick={setSelected}
-						/>
-					))}
-				</div>
-				<OrganisasiCardContainer data={data} />
-			</div>
-		</Template>
-	);
+    <Template>
+      <div className="OrganisasiPageContainer">
+        <OrganisasiCarousel
+          data={options}
+          url={location_key}
+          onChange={handleChangeOption}
+          selected={selectedOptions}
+        />
+        <div className="suboptions-container">
+          {subOptions.map((row, i) => (
+            <OrganisasiTag
+              text={row}
+              key={i}
+              active={row === selected}
+              onClick={setSelected}
+            />
+          ))}
+        </div>
+        <OrganisasiCardContainer data={data} />
+      </div>
+    </Template>
+  );
 };
 
 const OrganisasiCarousel = ({ data, onChange, selected }) => (

@@ -43,8 +43,7 @@ export const isPastEvent = (event) => {
 };
 
 export const findUpcomingEvent = (events) => {
-  const today = new Date();
-  const futureEvents = events.filter(({ date }) => date > today);
+  const futureEvents = events.filter(({ date }) => calculateDays(date) >= -1);
   return futureEvents[0];
 };
 

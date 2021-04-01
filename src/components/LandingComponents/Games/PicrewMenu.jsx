@@ -55,12 +55,11 @@ const MainMenu = ({ mainIdx, setMainIdx }) => {
 
 const responsive = {
   desktop: {
-    breakpoint: { max: 3000, min: 0 },
+    breakpoint: { max: 3000, min: 700 },
     items: 5,
-    partialVisibilityGutter: 30,
   },
   mobile: {
-    breakpoint: { max: 800, min: 0 },
+    breakpoint: { max: 700, min: 0 },
     items: 4,
     partialVisibilityGutter: 0,
   },
@@ -97,6 +96,7 @@ const SubMenu = ({ mainIdx, subIdx, setSubIdx }) => {
         infinite={true}
         customRightArrow={<CustomArrow />}
         customLeftArrow={<CustomArrow />}
+        keyBoardControl={false}
       >
         {SubmenuComponents}
       </Carousel>
@@ -109,22 +109,24 @@ const Options = ({ mainIdx, subIdx, onChange }) => {
   let target = MENU_DB[mainIdx].getImages(subMenu[subIdx]);
   return (
     <div className="picrew-options">
-      <div
-        className="picrew-options-item"
-        key={"delete"}
-        onClick={() => onChange("")}
-      >
-        <img src={deleteIcon} alt="delete-icon" />
-      </div>
-      {target.map((option, idx) => (
+      <div className="picrew-options-inner">
         <div
           className="picrew-options-item"
-          key={idx}
-          onClick={() => onChange(option)}
+          key={"delete"}
+          onClick={() => onChange("")}
         >
-          <img src={option} alt={`options-${idx}`} />
+          <img src={deleteIcon} alt="delete-icon" />
         </div>
-      ))}
+        {target.map((option, idx) => (
+          <div
+            className="picrew-options-item"
+            key={idx}
+            onClick={() => onChange(option)}
+          >
+            <img src={option} alt={`options-${idx}`} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

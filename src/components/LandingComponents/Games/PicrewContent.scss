@@ -4,6 +4,7 @@
 .picrew-content {
   @include setup_size(100%, 100%);
   @include flex-center(column);
+  overflow: hidden;
   position: relative;
   p {
     padding: 0 20%;
@@ -14,52 +15,36 @@
     left: 0;
     position: absolute;
   }
-  .level-1 {
-    z-index: 1;
+  .logo {
+    @include setup_size(20%, 20%);
+    position: absolute;
+    transform: translate(385%, 20%);
+    z-index: 50;
+    filter: drop-shadow($shadow-blur);
   }
-  .level-2 {
-    z-index: 2;
+  .text {
+    position: absolute;
+    width: 100%;
+    text-overflow: ellipsis;
+    bottom: 2.5%;
+    z-index: 51;
+    font-family: $font1 !important;
+    & > * {
+      font-size: 80%;
+      font-family: inherit;
+      & > * {
+        font-family: inherit;
+        font-size: inherit;
+      }
+    }
+    &:hover {
+      cursor: text;
+    }
   }
-  .level-3 {
-    z-index: 3;
-  }
-  .level-4 {
-    z-index: 4;
-  }
-  .level-5 {
-    z-index: 5;
-  }
-  .level-6 {
-    z-index: 6;
-  }
-  .level-7 {
-    z-index: 7;
-  }
-  .level-8 {
-    z-index: 8;
-  }
-  .level-9 {
-    z-index: 9;
-  }
-  .level-10 {
-    z-index: 10;
-  }
-  .level-11 {
-    z-index: 11;
-  }
-  .level-12 {
-    z-index: 12;
-  }
-  .level-13 {
-    z-index: 13;
-  }
-  .level-14 {
-    z-index: 14;
-  }
-  .level-15 {
-    z-index: 15;
-  }
-  .level-16 {
-    z-index: 16;
+  $layers: 18;
+  @for $i from 1 through $layers {
+    .level-#{$i} {
+      z-index: $i;
+    }
   }
 }

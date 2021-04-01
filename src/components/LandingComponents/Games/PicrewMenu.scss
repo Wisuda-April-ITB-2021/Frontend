@@ -2,13 +2,17 @@
 @import "../../../styles/variables.scss";
 
 $menu-height: 80vh;
-$submenu-height: 20vh;
+$submenu-height: 12vh;
 $options-height: 50vh;
 
-.picrew-menu-container {
-  @include setup_size(100%, $menu-height);
-  background: $darkBlue;
-  box-shadow: $shadow-blur;
+.picrew-menu {
+  width: 100%;
+  &-container {
+    @include setup_size(100%, 100%);
+    @include flex-center(column);
+    background: $darkBlue;
+    box-shadow: $shadow-blur;
+  }
 }
 
 .picrew-menu-main {
@@ -39,7 +43,7 @@ $options-height: 50vh;
   @include setup_size(100%, $submenu-height);
   max-height: 200px;
   box-shadow: $shadow-blur;
-  padding: 0.25rem 4rem;
+  padding: 0.25rem 2rem;
   position: relative;
   &-img {
     &:hover {
@@ -61,7 +65,7 @@ $options-height: 50vh;
     }
     img {
       transition: $default-transition;
-      height: 15vh;
+      height: 10vh;
       max-height: 200px;
       transform: scale(0.9);
       &:hover {
@@ -73,7 +77,7 @@ $options-height: 50vh;
 
 .picrew-submenu-button-container {
   @include flex_center(column);
-  @include setup_size(3rem, 60%);
+  @include setup_size(2rem, 60%);
   position: absolute;
   filter: drop-shadow($shadow-blur);
   svg path {
@@ -97,28 +101,37 @@ $options-height: 50vh;
 }
 
 .picrew-options {
-  @include setup_size(100%, $options-height);
+  @include setup_size(100%, 100%);
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  // @include setup_size(100%, $options-height);
   // @include flex-center(row);
+  overflow-y: scroll;
+  padding: 0.5rem 2.5% 2rem;
   mask-image: -webkit-gradient(
     linear,
     left top,
     left bottom,
-    color-stop(0.72, rgba(0, 0, 0, 1)),
-    color-stop(0.97, rgba(0, 0, 0, 0))
+    color-stop(0.8, rgba(0, 0, 0, 1)),
+    color-stop(0.95, rgba(0, 0, 0, 0))
   );
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1.25rem 2.5%;
-  overflow-y: scroll;
+  &-inner {
+    @include setup_size(100%, fit-content);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
   &-item {
     @include flex-center(column);
-    margin: 0.5% 1%;
-    width: 18%;
-    aspect-ratio: 1 / 1;
+    margin: 0.5%;
+    width: 13.25%;
+    // aspect-ratio: 1 / 1;
     transition: $default-transition;
     filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.2));
     transform: scale(0.975);
     background: $blueTransparent;
+    overflow: hidden;
     border-radius: $border-radius;
     &:first-of-type {
       // untuk delete icon
@@ -139,9 +152,9 @@ $options-height: 50vh;
 }
 
 @media only screen and (max-width: $breakpoint-tab) {
-  $menu-height: 50vh;
-  $submenu-height: 15vh;
-  $options-height: 30vh;
+  $menu-height: 45vh;
+  $submenu-height: 12vh;
+  $options-height: 20vh;
 
   .picrew-menu-container {
     @include setup_size(100%, $menu-height);
@@ -157,7 +170,7 @@ $options-height: 50vh;
         @include setup_size(65%, 5px);
       }
       img {
-        height: 15vw;
+        height: 12vw;
         max-height: 200px;
         transform: scale(0.8);
         &:hover {
@@ -179,7 +192,7 @@ $options-height: 50vh;
 
   .picrew-options {
     @include setup_size(100%, $options-height);
-    padding: 1.25rem 2.5%;
+    padding: 1.25rem 2.5% 2rem;
     mask-image: -webkit-gradient(
       linear,
       left top,
@@ -188,15 +201,15 @@ $options-height: 50vh;
       color-stop(0.97, rgba(0, 0, 0, 0))
     );
     &-item {
-      margin: 0.5% 1%;
-      width: 18%;
+      margin: 0.75%;
+      width: 15.15%;
     }
   }
 }
 
 @media only screen and (max-width: $breakpoint) {
-  $menu-height: 60vh;
-  $submenu-height: 15vh;
+  $menu-height: 50vh;
+  $submenu-height: 12vh;
   $options-height: 40vh;
 
   .picrew-menu-container {
@@ -211,7 +224,7 @@ $options-height: 50vh;
         @include setup_size(65%, 5px);
       }
       img {
-        height: 20vw;
+        height: 15vw;
       }
     }
   }
@@ -228,7 +241,7 @@ $options-height: 50vh;
 
   .picrew-options {
     @include setup_size(100%, $options-height);
-    padding: 1.25rem 3% 2.5rem;
+    padding: 0.75rem 3% 1.5rem;
     mask-image: -webkit-gradient(
       linear,
       left top,
@@ -237,8 +250,8 @@ $options-height: 50vh;
       color-stop(0.92, rgba(0, 0, 0, 0))
     );
     &-item {
-      margin: 0.5% 1%;
-      width: 23%;
+      margin: 1%;
+      width: 18%;
     }
   }
 }

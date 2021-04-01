@@ -7,9 +7,9 @@ const fakultas = (name, himpunan) => ({ name, himpunan });
 
 const DAFTAR_LINK = [
   fakultas("STEI", [
-    himpunan("HMIF", "https://bit.ly"),
-    himpunan("HME", "https://bit.ly"),
-    himpunan("IMT", "https://bit.ly"),
+    himpunan("HMIF", "bit.ly"),
+    himpunan("HME", "bit.ly"),
+    himpunan("IMT", "bit.ly"),
   ]),
 ];
 
@@ -21,7 +21,7 @@ const Table = ({ links }) => {
           <tr key={idx}>
             <td>{himpunan}</td>
             <td>
-              <a href={link}>{link}</a>
+              <a href={"https://" + link}>{link}</a>
             </td>
           </tr>
         ))}
@@ -33,19 +33,19 @@ const Table = ({ links }) => {
 export const GatherTown = () => {
   return (
     <div className="gather-town">
-      <h3>Gather Town</h3>
+      <h3>Spesial untuk para Wisudawan</h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Amet cursus sit amet
-        dictum. Ornare lectus sit amet est placerat in. Accumsan sit amet nulla
-        facilisi morbi tempus iaculis urna.
+        Halo! Selamat berbahagia kepada para wisudawan yang hari ini resmi
+        menjadi sarjana karena telah menyelesaikan pendidikan di Institut
+        Teknologi Bandung tercinta. Kami selaku panitia Perayaan Wisuda April
+        2021, menyediakan wadah untuk para wisudawan bercengkrama, berkumpul,
+        dan beramah tamah secara virtual. Wisudawan dapat mengajak massa
+        himpunan, teman, pacar, atau siapapun yang ingin ditemui di sini!
+        Selamat menikmati Gather Town dan jangan lupa untuk mengajak teman -
+        teman Anda!
       </p>
       <p>
-        Tincidunt ornare massa eget egestas purus. Tempor orci dapibus ultrices
-        in. Sed viverra ipsum nunc aliquet. Vitae turpis massa sed elementum
-        tempus egestas sed. Id consectetur purus ut faucibus pulvinar. Id
-        venenatis a condimentum vitae sapien pellentesque. Accumsan tortor
-        posuere ac ut. Interdum consectetur libero id faucibus nisl tincidunt.
+        <strong>Gather Town</strong> dapat diakses melalui tautan di bawah ini:
       </p>
       <div className="gather-town-links">
         {DAFTAR_LINK.map((himpunan, idx) => (

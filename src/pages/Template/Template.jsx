@@ -41,7 +41,7 @@ export const Template = ({ children, nofooter, nocontain, isLong }) => {
     setParallaxHeight(
       document.getElementsByClassName("template")[0].clientHeight
     );
-    console.log(parallaxHeight);
+    // console.log(parallaxHeight);
   }, [parallaxHeight]);
 
   const { scrollY } = useViewportScroll();
