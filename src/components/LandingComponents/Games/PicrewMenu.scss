@@ -130,9 +130,13 @@ $options-height: 50vh;
     transition: $default-transition;
     filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.2));
     transform: scale(0.975);
-    background: $blueTransparent;
+    background: $darkBlue;
     overflow: hidden;
     border-radius: $border-radius;
+    &-active {
+      // background: $blue;
+      border: 1px solid $blue;
+    }
     &:first-of-type {
       // untuk delete icon
       transform: scale(0.8);

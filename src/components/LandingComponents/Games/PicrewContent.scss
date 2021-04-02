@@ -29,12 +29,38 @@
     bottom: 2.5%;
     z-index: 51;
     font-family: $font1 !important;
+    font-size: clamp(24px, 2.5vw, 44px);
+    color: rgb(250, 221, 116);
+    filter: none;
+    .shadow {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      transform: translate(0.1rem, 0.1rem);
+      z-index: -1;
+      left: 0;
+      color: $black;
+      pointer-events: none;
+    }
+    i,
+    b {
+      color: inherit;
+      font-size: inherit;
+      font-family: inherit;
+    }
     & > * {
-      font-size: 80%;
+      color: inherit;
+      font-size: inherit;
       font-family: inherit;
       & > * {
+        color: inherit;
         font-family: inherit;
         font-size: inherit;
+        & > * {
+          color: inherit;
+          font-family: inherit;
+          font-size: inherit;
+        }
       }
     }
     &:hover {

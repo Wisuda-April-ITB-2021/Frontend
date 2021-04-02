@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import ContentEditable from "react-contenteditable";
+import { setLocalPicrewText } from "./picrewFunctions";
 import "./PicrewContent.scss";
 import Logo from "../../../images/logo/logo-sm.png";
 
@@ -38,23 +40,23 @@ const levelData = {
   "level-18": new Path("accessories", "pose"),
 };
 
-const EditableText = ({ text: html, setText: setHtml }) => {
+const EditableText = ({ text: html, setText: setHtml, className }) => {
   const handleChange = (evt) => {
-    localStorage.setItem("picrew-text", JSON.stringify(evt.target.value));
-    setHtml(evt.target.value);
+    const text = evt.target.value;
+    setLocalPicrewText(text);
+    setHtml(text);
   };
   return (
-    <ContentEditable html={html} disabled={false} onChange={handleChange} />
+    <ContentEditable
+      html={html}
+      className={className}
+      disabled={false}
+      onChange={handleChange}
+    />
   );
 };
 
-export const PicrewContent = ({
-  data,
-  clearText,
-  setClearText,
-  text,
-  setText,
-}) => {
+export const PicrewContent = ({ data, text, setText, showText }) => {
   const images = [];
   for (const [key, value] of Object.entries(levelData)) {
     value.getImg(data) !== undefined &&
@@ -73,12 +75,22 @@ export const PicrewContent = ({
       {images.length > 0 ? (
         images
       ) : (
-        <p>Susun avatarmu dari komponen-komponen di bawah!</p>
+        <p>Susun avatarmu dengan memilih komponen-komponen di kanan/bawah!</p>
       )}
       <img src={Logo} className="logo" alt="logo-wispril-avatar" />
-      <h2 className="text">
-        <EditableText text={text} setText={setText} />
-      </h2>
+      <AnimatePresence>
+        {showText && (
+          <motion.h5
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="text"
+          >
+            <EditableText className="shadow" text={text} setText={setText} />
+            <EditableText text={text} setText={setText} />
+          </motion.h5>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

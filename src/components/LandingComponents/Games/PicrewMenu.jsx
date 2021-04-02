@@ -29,7 +29,7 @@ class Menu {
   }
 }
 
-const MENU_DB = [
+export const MENU_DB = [
   new Menu("Base", BASE),
   new Menu("Face", FACE),
   new Menu("Accessories", ACCESSORIES),
@@ -104,9 +104,12 @@ const SubMenu = ({ mainIdx, subIdx, setSubIdx }) => {
   );
 };
 
-const Options = ({ mainIdx, subIdx, onChange }) => {
+const Options = ({ mainIdx, subIdx, onChange, currentImages }) => {
   const subMenu = MENU_DB[mainIdx].getSubMenus();
   let target = MENU_DB[mainIdx].getImages(subMenu[subIdx]);
+
+  const currentMenu = currentImages[Object.keys(currentImages)[mainIdx]];
+  const currentItem = currentMenu[subMenu[subIdx]];
   return (
     <div className="picrew-options">
       <div className="picrew-options-inner">
@@ -119,7 +122,9 @@ const Options = ({ mainIdx, subIdx, onChange }) => {
         </div>
         {target.map((option, idx) => (
           <div
-            className="picrew-options-item"
+            className={`picrew-options-item${
+              option === currentItem ? " picrew-options-item-active" : ""
+            }`}
             key={idx}
             onClick={() => onChange(option)}
           >
@@ -131,7 +136,7 @@ const Options = ({ mainIdx, subIdx, onChange }) => {
   );
 };
 
-export const PicrewMenu = ({ onChange }) => {
+export const PicrewMenu = ({ onChange, currentImages }) => {
   const [mainIdx, setMainIdx] = useState(0);
   const [subIdx, setSubIdx] = useState(0);
 
@@ -156,6 +161,7 @@ export const PicrewMenu = ({ onChange }) => {
         mainIdx={mainIdx}
         subIdx={subIdx}
         onChange={handleChangeOptions}
+        currentImages={currentImages}
       />
     </div>
   );
