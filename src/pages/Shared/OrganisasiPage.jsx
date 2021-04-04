@@ -10,6 +10,8 @@ import OrganisasiCardContainer from "../../components/shared/Cards/OrganisasiCar
 import { ReactComponent as LeftArrow } from "../../icons/leftArrow.svg";
 import { ReactComponent as RightArrow } from "../../icons/rightArrow.svg";
 
+import { getAllOrgz } from "../../api/organisasi";
+
 // import Accordion from "../../components/GaleriComponents/Accordion";
 // import imageHMJ from "../../components/GaleriComponents/AccordionAssets/image-hmj.png";
 // import imageUnit from "../../components/GaleriComponents/AccordionAssets/image-unit.png";
@@ -26,6 +28,7 @@ import "./OrganisasiPage.scss";
 
 // Page ini dipake buat both apresiasi sama galeri wisudawan. Nanti baca URL nya aja dari routes.js.
 export const OrganisasiPage = () => {
+  getAllOrgz();
   const location = useLocation().pathname.split("/");
   const page = location[1];
   const location_key = location[location.length - 1];
