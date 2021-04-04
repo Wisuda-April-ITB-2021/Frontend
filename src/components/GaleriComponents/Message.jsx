@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Tooltip from "../shared/Tooltip";
-import { useLocation } from "react-router-dom";
 import { List, ListItemPost } from "../shared/List";
 import { sendAnalyticsAction, WISUDAWAN_ACTION } from "../../api/analytics";
 import "./Message.scss";
 
-const MessageForm = () => {
+const MessageForm = ({onPost}) => {
   const [name, setName] = useState("");
   const [msg, setMsg] = useState("");
   const [tooltipMsg, setTooltipMsg] = useState("");
@@ -24,10 +23,10 @@ const MessageForm = () => {
     validate();
   }, [name, msg]);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!msg) return;
     sendAnalyticsAction(WISUDAWAN_ACTION, "Send message");
-    alert("Pesan kamu sudah dikirim!");
+    onPost(name,msg);
   };
 
   return (
@@ -70,7 +69,7 @@ const Messages = (props) => {
       );
     });
   } else {
-    messageList = <p>Loading placeholder</p>;
+    messageList = <p>Write a message for {props.nama}!</p>;
   }
 
   return <List>{messageList}</List>;

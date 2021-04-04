@@ -5,114 +5,163 @@ import {
   Messages,
 } from "../../components/GaleriComponents/Message";
 import { List, ListItem } from "../../components/shared/List";
+import {useHistory} from "react-router-dom";
 
 import Accordion from "../../components/GaleriComponents/Accordion";
-import imageHMJ from "../../components/GaleriComponents/AccordionAssets/image-hmj.png";
-import imageUnit from "../../components/GaleriComponents/AccordionAssets/image-unit.png";
-import imageAward from "../../components/GaleriComponents/AccordionAssets/image-award.png";
-import imageCertificate from "../../components/GaleriComponents/AccordionAssets/image-certificate.png";
 import "./WisudawanPage.scss";
+
+import {
+	fetchWisudawan,
+	fetchWisudawanContent,
+	fetchWisudawanMessage,
+	parseImg,
+	normalizeResponse,
+	postMessage
+} from "../Controller";
+
+import {getFunFact, getKontribusi, parseOrgData, parsePrestasiKaryaData} from "../Util";
+
 import axios from "axios";
 
-const dummyList = [
-  { title: "Lahir di bandung, 1 Januari 1999", content: "" },
-  {
-    title: "Wibu Parah",
-    content:
-      "Katanya sih udah ngabisin 1000 episode anime, trus suka koleksi figure-figure anime idol gitu",
-    image: imageHMJ,
-  },
-];
-
-const dummyOrganisasi = [
-  {
-    title: `HMME "Atmospharia" ITB`,
-    image: imageHMJ,
-    content: dummyList,
-  },
-  {
-    title: `Unit Kebudayaan Jepang`,
-    image: imageUnit,
-    content: dummyList,
-  },
-];
-
-const dummyPrestasidanKarya = [
-  {
-    title: `Prestasi`,
-    image: imageAward,
-    content: dummyList,
-  },
-  {
-    title: `Karya`,
-    image: imageCertificate,
-    content: dummyList,
-  },
-];
-
 const generateList = (data) => (
-  <List>
-    {data.map((row, i) => (
-      <ListItem title={row.title} imageLink={row.image} key={i}>
-        {row.content}
-      </ListItem>
-    ))}
-  </List>
+	<List>
+		{data.map((row, i) => (
+			<ListItem title={row.headings} imageLink={parseImg(row.image) || ""} key={i}>
+				{row.details}
+			</ListItem>
+		))}
+	</List>
 );
 
-const generateAccordion = (data) => (
-  <>
-    {data.map((row, i) => (
-      <Accordion title={row.title} image={row.image} key={i}>
-        {generateList(row.content)}
-      </Accordion>
-    ))}
-  </>
-);
+const generateAccordion = (data) => {
+  let res = [];
+
+  for(const [key,value] of Object.entries(data)){
+    if(value.content.length){
+      res.push(
+				<Accordion title={key} image={value.isLocal ? value.logo : parseImg(value.logo)} key={key}>
+					{generateList(value.content)}
+				</Accordion>
+			);
+    }
+    
+  }
+
+  return <>{res}</>
+};
+
+const generateFunFact = (wisudawan) =>{
+  let fun_fact = wisudawan.nama ? getFunFact(wisudawan) : [];
+  if(!fun_fact.length) return <></>
+  return (
+		<div className='fun-facts'>
+			<h3>Fun Facts</h3>
+			{generateList(fun_fact)}
+		</div>
+	);
+}
+
+const generateKontribusi = (wisudawan) => {
+	let kontribusi = wisudawan.nama ? getKontribusi(wisudawan.org_data) : [];
+	if(!kontribusi.length) return <></>
+  return (
+		<div className='fun-facts'>
+			<h3>Kontribusi</h3>
+			{generateList(kontribusi)}
+		</div>
+		)
+}
+
+const generateOrganisasi = (wisudawan) => {
+  let org_data = wisudawan.nama ? parseOrgData(wisudawan.org_data) : null;
+	if (!org_data) return <></>;
+  return (
+		<div className='organisasi'>
+			<h3>Organisasi</h3>
+			{generateAccordion(org_data)}
+		</div>
+	);
+}
+
+const generatePrestasiKarya = (wisudawan) => {
+	let prestasiKarya = wisudawan.nama
+		? parsePrestasiKaryaData(wisudawan.self_data)
+		: null;
+	if (!prestasiKarya) return <></>;
+	return (
+		<div className='prestasi'>
+			<h3>Prestasi Dan Karya</h3>
+			{generateAccordion(prestasiKarya)}
+		</div>
+	);
+};
 
 export const WisudawanPage = () => {
-  const [data, setData] = useState(null);
+  const id = "dcf53d9e-05e9-4ea2-9d77-db73855730ce";
+	const history = useHistory();
+
+  const [wisudawan, setWisudawan] = useState({});
+  const [messages, setMessages] = useState(null);
+
+	const handlePost = async (name, msg) =>{
+		if(name=="") name = "Anonymous"
+		try{
+			await postMessage({
+				id_wisudawan: wisudawan.id,
+				message: msg,
+				sender: name,
+			});
+			alert("Pesan kamu sudah dikirim!");
+			history.push(0);
+		}catch(err){
+			console.log(err);
+			alert("Sorry! Something went wrong! Please try again later!");
+		}
+		
+	}
 
   useEffect(async () => {
-    const result = await axios("https://jsonplaceholder.typicode.com/posts");
-    setData(result.data.slice(0, 5));
-  }, []);
+    try{
+      const bio_wisudawan = normalizeResponse(await fetchWisudawan(id));
+			const content_wisudawan = normalizeResponse(await fetchWisudawanContent(bio_wisudawan.nim));
+			fetchWisudawanMessage(id).then((res)=>{
+				setMessages(normalizeResponse(res));
+			}).catch((err)=>{
+				console.log("GA ADA MESSAGE BANG")
+			})
+			const data_wisudawan = {...bio_wisudawan, ...content_wisudawan};
+			setWisudawan(data_wisudawan);
+    }catch(err){
+      console.log(err);
+    }
+	}, []);
 
   return (
-    <Template isLong>
-      <div className="wisudawan-page-specific">
-        <div className="bio">
-          <div className="name">
-            <h2>Nama</h2>
-            <h3>10017001/IF</h3>
-          </div>
-          <img src={"https://picsum.photos/200"} />
-          <h5 className="desc">
-            Kiat sukses berternak lele supaya banyak cuan di tengah pandemi
-          </h5>
-          <div className="media-social"></div>
-        </div>
+		<Template isLong>
+			<div className='wisudawan-page-specific'>
+				<div className='bio'>
+					<div className='name'>
+						<h2>{wisudawan.nama || ""}</h2>
+						<h3>{`${wisudawan.nim}/${wisudawan.jurusan_short}`}</h3>
+					</div>
+					<img src={parseImg(wisudawan.photo)} />
+					<h5 className='desc'>{wisudawan.judul_ta}</h5>
+					<div className='media-social'></div>
+				</div>
 
-        <div className="fun-facts">
-          <h3>Fun Facts</h3>
-          {generateList(dummyList)}
-        </div>
+				{generateFunFact(wisudawan)}
 
-        <div className="organisasi">
-          <h3>Organisasi Dan Kontribusi</h3>
-          {generateAccordion(dummyOrganisasi)}
-        </div>
+				{generateKontribusi(wisudawan)}
 
-        <div className="prestasi">
-          <h3>Prestasi Dan Karya</h3>
-          {generateAccordion(dummyPrestasidanKarya)}
-        </div>
+				{generateOrganisasi(wisudawan)}
 
-        <h3>Pojok Surat Cinta</h3>
-        <MessageForm />
-        <h4>Messages ({data && data.length})</h4>
-        <Messages data={data} />
-      </div>
-    </Template>
-  );
+				{generatePrestasiKarya(wisudawan)}
+
+				<h3>Pojok Surat Cinta</h3>
+				<MessageForm onPost={handlePost} />
+				<h4>Messages ({(messages && messages.length) || 0})</h4>
+				<Messages data={messages} nama={wisudawan.nama} />
+			</div>
+		</Template>
+	);
 };

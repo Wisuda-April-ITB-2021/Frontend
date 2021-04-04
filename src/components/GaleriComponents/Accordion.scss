@@ -2,9 +2,14 @@
 @import "../../styles/variables.scss";
 
 .btn {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
   align-items: center;
+  justify-content: center;
+  img,h4{
+    justify-self: flex-start;
+  }
+  svg{justify-self: flex-end;}
   padding: 0 10px;
   position: relative;
   z-index: 2;
@@ -27,6 +32,12 @@
   justify-content: center;
   margin: 5px;
   padding-right: 10px;
+  .btn{
+    max-height: 10vh;
+    img{
+      max-height: 8vh;
+    }
+  }
 }
 
 .btn:hover {

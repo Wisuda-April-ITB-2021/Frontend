@@ -8,6 +8,11 @@
   & > *:not(.message-form) {
     @include flex_center(column);
   }
+  .fun-facts{
+    .list{
+      align-self: flex-start;
+    }
+  }
   h3 {
     margin-bottom: 2.5vh;
   }
