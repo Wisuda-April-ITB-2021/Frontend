@@ -13,7 +13,11 @@ export const fetchWisudawanContent = (nim) => {
 	return axios.get(`${URL}/content/wisudawan/${nim}`);
 };
 
-export const postMessage = (id_wisudawan, sender, message) => {
+export const fetchApresiasi = (slug) => {
+	return axios.get(`${URL}/orgz/slug/${slug}`);
+};
+
+export const postMessage = ({id_wisudawan, sender, message}) => {
 	return axios.post(`${URL}/message/`, {id_wisudawan, message, sender});
 };
 

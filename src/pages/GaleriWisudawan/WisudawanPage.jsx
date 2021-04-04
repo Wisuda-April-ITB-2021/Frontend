@@ -21,8 +21,6 @@ import {
 
 import {getFunFact, getKontribusi, parseOrgData, parsePrestasiKaryaData} from "../Util";
 
-import axios from "axios";
-
 const generateList = (data) => (
 	<List>
 		{data.map((row, i) => (
@@ -108,13 +106,13 @@ export const WisudawanPage = () => {
 		try{
 			await postMessage({
 				id_wisudawan: wisudawan.id,
-				message: msg,
 				sender: name,
+				message: msg,
 			});
 			alert("Pesan kamu sudah dikirim!");
 			history.push(0);
 		}catch(err){
-			console.log(err);
+			console.log(JSON.stringify(err));
 			alert("Sorry! Something went wrong! Please try again later!");
 		}
 		
