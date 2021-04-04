@@ -12,11 +12,6 @@ import { ReactComponent as RightArrow } from "../../icons/rightArrow.svg";
 
 import { getAllOrgz } from "../../api/organisasi";
 
-// import Accordion from "../../components/GaleriComponents/Accordion";
-// import imageHMJ from "../../components/GaleriComponents/AccordionAssets/image-hmj.png";
-// import imageUnit from "../../components/GaleriComponents/AccordionAssets/image-unit.png";
-// import imageAward from "../../components/GaleriComponents/AccordionAssets/image-award.png";
-
 import {
   galeriOptions,
   apresiasiOptions,
@@ -27,8 +22,53 @@ import {
 import "./OrganisasiPage.scss";
 
 // Page ini dipake buat both apresiasi sama galeri wisudawan. Nanti baca URL nya aja dari routes.js.
+
+const localItemName = "orgz";
+const handleOrgzLocalStorage = {
+  set: (orgz) => {
+    const data = {
+      orgz,
+      lastUpdated: new Date(),
+    };
+    localStorage.setItem(localItemName, JSON.stringify(data));
+  },
+  get: async () => {
+    const setOrgz = async () => {
+      const orgzList = await getAllOrgz();
+      handleOrgzLocalStorage.set(orgzList);
+      return orgzList;
+    };
+
+    // ambil dari local storage. Kalo blm ada, panggil API
+    const res = JSON.parse(localStorage.getItem(localItemName));
+    if (!res) return await setOrgz();
+
+    // kalo ada, cek datanya masih valid ga (10 menit)
+    const { orgz, lastUpdated } = res;
+    const isDataOutdated = new Date() - new Date(lastUpdated) > 10 * 60 * 60;
+    if (isDataOutdated) return await setOrgz();
+    return orgz; // kalo valid, pake dari local storage aja
+  },
+};
+
+const getOrgzGroups = (data, mainPath, subPath) => {
+  if (mainPath === "galeri-wisudawan") {
+    return subPath === "hmj"
+      ? data.FAKULTAS.HMJ
+      : subPath === "ukm"
+      ? data.UKM
+      : data.ETC;
+  } else {
+    // apresiasi
+    return subPath === "fakultas"
+      ? { ...data.FAKULTAS.HMJ, TPB: { ...data.FAKULTAS.TPB } }
+      : subPath === "ukm"
+      ? data.UKM
+      : data.ETC;
+  }
+};
+
 export const OrganisasiPage = () => {
-  getAllOrgz();
   const location = useLocation().pathname.split("/");
   const page = location[1];
   const location_key = location[location.length - 1];
@@ -39,15 +79,18 @@ export const OrganisasiPage = () => {
   if (path) {
     idx_key = path.idx;
   } else {
-    // console.log("MASUK SINI BANG");
     window.location.href = `/${page}/${targetOptions[0].url}`;
   }
 
-  const [options, setOptions] = useState(targetOptions);
-  const [subOptions, setSubOptions] = useState(fakultasOptions);
+  // const [options, setOptions] = useState(targetOptions);
+  const options = targetOptions;
+
+  const [orgz, setOrgz] = useState();
+  const [subOptions, setSubOptions] = useState();
   const [data, setData] = useState(dummyHimpunan);
   const [selectedOptions, setSelectedOptions] = useState(idx_key);
-  const [selected, setSelected] = useState("FITB");
+  const [selected, setSelected] = useState();
+  const [currUrl, setCurrUrl] = useState(path.url);
 
   const handleChangeOption = (val) => {
     let targetVal = selectedOptions + val;
@@ -58,9 +101,20 @@ export const OrganisasiPage = () => {
     window.history.replaceState(
       null,
       "Wisuda April ITB 2021",
-      `/galeri-wisudawan/${url}`
+      `/${page}/${url}`
     );
+    setCurrUrl(url);
   };
+
+  useEffect(() => {
+    const fetchOrgz = async () => {
+      const orgz = await handleOrgzLocalStorage.get();
+      setOrgz(orgz);
+      const currSubOptions = getOrgzGroups(orgz, page, currUrl);
+      setSubOptions(currSubOptions);
+    };
+    fetchOrgz();
+  }, [currUrl]);
 
   return (
     <Template>
@@ -72,14 +126,14 @@ export const OrganisasiPage = () => {
           selected={selectedOptions}
         />
         <div className="suboptions-container">
-          {subOptions.map((row, i) => (
+          {/* {subOptions?.map((row, i) => (
             <OrganisasiTag
-              text={row}
+              text={Object.keys(row)}
               key={i}
-              active={row === selected}
-              onClick={setSelected}
+              active={Object.keys(row) === selected}
+              onClick={setSelected(Object.keys(row))}
             />
-          ))}
+          ))} */}
         </div>
         <OrganisasiCardContainer data={data} />
       </div>
