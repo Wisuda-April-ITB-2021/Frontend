@@ -20,11 +20,12 @@ import {
 } from "../Util";
 
 import "./OrganisasiPage.scss";
+import { Loading } from "../../components/shared/Loading/Loading";
 
 // Page ini dipake buat both apresiasi sama galeri wisudawan. Nanti baca URL nya aja dari routes.js.
 
 const localItemName = "orgz";
-const handleOrgzLocalStorage = {
+export const handleOrgzLocalStorage = {
   set: (orgz) => {
     const data = {
       orgz,
@@ -61,7 +62,7 @@ const getOrgzGroups = (data, mainPath, subPath) => {
   } else {
     // apresiasi
     return subPath === "fakultas"
-      ? { ...data.FAKULTAS.HMJ, TPB: { ...data.FAKULTAS.TPB } }
+      ? { ...data.FAKULTAS.HMJ, TPB: data.FAKULTAS.TPB }
       : subPath === "ukm"
       ? data.UKM
       : data.ETC;
@@ -85,11 +86,10 @@ export const OrganisasiPage = () => {
   // const [options, setOptions] = useState(targetOptions);
   const options = targetOptions;
 
-  const [orgz, setOrgz] = useState();
   const [subOptions, setSubOptions] = useState();
-  const [data, setData] = useState(dummyHimpunan);
+  const [data, setData] = useState();
   const [selectedOptions, setSelectedOptions] = useState(idx_key);
-  const [selected, setSelected] = useState();
+  const [selected, setSelected] = useState("");
   const [currUrl, setCurrUrl] = useState(path.url);
 
   const handleChangeOption = (val) => {
@@ -109,9 +109,13 @@ export const OrganisasiPage = () => {
   useEffect(() => {
     const fetchOrgz = async () => {
       const orgz = await handleOrgzLocalStorage.get();
-      setOrgz(orgz);
       const currSubOptions = getOrgzGroups(orgz, page, currUrl);
-      setSubOptions(currSubOptions);
+      setData(currSubOptions);
+      console.log(currSubOptions);
+
+      let subOptionList = Object.keys(currSubOptions);
+      subOptionList = subOptionList.map((str) => str.replace(/_/g, " "));
+      setSubOptions(subOptionList);
     };
     fetchOrgz();
   }, [currUrl]);
@@ -126,16 +130,26 @@ export const OrganisasiPage = () => {
           selected={selectedOptions}
         />
         <div className="suboptions-container">
-          {/* {subOptions?.map((row, i) => (
-            <OrganisasiTag
-              text={Object.keys(row)}
-              key={i}
-              active={Object.keys(row) === selected}
-              onClick={setSelected(Object.keys(row))}
-            />
-          ))} */}
+          {subOptions ? (
+            subOptions.map((row, i) => (
+              <OrganisasiTag
+                text={row}
+                key={i}
+                active={row === selected}
+                onClick={setSelected}
+              />
+            ))
+          ) : (
+            <Loading />
+          )}
         </div>
-        <OrganisasiCardContainer data={data} />
+        {data ? (
+          <OrganisasiCardContainer data={data[selected.replace(/ /g, "_")]} />
+        ) : selected ? (
+          <Loading />
+        ) : (
+          ""
+        )}
       </div>
     </Template>
   );

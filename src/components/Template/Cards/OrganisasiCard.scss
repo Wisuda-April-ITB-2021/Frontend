@@ -1,7 +1,7 @@
 @import "../../../styles/mixin.scss";
 @import "../../../styles/variables.scss";
 
-.organisasiCard {
+.organisasi-card {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -29,12 +29,15 @@
   }
 
   .mainImage {
+    height: 15vw;
     width: 15vw;
+    background-size: contain;
     padding: 1vw;
   }
 
   h4 {
     font-size: 1.5vw;
+    text-align: center;
   }
 }
 
@@ -43,7 +46,7 @@
 }
 
 @media only screen and (max-width: $breakpoint) {
-  .organisasiCard {
+  .organisasi-card {
     // margin: 2vw 30px;
     margin: 1.6vw;
     width: 40vw;

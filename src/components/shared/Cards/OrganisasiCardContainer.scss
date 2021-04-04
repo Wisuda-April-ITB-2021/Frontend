@@ -1,24 +1,20 @@
-.organisasiCardContainer{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0 8vw;
-    box-sizing: border-box;
-    width: 60vw;
-
+.organisasiCardContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 8vw;
+  box-sizing: border-box;
+  width: 60vw;
 }
 
 @media only screen and (max-width: 600px) {
-    .organisasiCardContainer{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0;
-        padding: 0px;
-        width: 100vw;
-    
-    }
-
+  .organisasiCardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0px;
+    width: 100vw;
   }
-
+}

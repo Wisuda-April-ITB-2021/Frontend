@@ -12,7 +12,7 @@ export const galeriOptions = [
 ];
 
 export const apresiasiOptions = [
-  { title: "Fakultas (TPB + HMJ)", url: "fakultas", idx: 0 },
+  { title: "TPB + HMJ", url: "fakultas", idx: 0 },
   { title: "Unit (UKM)", url: "ukm", idx: 1 },
   { title: "Lainnya", url: "etc", idx: 2 },
 ];

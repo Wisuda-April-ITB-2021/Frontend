@@ -2,8 +2,9 @@ import React from "react";
 import { Template } from "../Template/Template";
 import "./ApresiasiPage.scss";
 
-import {Youtube} from "../../components/LandingComponents/Youtube";
-import {Spotify} from "../../components/LandingComponents/Spotify";
+import { handleOrgzLocalStorage } from "../Shared/OrganisasiPage";
+import { Youtube } from "../../components/LandingComponents/Youtube";
+import { Spotify } from "../../components/LandingComponents/Spotify";
 
 export const ApresiasiPage = () => {
   return (
@@ -18,16 +19,12 @@ export const ApresiasiPage = () => {
       </div>
       <h5 className="Tulisan">- Spotify -</h5>
       <div className="Spotify">
-    	  <Spotify link="https://open.spotify.com/embed/track/4RAOI1etsgbh5NP3T5R8rN" />
+        <Spotify link="https://open.spotify.com/embed/track/4RAOI1etsgbh5NP3T5R8rN" />
       </div>
       <h5 className="Tulisan">- Poster -</h5>
-      <div className="Poster">
-        {/* Masukin poster di sini */}
-      </div>
+      <div className="Poster">{/* Masukin poster di sini */}</div>
       <h5 className="Tulisan">- Cerita -</h5>
-      <div className="Cerita">
-        {/* Masukin cerita di sini */}
-      </div>
+      <div className="Cerita">{/* Masukin cerita di sini */}</div>
     </Template>
   );
 };

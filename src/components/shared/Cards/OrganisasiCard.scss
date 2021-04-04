@@ -1,7 +1,7 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/mixin.scss";
 
-.organisasiCard {
+.organisasi-card {
   @include flex_center(column);
   position: relative;
 
@@ -26,21 +26,24 @@
   }
 
   .mainImage {
-    width: 15vw;
+    width: 12.5vw;
+    height: 12.5vw;
+    object-fit: contain;
     padding: 1vw;
   }
 
   h4 {
+    text-align: center;
     font-size: 1.5vw;
   }
 }
 
-.organisasiCard:hover {
+.organisasi-card:hover {
   background-color: $darkBlueTransparent;
 }
 
 @media only screen and (max-width: 600px) {
-  .organisasiCard {
+  .organisasi-card {
     // margin: 2vw 30px;
     @include setup_size(40vw, 50vw);
     margin: 2vw;

@@ -1,17 +1,30 @@
 @import "../../styles/mixin.scss";
 @import "../../styles/variables.scss";
 
-.galeri-wisudawan-container{
+.galeri-wisudawan-container {
   @include flex_center(column);
-  padding : 5vh 0;
+  padding: 5vh 0;
   text-align: center;
-  .organization-detail{
+  .organization-detail {
     @include flex_center(column);
-    .desc{
-      padding : 0 20%;
+    .desc {
+      padding: 0 20%;
     }
+  }
+  .image {
+    width: 20vw;
+    height: 20vw;
+    object-fit: contain;
+    margin: 2vh 0;
   }
 }
 
 @media only screen and (max-width: $breakpoint) {
+  .galeri-wisudawan-container {
+    .image {
+      width: 20vh;
+      height: 20vh;
+      margin: 2vh 0;
+    }
+  }
 }
