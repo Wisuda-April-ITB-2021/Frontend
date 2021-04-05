@@ -105,7 +105,7 @@ export const WisudawanPage = () => {
 		if(name=="") name = "Anonymous"
 		try{
 			await postMessage({
-				id_wisudawan: wisudawan.id,
+				id_wisudawan: wisudawan.id_wisudawan,
 				sender: name,
 				message: msg,
 			});
@@ -123,6 +123,7 @@ export const WisudawanPage = () => {
       const bio_wisudawan = normalizeResponse(await fetchWisudawan(id));
 			const content_wisudawan = normalizeResponse(await fetchWisudawanContent(bio_wisudawan.nim));
 			fetchWisudawanMessage(id).then((res)=>{
+				console.log("MASUK SINI BANG");
 				setMessages(normalizeResponse(res));
 			}).catch((err)=>{
 				console.log("GA ADA MESSAGE BANG")

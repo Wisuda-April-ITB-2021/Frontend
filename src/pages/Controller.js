@@ -6,7 +6,7 @@ export const fetchWisudawan = (id) => {
 };
 
 export const fetchWisudawanMessage = (id) => {
-	return axios.get(`${URL}/wisudawan/message/${id}`);
+	return axios.get(`${URL}/message/wisudawan/${id}`);
 };
 
 export const fetchWisudawanContent = (nim) => {
@@ -18,6 +18,7 @@ export const fetchApresiasi = (slug) => {
 };
 
 export const postMessage = ({id_wisudawan, sender, message}) => {
+	console.log(id_wisudawan, sender, message);
 	return axios.post(`${URL}/message/`, {id_wisudawan, message, sender});
 };
 

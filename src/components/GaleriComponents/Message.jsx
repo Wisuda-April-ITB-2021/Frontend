@@ -63,10 +63,10 @@ const Messages = (props) => {
   if (props.data) {
     messageList = props.data.map((el, idx) => {
       return (
-        <ListItemPost key={idx} title={el.title}>
-          {el.body}
-        </ListItemPost>
-      );
+				<ListItemPost key={idx} title={el.sender}>
+					{el.message}
+				</ListItemPost>
+			);
     });
   } else {
     messageList = <p>Write a message for {props.nama}!</p>;
