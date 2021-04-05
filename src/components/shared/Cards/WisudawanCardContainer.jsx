@@ -23,8 +23,8 @@ const WisudawanCardContainer = ({ data }) => {
           </Link>
         ))
       ) : (
-        <p>
-          Tidak ditemukan wisudawan untuk organisasi ini pada Wispril kali ini
+        <p className="wisudawan-card-error">
+          Tidak ditemukan wisudawan yang sesuai untuk organisasi ini
         </p>
       )}
     </div>

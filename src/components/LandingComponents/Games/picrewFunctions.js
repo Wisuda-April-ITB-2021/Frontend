@@ -46,7 +46,31 @@ const getImage = () => {
   }).then((canvas) => canvas.toDataURL("image/png"));
 };
 
+const isNotCompatible = () => {
+  const iOS = () => {
+    return (
+      [
+        "iPad Simulator",
+        "iPhone Simulator",
+        "iPod Simulator",
+        "iPad",
+        "iPhone",
+        "iPod",
+      ].includes(navigator.platform) ||
+      // iPad on iOS 13 detection
+      (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+    );
+  };
+  const safari = () => {
+    return /apple/i.test(navigator.vendor);
+  };
+  return iOS() || safari();
+};
+
 export const downloadPicrew = async () => {
+  const errorMsg =
+    "Fitur download kemungkinan tidak bekerja dengan baik untuk pengguna iOS atau browser Safari. Silakan coba download Wispril Avatar buatanmu dengan perangkat Android atau browser seperti Chrome";
+  if (isNotCompatible()) alert(errorMsg);
   const image = await getImage();
   download(image, "wispril-avatar.png");
   sendAnalyticsAction(PICREW_ACTION, "Download Picrew");

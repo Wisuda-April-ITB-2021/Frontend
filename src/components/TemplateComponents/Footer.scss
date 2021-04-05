@@ -11,7 +11,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0 3.5%;
-  position: relative;
+  position: absolute;
+  bottom: 0;
   z-index: 10;
   &-text {
     width: 100%;

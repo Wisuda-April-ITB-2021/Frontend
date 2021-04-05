@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
+import { motion, AnimatePresence } from "framer-motion";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
@@ -109,9 +109,10 @@ export const OrganisasiPage = () => {
   useEffect(() => {
     const fetchOrgz = async () => {
       const orgz = await handleOrgzLocalStorage.get();
+      // console.log(orgz);
       const currSubOptions = getOrgzGroups(orgz, page, currUrl);
       setData(currSubOptions);
-      console.log(currSubOptions);
+      // console.log(currSubOptions);
 
       let subOptionList = Object.keys(currSubOptions);
       subOptionList = subOptionList.map((str) => str.replace(/_/g, " "));
@@ -130,18 +131,27 @@ export const OrganisasiPage = () => {
           selected={selectedOptions}
         />
         <div className="suboptions-container">
-          {subOptions ? (
-            subOptions.map((row, i) => (
-              <OrganisasiTag
-                text={row}
-                key={i}
-                active={row === selected}
-                onClick={setSelected}
-              />
-            ))
-          ) : (
-            <Loading />
-          )}
+          <AnimatePresence exitBeforeEnter>
+            {subOptions ? (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                key={subOptions[0]}
+              >
+                {subOptions.map((row, i) => (
+                  <OrganisasiTag
+                    text={row}
+                    key={i}
+                    active={row === selected}
+                    onClick={setSelected}
+                  />
+                ))}
+              </motion.div>
+            ) : (
+              <Loading />
+            )}
+          </AnimatePresence>
         </div>
         {data ? (
           <OrganisasiCardContainer data={data[selected.replace(/ /g, "_")]} />

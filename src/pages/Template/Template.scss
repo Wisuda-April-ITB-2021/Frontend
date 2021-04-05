@@ -15,6 +15,7 @@
     margin: $navbar-height auto 0;
     width: 60vw;
     position: relative;
+    margin-bottom: 220px;
     z-index: 2;
 
     &::before {
@@ -90,6 +91,7 @@
   .template {
     &-content {
       width: 90vw;
+      margin-bottom: 45vh;
       &::before {
         background: linear-gradient(
           90deg,

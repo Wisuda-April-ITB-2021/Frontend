@@ -43,7 +43,9 @@ const Accordion = (props) => {
   return (
     <div className="accordionSection">
       <motion.button className={`btn ${isActive}`} onClick={toggleAccordion}>
-        <img src={props.image} alt="" className="accordionImage" />
+        {props.img && (
+          <img src={props.image} alt="" className="accordionImage" />
+        )}
         <h4 className="accordionTitle">{props.title}</h4>
 
         <motion.svg

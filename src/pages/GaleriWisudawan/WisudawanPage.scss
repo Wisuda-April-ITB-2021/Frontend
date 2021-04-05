@@ -8,12 +8,29 @@
   & > *:not(.message-form) {
     @include flex_center(column);
   }
+  .fun-facts {
+    .list {
+      align-self: flex-start;
+    }
+  }
   h3 {
     margin-bottom: 2.5vh;
+  }
+  .media-social {
+    @include setup_size(100%, 100%);
+    @include flex_center(row);
+    padding: 5%;
+    & > * {
+      svg {
+        @include setup_size(5vh, 5vh);
+      }
+      padding: 0 0.5vw;
+    }
   }
 }
 
 .bio {
+  margin-top: 7vh;
   .name {
     text-align: center;
   }
@@ -24,6 +41,7 @@
   .desc {
     margin-top: 2vh;
     text-align: center;
+    width: 70%;
   }
 }
 
@@ -46,6 +64,7 @@
     }
     .desc {
       margin-top: 2vh;
+      width: 100%;
     }
   }
 }

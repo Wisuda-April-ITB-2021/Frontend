@@ -13,8 +13,6 @@
   }
   .image {
     width: 20vw;
-    height: 20vw;
-    object-fit: contain;
     margin: 2vh 0;
   }
   h3 {
@@ -26,9 +24,8 @@
   .galeri-wisudawan-container {
     padding: 5vh 0 0;
     .image {
-      width: 20vh;
-      height: 20vh;
-      margin: 2vh 0;
+      width: 40vh;
+      margin: 2vh 0 0;
     }
   }
 }

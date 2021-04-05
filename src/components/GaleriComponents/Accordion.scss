@@ -2,9 +2,19 @@
 @import "../../styles/variables.scss";
 
 .btn {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
   align-items: center;
+  justify-content: center;
+
+  svg {
+    justify-self: flex-end;
+  }
+
+  img,
+  svg {
+    margin-left: 2vw;
+  }
   padding: 0 10px;
   position: relative;
   z-index: 2;
@@ -27,6 +37,14 @@
   justify-content: center;
   margin: 5px;
   padding-right: 10px;
+  .btn {
+    max-height: 10vh;
+    img {
+      height: 5vh;
+      width: 5vh;
+      object-fit: contain;
+    }
+  }
 }
 
 .btn:hover {
@@ -68,12 +86,16 @@
 @media only screen and (max-width: $breakpoint) {
   .btn {
     width: 80vw;
+    @include setup_size(80vw, fit-content);
+    @include flex-center(row);
     border-radius: 12px;
-    height: 8vh;
+    min-height: 8vh;
     padding: 0 5px;
     h4 {
       font-size: 16px;
+      width: 90%;
       text-align: center;
+      margin: 0 3vw;
     }
   }
   .accordionContent {

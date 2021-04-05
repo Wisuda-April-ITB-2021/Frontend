@@ -1,30 +1,119 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Template } from "../Template/Template";
 import "./ApresiasiPage.scss";
 
+import { ASSETS_URL } from "../../api/urls";
 import { handleOrgzLocalStorage } from "../Shared/OrganisasiPage";
 import { Youtube } from "../../components/LandingComponents/Youtube";
 import { Spotify } from "../../components/LandingComponents/Spotify";
 
-export const ApresiasiPage = () => {
+import { fetchApresiasi, normalizeResponse } from "../Controller";
+import { Loading } from "../../components/shared/Loading/Loading";
+
+const findOrg = (list, location) => {
+  const subPath = location[2];
+  const targetSlug = location[3].toUpperCase();
+  const orgGroup =
+    subPath === "fakultas"
+      ? { ...list.FAKULTAS.HMJ, TPB: list.FAKULTAS.TPB }
+      : subPath === "ukm"
+      ? list.UKM
+      : list.ETC;
+
+  let data;
+  Object.keys(orgGroup).forEach((subMenu) => {
+    orgGroup[subMenu].forEach((org) => {
+      if (org.slug.toUpperCase() === targetSlug.toUpperCase()) {
+        data = org;
+      }
+    });
+  });
+  return data;
+};
+
+const generateYoutube = (data) => {
+  if (!data?.apresiasi_video) return <></>;
   return (
-    <Template className="container">
-      <div className="Tulisanatas">
-        <h3>Apresiasi Wisudawan</h3>
-        <h2>TPB STEI 2020</h2>
-      </div>
+    <>
       <h5 className="Tulisan">- Video -</h5>
       <div className="Youtube">
-        <Youtube link="https://www.youtube.com/embed/FiWxQQ5QcfU" />
+        <Youtube link={data.apresiasi_video} />
       </div>
+    </>
+  );
+};
+
+const generateSpotify = (data) => {
+  if (!data?.apresiasi_spotify) return <></>;
+  return (
+    <>
       <h5 className="Tulisan">- Spotify -</h5>
       <div className="Spotify">
-        <Spotify link="https://open.spotify.com/embed/track/4RAOI1etsgbh5NP3T5R8rN" />
+        <Spotify link={data.apresiasi_spotify} />
       </div>
+    </>
+  );
+};
+
+const generatePoster = (data) => {
+  if (!data?.apresiasi_poster) return <></>;
+  return (
+    <>
       <h5 className="Tulisan">- Poster -</h5>
-      <div className="Poster">{/* Masukin poster di sini */}</div>
+      <div className="Poster">
+        <img src={ASSETS_URL + "/" + data.apresiasi_poster} />
+      </div>
+    </>
+  );
+};
+
+const generateCerita = (data) => {
+  if (!data?.apresiasi_cerita) return <></>;
+  return (
+    <>
       <h5 className="Tulisan">- Cerita -</h5>
-      <div className="Cerita">{/* Masukin cerita di sini */}</div>
+      <div className="Cerita">{data.apresiasi_cerita}</div>
+    </>
+  );
+};
+
+export const ApresiasiPage = () => {
+  const location = useLocation().pathname.split("/");
+  const [data, setData] = useState({});
+
+  // useEffect(async () => {
+  //   try {
+  //     const res = normalizeResponse(await fetchApresiasi(slug));
+  //     setData(res);
+  //   } catch (err) {
+  //     setData({});
+  //   }
+  // }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await handleOrgzLocalStorage.get();
+      // console.log(data);
+      setData(findOrg(data, location));
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => console.log(data), [data]);
+  return (
+    <Template className="container">
+      {
+        <div className="Tulisanatas">
+          <h3>Apresiasi Wisudawan</h3>
+          {data ? <h2>{data.name}</h2> : <Loading />}
+        </div>
+      }
+
+      {generateYoutube(data)}
+      {generateSpotify(data)}
+      {generatePoster(data)}
+      {generateCerita(data)}
     </Template>
   );
 };

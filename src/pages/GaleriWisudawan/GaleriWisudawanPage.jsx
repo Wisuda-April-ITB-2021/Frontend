@@ -11,6 +11,7 @@ import WisudawanCardContainer from "../../components/shared/Cards/WisudawanCardC
 
 import "./GaleriWisudawanPage.scss";
 import { Loading } from "../../components/shared/Loading/Loading";
+import WisudawanFilter from "../../components/GaleriComponents/WisudawanFilter";
 
 const findOrg = (list, location) => {
   const subPath = location[2];
@@ -45,11 +46,11 @@ export const GaleriWisudawanPage = () => {
       const data = await handleOrgzLocalStorage.get();
       // console.log(data);
       setDataOrg(findOrg(data, location));
-      setLoaded(true);
 
       const wisudawan = await getAllWisudawan(location[3]);
       setDataWisudawan(wisudawan);
       // console.log(wisudawan);
+      setLoaded(true);
     };
     fetchData();
   }, []);
@@ -66,8 +67,8 @@ export const GaleriWisudawanPage = () => {
             image={dataOrg.logo}
           />
 
-          <h3>Daftar Wisudawan</h3>
-          <WisudawanCardContainer data={dataWisudawan} />
+          {/* <WisudawanCardContainer data={dataWisudawan} /> */}
+          <WisudawanFilter data={dataWisudawan} name={dataOrg.name} />
         </div>
       ) : (
         <h2>Organisasi tidak ditemukan</h2>

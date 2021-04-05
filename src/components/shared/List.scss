@@ -65,6 +65,7 @@ $bullet-size: 10px;
 }
 
 .listItemPost {
+  @include setup_size(100%,100%);
   position: relative;
 
   hr {
