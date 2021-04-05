@@ -13,10 +13,10 @@ const GAMES = [
     title: "Avatar Maker",
     Component: <Picrew />,
   },
-  {
-    title: "Gather Town",
-    Component: <GatherTown />,
-  },
+  // {
+  //   title: "Gather Town",
+  //   Component: <GatherTown />,
+  // },
   {
     title: "Mercusuar",
     Component: <Majalah />,
