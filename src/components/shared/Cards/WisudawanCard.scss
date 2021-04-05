@@ -1,3 +1,6 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixin.scss";
+
 .wisudawanCard {
   box-sizing: border-box;
   display: flex;
@@ -8,37 +11,56 @@
 
   background-image: url("../../../images/bg/card-bg.jpg");
   background-size: cover;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
-  transition: all ease 0.4s;
+  box-shadow: $shadow-blur;
+  transition: $default-transition,
+    box-shadow $transition-tween $transition-duration;
 
   margin: 1vw;
   padding: 3vw 3vw;
-  height: 32vw;
-  width: 24vw;
-  border-radius: 20px;
+  @include setup_size(24vw, 36vw);
+  border-radius: $border-radius;
 
-  .mainImage {
-    width: 15vw;
-    border-radius: 50%;
+  &:hover {
+    transform: translateY(-2%);
+    box-shadow: $shadow-light;
+    cursor: pointer;
   }
 
-  .cardBackground {
-    width: 20vw;
-    padding: 2vw;
-    position: absolute;
-    bottom: 7vw;
-    left: 3vw;
-    z-index: 2;
+  .images {
+    @include setup_size(15vw, 15vw);
+    position: relative;
+    .mainImage {
+      @include setup_size(100%, 100%);
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .cardBackground {
+      width: 20vw;
+      // padding: 2vw;
+      position: absolute;
+      bottom: -2vw;
+      left: -1.75vw;
+      z-index: 2;
+    }
   }
 
   h4 {
+    &:first-of-type {
+      color: $yellow;
+      transform: scale(1.1);
+    }
     font-size: 1.4vw;
   }
 
   p {
+    // @include setup_size(100%, 15%);
+    // @include setup_size(20vw, 2vw)
+    width: 22vw;
     text-align: center;
     font-size: 1.2vw;
     padding: 0 2vw;
+    margin-top: 1.5vw;
   }
 }
 
@@ -46,22 +68,35 @@
   background-color: #3999c985;
 }
 
-@media only screen and (max-width: 720px) {
+.wisudawan-card-tooltip {
+  @include setup_size(70%, fit-content);
+  position: absolute;
+  font-size: 12px;
+  padding: 7px;
+  text-align: left;
+  background: $darkBlueTransparent2;
+  border-radius: 7.5px;
+  bottom: 2%;
+  right: -5%;
+  backdrop-filter: blur(10px);
+}
+
+@media only screen and (max-width: $breakpoint) {
   .wisudawanCard {
     margin: 1.6vw;
-    height: 52vw;
-    width: 40vw;
+    @include setup_size(40vw, 65vw);
 
-    .mainImage {
-      width: 20vw;
-      border-radius: 50%;
-    }
+    .images {
+      @include setup_size(25vw, 25vw);
+      position: relative;
 
-    .cardBackground {
-      width: 27vw;
-      padding: 2vw;
-      bottom: 12vw;
-      left: 7.5vw;
+      .cardBackground {
+        width: 32vw;
+        position: absolute;
+        bottom: -2vw;
+        left: -1.75vw;
+        z-index: 2;
+      }
     }
 
     h4 {
@@ -70,7 +105,17 @@
 
     p {
       font-size: 2.5vw;
-      padding: 0 2vw;
+      width: 35vw;
     }
+  }
+
+  .wisudawan-card-tooltip {
+    @include setup_size(100%, fit-content);
+    position: absolute;
+    font-size: 8px;
+    padding: 7px;
+    bottom: -2%;
+    left: 7%;
+    backdrop-filter: blur(10px);
   }
 }

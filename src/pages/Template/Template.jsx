@@ -48,7 +48,7 @@ export const Template = ({ children, nofooter, nocontain, isLong }) => {
   const firstLayerOpacity = useTransform(
     scrollY,
     [0, parallaxHeight * 0.35],
-    [1, 0]
+    [1, 0.5]
   );
   const secondLayerOpacity = useTransform(
     scrollY,
@@ -58,12 +58,12 @@ export const Template = ({ children, nofooter, nocontain, isLong }) => {
   const thirdLayerOpacity = useTransform(
     scrollY,
     [0, parallaxHeight * 0.6],
-    [0, 1]
+    [0, 0.5]
   );
   const fourthLayerOpacity = useTransform(
     scrollY,
     [0, parallaxHeight * 0.15],
-    [1, 0]
+    [1, 0.5]
   );
   const firstLayerPosition = useTransform(
     scrollY,

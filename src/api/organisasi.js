@@ -57,3 +57,10 @@ export const getAllOrgz = async () => {
   mapOrgz(ORGZ_LIST, orgz);
   return ORGZ_LIST;
 };
+
+export const getAllWisudawan = async (slug) => {
+  const { data } = await axios.get(URL + "/wisudawan/org/" + slug);
+  const wisudawan = data.status === 200 && data.data;
+  if (!wisudawan) throw new Error(data);
+  return wisudawan;
+};

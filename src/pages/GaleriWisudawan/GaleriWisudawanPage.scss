@@ -17,10 +17,14 @@
     object-fit: contain;
     margin: 2vh 0;
   }
+  h3 {
+    margin: 5vh 0 2vh;
+  }
 }
 
 @media only screen and (max-width: $breakpoint) {
   .galeri-wisudawan-container {
+    padding: 5vh 0 0;
     .image {
       width: 20vh;
       height: 20vh;
