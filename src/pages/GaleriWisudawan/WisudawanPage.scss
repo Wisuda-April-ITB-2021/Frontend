@@ -16,6 +16,15 @@
   h3 {
     margin-bottom: 2.5vh;
   }
+  .media-social{
+    @include setup_size(100%,100%);
+    @include flex_center(row);
+    padding : 5%;
+    &>*{
+      svg{@include setup_size(5vh,5vh)};
+      padding : 0 0.5vw;
+    }
+  }
 }
 
 .bio {

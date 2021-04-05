@@ -19,6 +19,13 @@ import {
 	postMessage
 } from "../Controller";
 
+import {ReactComponent as InstagramIcon} from "../../icons/instagram.svg";
+import {ReactComponent as LinkedinIcon} from "../../icons/linkedin.svg";
+import {ReactComponent as TwitterIcon} from "../../icons/twitter.svg";
+import {ReactComponent as SpotifyIcon} from "../../icons/spotify.svg";
+import {ReactComponent as LineIcon} from "../../icons/line.svg";
+import {ReactComponent as TiktokIcon} from "../../icons/tiktok.svg";
+
 import {getFunFact, getKontribusi, parseOrgData, parsePrestasiKaryaData} from "../Util";
 
 const generateList = (data) => (
@@ -46,6 +53,50 @@ const generateAccordion = (data) => {
   }
 
   return <>{res}</>
+};
+
+const generateMediaSocial = (wisudawan) => {
+	if (!wisudawan.nama) return <></>;
+	let medsos = [
+		{
+			url: wisudawan.instagram,
+			C: <InstagramIcon className='social-media-icon instagram-icon' />,
+		},
+		{
+			url: wisudawan.twitter,
+			C: <TwitterIcon className='social-media-icon twitter-icon' />,
+		},
+		{
+			url: wisudawan.linkedin,
+			C: <LinkedinIcon className='social-media-icon linkedin-icon' />,
+		},
+		{
+			url: wisudawan.line,
+			C: <LineIcon className='social-media-icon line-icon' />,
+		},
+		{
+			url: wisudawan.spotify,
+			C: <TiktokIcon className='social-media-icon tiktok-icon' />,
+		},
+		{
+			url: wisudawan.spotify,
+			C: <SpotifyIcon className='social-media-icon spotify-icon' />,
+		},
+	];
+
+	return (
+		<div className='media-social'>
+			{medsos.map((row, i) =>
+				row.url ? (
+					<a href={row.url} target='_blank'>
+						{row.C}
+					</a>
+				) : (
+					<></>
+				)
+			)}
+		</div>
+	);
 };
 
 const generateFunFact = (wisudawan) =>{
@@ -145,7 +196,7 @@ export const WisudawanPage = () => {
 					</div>
 					<img src={parseImg(wisudawan.photo)} />
 					<h5 className='desc'>{wisudawan.judul_ta}</h5>
-					<div className='media-social'></div>
+					{generateMediaSocial(wisudawan)}
 				</div>
 
 				{generateFunFact(wisudawan)}
