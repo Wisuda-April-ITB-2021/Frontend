@@ -71,6 +71,10 @@
 
 .triangle {
   margin-right: 1vw;
+  transition: $default-transition;
+  &-open {
+    transform: rotate(180deg);
+  }
 }
 
 .accordionImage {
@@ -96,6 +100,9 @@
       width: 90%;
       text-align: center;
       margin: 0 3vw;
+    }
+    svg {
+      margin-right: 2vw;
     }
   }
   .accordionContent {

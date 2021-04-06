@@ -4,7 +4,7 @@ import { List, ListItemPost } from "../shared/List";
 import { sendAnalyticsAction, WISUDAWAN_ACTION } from "../../api/analytics";
 import "./Message.scss";
 
-const MessageForm = ({onPost}) => {
+const MessageForm = ({ onPost }) => {
   const [name, setName] = useState("");
   const [msg, setMsg] = useState("");
   const [tooltipMsg, setTooltipMsg] = useState("");
@@ -26,7 +26,7 @@ const MessageForm = ({onPost}) => {
   const handleSubmit = async () => {
     if (!msg) return;
     sendAnalyticsAction(WISUDAWAN_ACTION, "Send message");
-    onPost(name,msg);
+    onPost(name, msg);
   };
 
   return (
@@ -63,13 +63,13 @@ const Messages = (props) => {
   if (props.data) {
     messageList = props.data.map((el, idx) => {
       return (
-				<ListItemPost key={idx} title={el.sender}>
-					{el.message}
-				</ListItemPost>
-			);
+        <ListItemPost key={idx} title={el.sender}>
+          {el.message}
+        </ListItemPost>
+      );
     });
   } else {
-    messageList = <p>Write a message for {props.nama}!</p>;
+    messageList = <p>Yuk tulis pesan untuk wisudawan ini!</p>;
   }
 
   return <List>{messageList}</List>;
