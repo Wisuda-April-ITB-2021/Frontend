@@ -86,7 +86,6 @@ const shuffleBase = (skin) => {
 const shuffleFace = (ears) => {
   const getRandomFace = (name, allowEmpty = false) =>
     getRandomItem(FACE, name, allowEmpty);
-  // console.log(FACE);
 
   const alis = getRandomFace("alis");
   const etc = getRandomFace("etc", ALLOW_EMPTY);
@@ -144,7 +143,6 @@ const shuffleAccessories = (hand) => {
 };
 
 export const shuffle = () => {
-  // console.log(MENU_DB);
   const [skin, ears, hand] = shuffleEarsSkinHand();
   const base = shuffleBase(skin);
   const face = shuffleFace(ears);

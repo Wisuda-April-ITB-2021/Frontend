@@ -37,7 +37,6 @@ const download = (image, name) => {
 
 const getImage = () => {
   const target = document.querySelector(".picrew-container");
-  // console.log(target);
   return html2canvas(target, {
     scrollX: 0,
     scrollY: -window.pageYOffset,

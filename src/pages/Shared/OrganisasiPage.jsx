@@ -15,8 +15,8 @@ import { getAllOrgz } from "../../api/organisasi";
 import {
   galeriOptions,
   apresiasiOptions,
-  fakultasOptions,
-  dummyHimpunan,
+  // fakultasOptions,
+  // dummyHimpunan,
 } from "../Util";
 
 import "./OrganisasiPage.scss";
@@ -109,10 +109,8 @@ export const OrganisasiPage = () => {
   useEffect(() => {
     const fetchOrgz = async () => {
       const orgz = await handleOrgzLocalStorage.get();
-      // console.log(orgz);
       const currSubOptions = getOrgzGroups(orgz, page, currUrl);
       setData(currSubOptions);
-      // console.log(currSubOptions);
 
       let subOptionList = Object.keys(currSubOptions);
       subOptionList = subOptionList.map((str) => str.replace(/_/g, " "));
@@ -154,7 +152,10 @@ export const OrganisasiPage = () => {
           </AnimatePresence>
         </div>
         {data ? (
-          <OrganisasiCardContainer data={data[selected.replace(/ /g, "_")]} />
+          <OrganisasiCardContainer
+            path={`${page}/${currUrl}`}
+            data={data[selected.replace(/ /g, "_")]}
+          />
         ) : selected ? (
           <Loading />
         ) : (

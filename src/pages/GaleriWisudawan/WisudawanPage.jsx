@@ -156,7 +156,6 @@ const generatePrestasiKarya = (wisudawan) => {
       prestasiKarya.Prestasi.content.length === 0)
   )
     return <></>;
-  // console.log(prestasiKarya);
   return (
     <div className="prestasi">
       <h3>Prestasi Dan Karya</h3>
@@ -183,8 +182,8 @@ export const WisudawanPage = () => {
       alert("Pesan kamu sudah dikirim!");
       history.push(0);
     } catch (err) {
-      console.log(JSON.stringify(err));
-      alert("Sorry! Something went wrong! Please try again later!");
+      console.error(JSON.stringify(err));
+      alert("Maaf, terjadi error. Coba lagi dalam beberapa menit.");
     }
   };
 
@@ -196,16 +195,15 @@ export const WisudawanPage = () => {
       );
       fetchWisudawanMessage(id)
         .then((res) => {
-          // console.log("MASUK SINI BANG");
           setMessages(normalizeResponse(res));
         })
         .catch((err) => {
-          // console.log("GA ADA MESSAGE BANG");
+          throw new Error(err);
         });
       const data_wisudawan = { ...bio_wisudawan, ...content_wisudawan };
       setWisudawan(data_wisudawan);
     } catch (err) {
-      console.log(err);
+      throw new Error(err);
     }
   }, []);
 

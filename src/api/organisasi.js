@@ -35,7 +35,6 @@ const mapOrgz = (template, arr) => {
   const handleTPB = (org) => template["FAKULTAS"]["TPB"].push(org);
   const handleUKM = (org) => template["UKM"][org.category].push(org);
   const handleEtc = (org) => {
-    // console.log(org);
     if (template["ETC"][org.category]) template["ETC"][org.category].push(org);
     else template["ETC"]["TERPUSAT"].push(org);
   };

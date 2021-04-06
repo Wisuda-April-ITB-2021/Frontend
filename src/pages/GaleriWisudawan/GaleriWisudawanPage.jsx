@@ -6,7 +6,7 @@ import { getAllWisudawan } from "../../api/organisasi";
 import { Template } from "../Template/Template";
 
 import { handleOrgzLocalStorage } from "../Shared/OrganisasiPage";
-import WisudawanCardContainer from "../../components/shared/Cards/WisudawanCardContainer.jsx";
+// import WisudawanCardContainer from "../../components/shared/Cards/WisudawanCardContainer.jsx";
 // import imageHMJ from "../../components/GaleriComponents/AccordionAssets/image-hmj.png";
 
 import "./GaleriWisudawanPage.scss";
@@ -15,7 +15,7 @@ import WisudawanFilter from "../../components/GaleriComponents/WisudawanFilter";
 
 const findOrg = (list, location) => {
   const subPath = location[2];
-  const targetSlug = location[3].toUpperCase();
+  const targetSlug = location[3];
   const orgGroup =
     subPath === "hmj"
       ? list.FAKULTAS.HMJ
@@ -44,12 +44,10 @@ export const GaleriWisudawanPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await handleOrgzLocalStorage.get();
-      // console.log(data);
       setDataOrg(findOrg(data, location));
 
       const wisudawan = await getAllWisudawan(location[3]);
       setDataWisudawan(wisudawan);
-      // console.log(wisudawan);
       setLoaded(true);
     };
     fetchData();

@@ -8,7 +8,7 @@ import { handleOrgzLocalStorage } from "../Shared/OrganisasiPage";
 import { Youtube } from "../../components/LandingComponents/Youtube";
 import { Spotify } from "../../components/LandingComponents/Spotify";
 
-import { fetchApresiasi, normalizeResponse } from "../Controller";
+// import { fetchApresiasi, normalizeResponse } from "../Controller";
 import { Loading } from "../../components/shared/Loading/Loading";
 
 const findOrg = (list, location) => {
@@ -69,14 +69,31 @@ const generatePoster = (data) => {
 };
 
 const generateCerita = (data) => {
-  if (!data?.apresiasi_cerita) return <></>;
+  if (!data?.apresiasi_tulisan) return <></>;
+  const tulisan = data.apresiasi_tulisan
+    .split("\n")
+    .map((line, idx) =>
+      line === " " ? <br key={idx} /> : <p key={idx}>{line}</p>
+    );
   return (
     <>
-      <h5 className="Tulisan">- Cerita -</h5>
-      <div className="Cerita">{data.apresiasi_cerita}</div>
+      <h5 className="Tulisan">- Karya Tulis -</h5>
+      <div className="Cerita">{tulisan}</div>
     </>
   );
 };
+
+const generateContent = (data) => (
+  <>
+    {generateCerita(data)}
+    {generateYoutube(data)}
+    {generateSpotify(data)}
+    {generatePoster(data)}
+  </>
+);
+
+const isContentAvailable = (data) =>
+  data.apresiasi_poster || data.apresiasi_tulisan || data.apresiasi_video;
 
 export const ApresiasiPage = () => {
   const location = useLocation().pathname.split("/");
@@ -94,13 +111,11 @@ export const ApresiasiPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await handleOrgzLocalStorage.get();
-      // console.log(data);
       setData(findOrg(data, location));
     };
     fetchData();
   }, []);
 
-  useEffect(() => console.log(data), [data]);
   return (
     <Template className="container">
       {
@@ -110,10 +125,17 @@ export const ApresiasiPage = () => {
         </div>
       }
 
-      {generateYoutube(data)}
-      {generateSpotify(data)}
-      {generatePoster(data)}
-      {generateCerita(data)}
+      {data ? (
+        isContentAvailable(data) ? (
+          generateContent(data)
+        ) : (
+          <p style={{ textAlign: "center", marginTop: "10px" }}>
+            Tidak ada konten untuk ditampilkan.
+          </p>
+        )
+      ) : (
+        ""
+      )}
     </Template>
   );
 };

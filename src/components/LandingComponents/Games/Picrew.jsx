@@ -51,7 +51,6 @@ export const Picrew = () => {
 
   const shufflePicrew = () => {
     const images = shuffle();
-    // console.log(images);
     setData(images);
     setLocalPicrewImages(images);
   };

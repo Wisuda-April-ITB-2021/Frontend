@@ -11,7 +11,6 @@ import "../../components/LandingComponents/EventTable.scss";
 import "./EventPage.scss";
 
 export const EventPage = () => {
-  // console.log(findUpcomingEvent(EVENTS));
   const comingSoonEvent = findUpcomingEvent(EVENTS).title;
   return (
     <Template>
