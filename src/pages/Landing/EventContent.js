@@ -48,7 +48,8 @@ export const findUpcomingEvent = (events) => {
 };
 
 export const calculateDays = (date) => {
-  const today = new Date();
+  // const today = new Date();
+  const today = new Date("2021-04-11");
   const timeDifference = date.getTime() - today.getTime();
   return Math.round(timeDifference / (1000 * 60 * 60 * 24));
 };

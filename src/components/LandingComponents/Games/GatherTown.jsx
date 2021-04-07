@@ -2,10 +2,9 @@ import React from "react";
 import Accordion from "../../GaleriComponents/Accordion";
 import "./GatherTown.scss";
 
-const himpunan = (name, link, available = true) => ({
+const himpunan = (name, link) => ({
   himpunan: name,
   link,
-  available,
 });
 const fakultas = (name, himpunan) => ({ name, himpunan });
 
@@ -19,7 +18,7 @@ const DAFTAR_LINK = [
   ]),
   fakultas("SITH-S", [
     himpunan("HIMABIO", "bit.ly/GThimabio"),
-    himpunan("HIMAMIKRO", "bit.ly", false),
+    himpunan("HIMAMIKRO", "bit.ly/GThimamikro"),
   ]),
   fakultas("SITH-R", [
     himpunan("HMRH", "bit.ly/GThmrh"),
@@ -53,31 +52,22 @@ const DAFTAR_LINK = [
     himpunan("KMIL", "bit.ly/GT_kmil"),
   ]),
   fakultas("FTI", [
-    himpunan("HIMATEK", "bit.ly", false),
-    himpunan("HMFT", "bit.ly", false),
-    himpunan("MTI", "bit.ly", false),
+    himpunan("HIMATEK", "bit.ly/GThimatek"),
+    himpunan("HMFT", "bit.ly/GT_HMFT"),
+    himpunan("MTI", "bit.ly/GT_mti"),
     himpunan("HMTB", "bit.ly/GT_HMTB"),
     himpunan("HMPG", "bit.ly/GTHMPG"),
   ]),
-  fakultas("FSRD", [
-    himpunan("VASA", "bit.ly", false),
-    himpunan("TERIKAT", "bit.ly", false),
-    himpunan("IPPDIG", "bit.ly", false),
-    himpunan("INDDES", "bit.ly", false),
-    himpunan("IMDI", "bit.ly", false),
-  ]),
+  fakultas("FSRD", [himpunan("KMSR", "bit.ly/GT_KMSR")]),
   fakultas("FTMD", [
     himpunan("HMM", "bit.ly/GT_hmm"),
-    himpunan("KMPN", "bit.ly", false),
+    himpunan("KMPN", "bit.ly/GT-KMPN"),
     himpunan("MTM", "bit.ly/GTmtm"),
   ]),
-  fakultas("SBM", [
-    himpunan("IMK", "bit.ly", false),
-    himpunan("KMM", "bit.ly", false),
-  ]),
+  fakultas("SBM", [himpunan("SBM", "bit.ly/GTsbm")]),
   fakultas("SAPPK", [
-    himpunan("IMA-G", "bit.ly", false),
-    himpunan("HMP", "bit.ly", false),
+    himpunan("IMA-G", "bit.ly/GTima-g"),
+    himpunan("HMP", "bit.ly/GT-HMPPL"),
   ]),
 ];
 
@@ -89,11 +79,7 @@ const Table = ({ links }) => {
           <tr key={idx}>
             <td>{himpunan}</td>
             <td className="table-info">
-              {available ? (
-                <a href={"https://" + link}>{link}</a>
-              ) : (
-                <p>Belum ada</p>
-              )}
+              <a href={"https://" + link}>{link}</a>
             </td>
           </tr>
         ))}

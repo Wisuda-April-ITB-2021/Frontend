@@ -21,8 +21,9 @@ export const Navbar = () => {
   const [isMobile, setIsMobile] = useState(checkIsMobile());
   useEffect(() => {
     function handleResize() {
+      // alert(window.innerWidth);
       setIsMobile(checkIsMobile());
-      setOpen((prev) => !prev);
+      // setOpen((prev) => !prev);
     }
     window.addEventListener("resize", handleResize);
     return () => {
@@ -35,7 +36,7 @@ export const Navbar = () => {
     <nav className="navbar">
       <div
         className="navbar-close-overlay"
-        style={{ display: isOpen ? "block" : "none" }}
+        style={{ display: isMobile && isOpen ? "block" : "none" }}
         onClick={toogleOpen}
       />
       <Link to="/" className="navbar-logo">
@@ -43,10 +44,14 @@ export const Navbar = () => {
         <h4>WISPRIL 2021</h4>
       </Link>
       <NavbarLinks isOpen={isOpen} isMobile={isMobile} />
-      <div className="navbar-background" />
-      <div className="navbar-button" onClick={toogleOpen}>
-        <div className={`navbar-line ${isOpen && "navbar-line-active"}`} />
-      </div>
+      {isMobile && (
+        <>
+          <div className="navbar-background" />
+          <div className="navbar-button" onClick={toogleOpen}>
+            <div className={`navbar-line ${isOpen && "navbar-line-active"}`} />
+          </div>
+        </>
+      )}
     </nav>
   );
 };

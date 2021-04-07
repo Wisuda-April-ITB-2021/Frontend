@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { sendAnalyticsAction, PICREW_ACTION } from "../../../api/analytics";
 
 import "./Picrew.scss";
 
@@ -21,7 +22,7 @@ import { ReactComponent as Text } from "../../../icons/text.svg";
 
 const defaultText = "Ketik di sini";
 
-export const Picrew = () => {
+const Picrew = () => {
   let initialData = getLocalPicrewImages() || createDataTemplate();
   let initialText = getLocalPicrewText() || defaultText;
   const [data, setData] = useState(initialData);
@@ -47,6 +48,7 @@ export const Picrew = () => {
     setText(text);
     setLocalPicrewImages(images);
     setLocalPicrewText(text);
+    sendAnalyticsAction(PICREW_ACTION, "Reset Picrew");
   };
 
   const shufflePicrew = () => {
@@ -115,3 +117,5 @@ export const Picrew = () => {
     </div>
   );
 };
+
+export default Picrew;

@@ -1,4 +1,5 @@
 import { MENU_DB } from "./PicrewMenu";
+import { sendAnalyticsAction, PICREW_ACTION } from "../../../api/analytics";
 import { createDataTemplate } from "./picrewFunctions";
 
 // export const createDataTemplate = () => ({
@@ -155,5 +156,6 @@ export const shuffle = () => {
     accessories: { ...template.accessories, ...accessories },
   };
 
+  sendAnalyticsAction(PICREW_ACTION, "Shuffle Picrew");
   return template;
 };

@@ -15,10 +15,10 @@
   // box-shadow: $shadow-blur;
   filter: drop-shadow($shadow-blur);
   transition: $default-transition;
-  &-background,
-  &-button {
-    display: none;
-  }
+  // &-background,
+  // &-button {
+  //   display: none;
+  // }
   &-logo,
   &-links {
     transition: $default-transition;

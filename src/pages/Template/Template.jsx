@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
 
 import { pageVariants, pageTransition } from "./variants";
@@ -13,6 +13,9 @@ import OrnamentLayer4 from "../../images/bg/bg-layer4.png";
 import Background from "../../images/bg/bg-long-black.png";
 
 import "./Template.scss";
+const Sponsor = lazy(() =>
+  import("../../components/TemplateComponents/Sponsor")
+);
 
 const Fireflies = () => (
   <div className="firefly-wrap">
@@ -137,6 +140,15 @@ export const Template = ({ children, nofooter, nocontain, isLong }) => {
       >
         <div className={`template${nocontain ? "-header" : "-content"}`}>
           {children}
+          <Suspense
+            fallback={
+              <p style={{ textAlign: "center" }}>
+                Loading Sponsor and Media Parters...
+              </p>
+            }
+          >
+            <Sponsor />
+          </Suspense>
         </div>
       </motion.div>
       {<Fireflies />}

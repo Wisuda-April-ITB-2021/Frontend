@@ -9,13 +9,12 @@
   background: $black;
   overflow: hidden;
   &-header {
-    margin-top: $navbar-height;
+    margin: $navbar-height 0 220px;
   }
   &-content {
-    margin: $navbar-height auto 0;
+    margin: $navbar-height auto 220px;
     width: 60vw;
     position: relative;
-    margin-bottom: 220px;
     z-index: 2;
 
     &::before {
@@ -89,6 +88,9 @@
 
 @media only screen and (max-width: $breakpoint) {
   .template {
+    &-header {
+      margin-bottom: 275px;
+    }
     &-content {
       width: 90vw;
       margin-bottom: 45vh;
