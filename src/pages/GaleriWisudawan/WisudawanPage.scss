@@ -6,6 +6,7 @@
   grid-template-columns: 1fr;
   gap: 5vh;
   & > *:not(.message-form) {
+    @include setup_size(100%,100%);
     @include flex_center(column);
   }
   .fun-facts {

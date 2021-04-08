@@ -99,18 +99,18 @@ const generateMediaSocial = (wisudawan) => {
   ];
 
   return (
-    <div className="media-social">
-      {medsos.map((row, i) =>
-        row.url ? (
-          <a href={row.url} key={i} target="_blank">
-            {row.C}
-          </a>
-        ) : (
-          <p key={i}></p>
-        )
-      )}
-    </div>
-  );
+		<div className='media-social footer-logo'>
+			{medsos.map((row, i) =>
+				row.url ? (
+					<a href={row.url} key={i} target='_blank'>
+						{row.C}
+					</a>
+				) : (
+					<p key={i}></p>
+				)
+			)}
+		</div>
+	);
 };
 
 const generateFunFact = (wisudawan) => {
