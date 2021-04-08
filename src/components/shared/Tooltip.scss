@@ -57,3 +57,18 @@
     margin-bottom: 2.5%;
   }
 }
+
+@media only screen and (max-width: $breakpoint) {
+  .tooltip{
+    p{font-size: clamp(10px, 1.5vw, 14px);}
+    .tooltip-text{
+      min-width: 50vw;
+      left : -30%;
+      padding : 10%;
+      &::before {
+        right: 20%;
+        top: -15px;
+      }
+    }
+  }
+}
