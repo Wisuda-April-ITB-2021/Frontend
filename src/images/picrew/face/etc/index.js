@@ -1,38 +1,38 @@
 
-const ACROSS_BERRY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/across-berry.png"
-const ACROSS_BURGUNDY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/across-burgundy.png"
-const ACROSS_CHERRY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/across-cherry.png"
-const ACROSS_PEACH = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/across-peach.png"
-const ACROSS_PINK = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/across-pink.png"
-const ACROSS_VR = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/across-vr.png"
+import ACROSS_BERRY from './across-berry.png'
+import ACROSS_BURGUNDY from './across-burgundy.png'
+import ACROSS_CHERRY from './across-cherry.png'
+import ACROSS_PEACH from './across-peach.png'
+import ACROSS_PINK from './across-pink.png'
+import ACROSS_VR from './across-vr.png'
 
-const BLOB_BERRY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/blob-berry.png"
-const BLOB_BURGUNDY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/blob-burgundy.png"
-const BLOB_CHERRY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/blob-cherry.png"
-const BLOB_PEACH = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/blob-peach.png"
-const BLOB_PINK = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/blob-pink.png"
-const BLOB_VR = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/blob-vr.png"
+import BLOB_BERRY from './blob-berry.png'
+import BLOB_BURGUNDY from './blob-burgundy.png'
+import BLOB_CHERRY from './blob-cherry.png'
+import BLOB_PEACH from './blob-peach.png'
+import BLOB_PINK from './blob-pink.png'
+import BLOB_VR from './blob-vr.png'
 
-const SLAPPED_BERRY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/slapped-berry.png"
-const SLAPPED_BURGUNDY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/slapped-burgundy.png"
-const SLAPPED_CHERRY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/slapped-cherry.png"
-const SLAPPED_PEACH = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/slapped-peach.png"
-const SLAPPED_PINK = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/slapped-pink.png"
-const SLAPPED_VR = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/slapped-vr.png"
+import SLAPPED_BERRY from './slapped-berry.png'
+import SLAPPED_BURGUNDY from './slapped-burgundy.png'
+import SLAPPED_CHERRY from './slapped-cherry.png'
+import SLAPPED_PEACH from './slapped-peach.png'
+import SLAPPED_PINK from './slapped-pink.png'
+import SLAPPED_VR from './slapped-vr.png'
 
-const STRIPE_BERRY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/stripe-berry.png"
-const STRIPE_BURGUNDY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/stripe-burgundy.png"
-const STRIPE_CHERRY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/stripe-cherry.png"
-const STRIPE_PEACH = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/stripe-peach.png"
-const STRIPE_PINK = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/stripe-pink.png"
-const STRIPE_VR = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/stripe-vr.png"
+import STRIPE_BERRY from './stripe-berry.png'
+import STRIPE_BURGUNDY from './stripe-burgundy.png'
+import STRIPE_CHERRY from './stripe-cherry.png'
+import STRIPE_PEACH from './stripe-peach.png'
+import STRIPE_PINK from './stripe-pink.png'
+import STRIPE_VR from './stripe-vr.png'
 
-const SWIRL_BERRY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/swirl-berry.png"
-const SWIRL_BURGUNDY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/swirl-burgundy.png"
-const SWIRL_CHERRY = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/swirl-cherry.png"
-const SWIRL_PEACH = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/swirl-peach.png"
-const SWIRL_PINK = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/swirl-pink.png"
-const SWIRL_VR = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/swirl-vr.png"
+import SWIRL_BERRY from './swirl-berry.png'
+import SWIRL_BURGUNDY from './swirl-burgundy.png'
+import SWIRL_CHERRY from './swirl-cherry.png'
+import SWIRL_PEACH from './swirl-peach.png'
+import SWIRL_PINK from './swirl-pink.png'
+import SWIRL_VR from './swirl-vr.png'
 
 
 const ETC = [

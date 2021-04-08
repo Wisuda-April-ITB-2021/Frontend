@@ -7,13 +7,13 @@ import MATA from './mata'
 import MULUT from './mulut'
 import TELINGA from './telinga'
 
-const ALIS_THUMB = 'https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/alis-min.png'
-const ETC_THUMB = 'https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/etc-min.png'
-const HIDUNG_THUMB = 'https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/hidung-min.png'
-const JANGGUT_THUMB = 'https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/janggut-min.png'
-const MATA_THUMB = 'https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/mata-min.png'
-const TELINGA_THUMB = 'https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/telinga-min.png'
-const MULUT_THUMB = 'https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/mulut-min.png'
+import ALIS_THUMB from './alis-min.png'
+import ETC_THUMB from './etc-min.png'
+import HIDUNG_THUMB from './hidung-min.png'
+import JANGGUT_THUMB from './janggut-min.png'
+import MATA_THUMB from './mata-min.png'
+import TELINGA_THUMB from './telinga-min.png'
+import MULUT_THUMB from './mulut-min.png'
 
 
 const FACE = {

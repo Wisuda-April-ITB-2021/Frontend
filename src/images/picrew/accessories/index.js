@@ -4,12 +4,12 @@ import JAHIM from "./jahim";
 import KEPALA from "./kepala";
 import OUTER from "./outer";
 import POSE from "./pose";
-const ETC_THUMB = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/etc.png";
-const INNER_THUMB = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/inner.png";
-const JAHIM_THUMB = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/jahim.png";
-const KEPALA_THUMB = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/kepala.png";
-const OUTER_THUMB = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/outer.png";
-const POSE_THUMB = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/pose.png";
+import ETC_THUMB from "./etc.png";
+import INNER_THUMB from "./inner.png";
+import JAHIM_THUMB from "./jahim.png";
+import KEPALA_THUMB from "./kepala.png";
+import OUTER_THUMB from "./outer.png";
+import POSE_THUMB from "./pose.png";
 
 export default {
   etc: {

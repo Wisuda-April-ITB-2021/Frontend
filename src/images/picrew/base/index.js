@@ -3,11 +3,11 @@ import RAMBUT_BELAKANG from "./rambut-belakang"
 import RAMBUT_ETC from "./rambut-etc"
 import RAMBUT_PONI from "./rambut-poni"
 import SKIN from "./skin"
-const BG_THUMB = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/bg.png"
-const RAMBUT_BELAKANG_THUMB = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/rambut-belakang.png"
-const RAMBUT_ETC_THUMB = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/rambut-etc.png"
-const RAMBUT_PONI_THUMB = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/rambut-poni.png"
-const SKIN_THUMB = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/skin.png"
+import BG_THUMB from "./bg.png"
+import RAMBUT_BELAKANG_THUMB from "./rambut-belakang.png"
+import RAMBUT_ETC_THUMB from "./rambut-etc.png"
+import RAMBUT_PONI_THUMB from "./rambut-poni.png"
+import SKIN_THUMB from "./skin.png"
 const BASE = {
 	bg: {
 		image: BG_THUMB,
