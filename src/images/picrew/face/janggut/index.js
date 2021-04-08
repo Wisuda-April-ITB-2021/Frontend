@@ -1,22 +1,22 @@
-// import ANTING_1 from "./anting-1.png"
-// import CHOKER_BUNGA from "./choker-bunga.png"
-// import FRECKLESS_1 from "./freckless-1.png"
-// import FRECKLESS_2 from "./freckless-2.png"
-// import FRECKLESS_3 from "./freckless-3.png"
-import GOATEE_1 from "./goatee-1.png";
-import JENGGOT_FULL_1 from "./jenggot-full-1.png";
-import JENGGOT_FULL_2 from "./jenggot-full-2.png";
-import JENGGOT_NANGGUNG_1 from "./jenggot-nanggung-1.png";
-import JENGGOT_PENDEK_1 from "./jenggot-pendek-1.png";
-import JENGGOT_SETENGAH_1 from "./jenggot-setengah-1.png";
-// import JERAWAT_2 from "./jerawat-2.png"
-// import KALUNG_1 from "./kalung-1.png"
-// import KALUNG_2 from "./kalung-2.png"
-// import KALUNG_3 from "./kalung-3.png"
-import KUMIS_AGAK_TEBEL from "./kumis-agak-tebel.png";
-import KUMIS_TIPIS_1 from "./kumis-tipis-1.png";
-import KUMIS_TIPIS_2 from "./kumis-tipis-2.png";
-// import TINDIK_HIDUNG_1 from "./tindik-hidung-1.png"
+// const ANTING_1 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/anting-1.png"
+// const CHOKER_BUNGA = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/choker-bunga.png"
+// const FRECKLESS_1 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/freckless-1.png"
+// const FRECKLESS_2 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/freckless-2.png"
+// const FRECKLESS_3 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/freckless-3.png"
+const GOATEE_1 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/janggut/goatee-1.png";
+const JENGGOT_FULL_1 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/janggut/jenggot-full-1.png";
+const JENGGOT_FULL_2 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/janggut/jenggot-full-2.png";
+const JENGGOT_NANGGUNG_1 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/janggut/jenggot-nanggung-1.png";
+const JENGGOT_PENDEK_1 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/janggut/jenggot-pendek-1.png";
+const JENGGOT_SETENGAH_1 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/janggut/jenggot-setengah-1.png";
+// const JERAWAT_2 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/jerawat-2.png"
+// const KALUNG_1 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/kalung-1.png"
+// const KALUNG_2 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/kalung-2.png"
+// const KALUNG_3 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/kalung-3.png"
+const KUMIS_AGAK_TEBEL = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/janggut/kumis-agak-tebel.png";
+const KUMIS_TIPIS_1 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/janggut/kumis-tipis-1.png";
+const KUMIS_TIPIS_2 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/janggut/kumis-tipis-2.png";
+// const TINDIK_HIDUNG_1 = "https://wisprilitb.sgp1.cdn.digitaloceanspaces.com/PicrewX/tindik-hidung-1.png"
 
 const JANGGUT = [
   // ANTING_1,

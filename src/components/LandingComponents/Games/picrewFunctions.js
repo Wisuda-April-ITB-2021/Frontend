@@ -42,6 +42,9 @@ const getImage = () => {
     scrollY: -window.pageYOffset,
     backgroundColor: null,
     scale: 1080 / target.scrollHeight,
+    useCORS : true,
+    allowTaint : false,
+    logging : true,
   }).then((canvas) => canvas.toDataURL("image/png"));
 };
 
@@ -71,6 +74,7 @@ export const downloadPicrew = async () => {
     "Fitur download kemungkinan tidak bekerja dengan baik untuk pengguna iOS atau browser Safari. Silakan coba download Wispril Avatar buatanmu dengan perangkat Android atau browser seperti Chrome";
   if (isNotCompatible()) alert(errorMsg);
   const image = await getImage();
+  console.log(image);
   download(image, "wispril-avatar.png");
   sendAnalyticsAction(PICREW_ACTION, "Download Picrew");
 };
