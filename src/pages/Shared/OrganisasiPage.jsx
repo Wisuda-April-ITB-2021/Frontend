@@ -115,6 +115,7 @@ export const OrganisasiPage = () => {
       let subOptionList = Object.keys(currSubOptions);
       subOptionList = subOptionList.map((str) => str.replace(/_/g, " "));
       setSubOptions(subOptionList);
+      setSelected(subOptionList[0]);
     };
     fetchOrgz();
   }, [currUrl]);
