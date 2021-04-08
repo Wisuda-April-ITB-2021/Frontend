@@ -1,72 +1,96 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
+import { motion, AnimatePresence } from "framer-motion";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
 import { Template } from "../Template/Template";
 import OrganisasiCardContainer from "../../components/shared/Cards/OrganisasiCardContainer.jsx";
-import WisudawanCardContainer from "../../components/shared/Cards/WisudawanCardContainer.jsx";
 
 import { ReactComponent as LeftArrow } from "../../icons/leftArrow.svg";
 import { ReactComponent as RightArrow } from "../../icons/rightArrow.svg";
 
-import Accordion from "../../components/GaleriComponents/Accordion";
-import imageHMJ from "../../components/GaleriComponents/AccordionAssets/image-hmj.png";
-import imageUnit from "../../components/GaleriComponents/AccordionAssets/image-unit.png";
-import imageAward from "../../components/GaleriComponents/AccordionAssets/image-award.png";
+import { getAllOrgz } from "../../api/organisasi";
+
+import {
+  galeriOptions,
+  apresiasiOptions,
+  // fakultasOptions,
+  // dummyHimpunan,
+} from "../Util";
 
 import "./OrganisasiPage.scss";
+import { Loading } from "../../components/shared/Loading/Loading";
 
-const options = [
-  { title: "Himpunan (HMJ)", url: "hmj", idx: 0 },
-  { title: "Unit (UKM)", url: "ukm", idx: 1 },
-  { title: "Lainnya", url: "etc", idx: 2 },
-];
 // Page ini dipake buat both apresiasi sama galeri wisudawan. Nanti baca URL nya aja dari routes.js.
+
+const localItemName = "orgz";
+export const handleOrgzLocalStorage = {
+  set: (orgz) => {
+    const data = {
+      orgz,
+      lastUpdated: new Date(),
+    };
+    localStorage.setItem(localItemName, JSON.stringify(data));
+  },
+  get: async () => {
+    const setOrgz = async () => {
+      const orgzList = await getAllOrgz();
+      handleOrgzLocalStorage.set(orgzList);
+      return orgzList;
+    };
+
+    // ambil dari local storage. Kalo blm ada, panggil API
+    const res = JSON.parse(localStorage.getItem(localItemName));
+    if (!res) return await setOrgz();
+
+    // kalo ada, cek datanya masih valid ga (10 menit)
+    const { orgz, lastUpdated } = res;
+    const isDataOutdated = new Date() - new Date(lastUpdated) > 10 * 60 * 60;
+    if (isDataOutdated) return await setOrgz();
+    return orgz; // kalo valid, pake dari local storage aja
+  },
+};
+
+const getOrgzGroups = (data, mainPath, subPath) => {
+  if (mainPath === "galeri-wisudawan") {
+    return subPath === "hmj"
+      ? data.FAKULTAS.HMJ
+      : subPath === "ukm"
+      ? data.UKM
+      : data.ETC;
+  } else {
+    // apresiasi
+    return subPath === "fakultas"
+      ? { ...data.FAKULTAS.HMJ, TPB: data.FAKULTAS.TPB }
+      : subPath === "ukm"
+      ? data.UKM
+      : data.ETC;
+  }
+};
+
 export const OrganisasiPage = () => {
   const location = useLocation().pathname.split("/");
+  const page = location[1];
   const location_key = location[location.length - 1];
-  const idx_key = options.filter((row) => row.url === location_key)[0].idx;
+  const targetOptions =
+    page === "galeri-wisudawan" ? galeriOptions : apresiasiOptions;
+  const path = targetOptions.filter((row) => row.url === location_key)[0];
+  let idx_key;
+  if (path) {
+    idx_key = path.idx;
+  } else {
+    window.location.href = `/${page}/${targetOptions[0].url}`;
+  }
 
-  const [subOptions, setSubOptions] = useState([
-    "FITB",
-    "FMIPA",
-    "FSRD",
-    "FTI",
-    "FTMD",
-    "FTSL",
-    "FTTM",
-    "SAPPK",
-    "SBM",
-    "SF",
-    "SITH",
-    "STEI",
-  ]);
-  const [data, setData] = useState([
-    {
-      text: "HMMME ATMOSPHAIRA ITB",
-      img: "https://picsum.photos/200",
-      url: "https://www.google.com",
-    },
-    {
-      text: "HMO TRITON ITB",
-      img: "https://picsum.photos/200",
-      url: "https://www.google.com",
-    },
-    {
-      text: "HMTG GEA ITB",
-      img: "https://picsum.photos/200",
-      url: "https://www.google.com",
-    },
-    {
-      text: "IMG ITB",
-      img: "https://picsum.photos/200",
-      url: "https://www.google.com",
-    },
-  ]);
+  // const [options, setOptions] = useState(targetOptions);
+  const options = targetOptions;
+
+  const [subOptions, setSubOptions] = useState();
+  const [data, setData] = useState();
   const [selectedOptions, setSelectedOptions] = useState(idx_key);
-  const [selected, setSelected] = useState("FITB");
+  const [selected, setSelected] = useState("");
+  const [currUrl, setCurrUrl] = useState(path.url);
 
   const handleChangeOption = (val) => {
     let targetVal = selectedOptions + val;
@@ -77,9 +101,23 @@ export const OrganisasiPage = () => {
     window.history.replaceState(
       null,
       "Wisuda April ITB 2021",
-      `/galeri-wisudawan/${url}`
+      `/${page}/${url}`
     );
+    setCurrUrl(url);
   };
+
+  useEffect(() => {
+    const fetchOrgz = async () => {
+      const orgz = await handleOrgzLocalStorage.get();
+      const currSubOptions = getOrgzGroups(orgz, page, currUrl);
+      setData(currSubOptions);
+
+      let subOptionList = Object.keys(currSubOptions);
+      subOptionList = subOptionList.map((str) => str.replace(/_/g, " "));
+      setSubOptions(subOptionList);
+    };
+    fetchOrgz();
+  }, [currUrl]);
 
   return (
     <Template>
@@ -91,41 +129,38 @@ export const OrganisasiPage = () => {
           selected={selectedOptions}
         />
         <div className="suboptions-container">
-          {subOptions.map((row, i) => (
-            <OrganisasiTag
-              text={row}
-              key={i}
-              active={row === selected}
-              onClick={setSelected}
-            />
-          ))}
+          <AnimatePresence exitBeforeEnter>
+            {subOptions ? (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                key={subOptions[0]}
+              >
+                {subOptions.map((row, i) => (
+                  <OrganisasiTag
+                    text={row}
+                    key={i}
+                    active={row === selected}
+                    onClick={setSelected}
+                  />
+                ))}
+              </motion.div>
+            ) : (
+              <Loading />
+            )}
+          </AnimatePresence>
         </div>
-        <OrganisasiCardContainer data={data} />
-        <h1>Wisudawan</h1>
-        <WisudawanCardContainer />
-        <h1>Accordion</h1>
-        <Accordion
-          title='HMME "Atmospharia" ITB'
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          image={imageHMJ}
-        />
-
-        <Accordion
-          title="Unit Kebudayaan Jepang"
-          content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          image={imageUnit}
-        />
-
-        <Accordion
-          title="Prestasi"
-          content="
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <br/>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          "
-          image={imageAward}
-        />
+        {data ? (
+          <OrganisasiCardContainer
+            path={`${page}/${currUrl}`}
+            data={data[selected.replace(/ /g, "_")]}
+          />
+        ) : selected ? (
+          <Loading />
+        ) : (
+          ""
+        )}
       </div>
     </Template>
   );

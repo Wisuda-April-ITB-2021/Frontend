@@ -1,0 +1,96 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixin.scss";
+
+@mixin _max_size($max-width, $max-height) {
+  max-width: $max-width;
+  max-height: $max-height;
+}
+
+@mixin max_size($size) {
+  @include _max_size($size, $size);
+}
+
+.sponsor-medpar {
+  text-align: center;
+  margin: 5vh 0;
+  h3:not(:first-of-type) {
+    margin: 10vh 0 5vh;
+  }
+}
+
+.logo {
+  &-container {
+    @include flex-center(row);
+    flex-wrap: wrap;
+    max-width: 60vw;
+    margin: 0 auto;
+
+    img {
+      margin: 5px;
+    }
+  }
+
+  $sizes-label: ("xl", "l", "m", "s");
+  $sizes-dimension: (
+    "xl": 29vw,
+    "l": 20vw,
+    "m": 13vw,
+    "s": 10vw,
+  );
+
+  @each $size in $sizes-label {
+    &-#{$size} {
+      @include max_size(map-get($sizes-dimension, $size));
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tab) {
+  .sponsor-medpar {
+    h3 {
+      margin: 4vh 0 3vh !important;
+    }
+  }
+  .logo {
+    &-container {
+      max-width: 90vw;
+    }
+    $sizes-label: ("xl", "l", "m", "s");
+    $sizes-dimension: (
+      "xl": 30vh,
+      "l": 19vh,
+      "m": 13vh,
+      "s": 10vh,
+    );
+    @each $size in $sizes-label {
+      &-#{$size} {
+        @include max_size(map-get($sizes-dimension, $size));
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint) {
+  .sponsor-medpar {
+    h3 {
+      margin: 4vh 0 3vh !important;
+    }
+  }
+  .logo {
+    &-container {
+      max-width: 90vw;
+    }
+    $sizes-label: ("xl", "l", "m", "s");
+    $sizes-dimension: (
+      "xl": 40vh,
+      "l": 25vh,
+      "m": 20vh,
+      "s": 15vh,
+    );
+    @each $size in $sizes-label {
+      &-#{$size} {
+        @include max_size(map-get($sizes-dimension, $size));
+      }
+    }
+  }
+}

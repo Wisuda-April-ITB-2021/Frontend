@@ -1,52 +1,94 @@
 @import "../../styles/mixin.scss";
 @import "../../styles/variables.scss";
 
-.message-form{
-  @include setup_size(100%,100%);
+.message-form {
+  @include setup_size(100%, 100%);
   display: grid;
   border-radius: 16px;
-  gap : 5px;
+  gap: 5px;
   grid-template-areas:
-  'message message message message'
-  'sender sender sender submit';
-  &>*{
+    "message message message message"
+    "sender sender sender submit";
+  & > * {
     background-color: $darkBlue;
   }
 
-  h6{ //  ini yang jadi label
-    color : $yellow;
+  h6 {
+    //  ini yang jadi label
+    color: $yellow;
     margin-bottom: 5px;
   }
 
-  input, textarea, button{
+  input,
+  textarea,
+  h6 {
+    padding: 0% 1.5%;
+  }
+  h6 {
+    padding: 0.5% 1.5% 0;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  input,
+  textarea,
+  button {
     width: 100%;
     background-color: transparent;
     border: none;
-    color : $lightGreen;
+    color: $lightGreen;
     font-size: clamp(16px, 1.4vw, 18px);
   }
 
-  .message,.sender,.message-send{
-    @include setup_size(100%,100%);
-    padding : 1vw;
+  .message,
+  .sender,
+  .message-send {
+    @include setup_size(100%, 100%);
+    padding: 1vw;
   }
 
-  .form-col{
+  .form-col {
     @include flex_center(column);
     align-items: flex-start;
   }
 
-  .message{
+  .message {
     grid-area: message;
-    input{height: 10vh};
+    input {
+      height: 10vh;
+    }
     border-radius: 16px 16px 0 0;
   }
-  .sender{grid-area: sender; border-radius: 0 0 0 16px;}
+  .sender {
+    grid-area: sender;
+    border-radius: 0 0 0 16px;
+  }
 
-  .message-send{
+  .message-send {
     grid-area: submit;
     background-color: $blue;
     border-radius: 0 0 16px 0;
     cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: $breakpoint) {
+  .message-form {
+    display: grid !important;
+    h6 {
+      margin-bottom: 2.5px;
+    }
+    input,
+    textarea,
+    button {
+      font-size: clamp(14px, 1.2vw, 14px);
+    }
+    .message,
+    .sender,
+    .message-send {
+      padding: 5vw;
+    }
   }
 }

@@ -1,2 +1,76 @@
 @import "../../../styles/mixin.scss";
 @import "../../../styles/variables.scss";
+
+.picrew-content {
+  @include setup_size(100%, 100%);
+  @include flex-center(column);
+  overflow: hidden;
+  position: relative;
+  p {
+    padding: 0 20%;
+  }
+  img {
+    @include setup_size(100%, 100%);
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+  .logo {
+    @include setup_size(20%, 20%);
+    position: absolute;
+    transform: translate(385%, 20%);
+    z-index: 50;
+    filter: drop-shadow($shadow-blur);
+  }
+  .text {
+    position: absolute;
+    width: 100%;
+    text-overflow: ellipsis;
+    bottom: 2.5%;
+    z-index: 51;
+    font-family: $font1 !important;
+    font-size: clamp(24px, 2.5vw, 44px);
+    color: rgb(250, 221, 116);
+    filter: none;
+    .shadow {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      transform: translate(0.1rem, 0.1rem);
+      z-index: -1;
+      left: 0;
+      color: $black;
+      pointer-events: none;
+    }
+    i,
+    b {
+      color: inherit;
+      font-size: inherit;
+      font-family: inherit;
+    }
+    & > * {
+      color: inherit;
+      font-size: inherit;
+      font-family: inherit;
+      & > * {
+        color: inherit;
+        font-family: inherit;
+        font-size: inherit;
+        & > * {
+          color: inherit;
+          font-family: inherit;
+          font-size: inherit;
+        }
+      }
+    }
+    &:hover {
+      cursor: text;
+    }
+  }
+  $layers: 18;
+  @for $i from 1 through $layers {
+    .level-#{$i} {
+      z-index: $i;
+    }
+  }
+}

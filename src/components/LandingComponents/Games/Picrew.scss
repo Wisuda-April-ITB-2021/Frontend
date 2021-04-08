@@ -3,13 +3,14 @@
 
 .picrew {
   @include flex_center(column);
-  width: 100%;
+  width: 140%;
   position: relative;
+  transform: translateX(-15%);
   text-align: center;
   background: $darkBlue;
   border-radius: $border-radius;
   overflow: hidden;
-  padding: 25px;
+  padding-top: 25px;
   filter: drop-shadow($shadow-blur);
   &::before {
     @include setup_size(100%, 100%);
@@ -22,17 +23,110 @@
     opacity: 0.5;
     z-index: -1;
   }
+  &-buttons {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  &-button {
+    z-index: 1;
+    margin: 0 0.5rem;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
 }
 
+$size: 60vh;
 .picrew-container {
   &-outer {
-    $size: 35vw;
+    z-index: 0;
     width: $size;
     height: $size;
     background: $darkBlue;
     box-shadow: $shadow-blur;
-    margin: 20px 0;
+    // margin-bottom: 20px;
+  }
+  &-outer2 {
+    @include setup_size(100%, 80vh);
+    display: flex;
+    padding: 2% 5%;
   }
   @include flex_center(column);
   @include setup_size(100%, 100%);
+}
+
+.picrew-content {
+  &-left {
+    @include flex_center(column);
+    justify-content: space-between;
+    width: $size;
+    margin-right: 1rem;
+  }
+  &-right {
+    width: $size;
+    flex-grow: 1;
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tab) {
+  .picrew {
+    padding-top: 40px;
+    width: 100%;
+    transform: translateX(0);
+    h3 {
+      margin-bottom: 0.5rem;
+    }
+    p {
+      margin-bottom: 1rem;
+      padding: 0 10%;
+    }
+    &-button {
+      margin: 1vh 0.5rem 2vh;
+    }
+  }
+  .picrew-container {
+    &-outer2 {
+      @include setup_size(100%, 100%);
+      @include flex-center(column);
+      padding: 0 5%;
+    }
+    &-outer {
+      $size: 50vw;
+      width: $size;
+      height: $size;
+    }
+  }
+  .picrew-content {
+    &-left {
+      margin-right: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint) {
+  $size: 65vw;
+  .picrew {
+    &-button {
+      margin: 2vh 0.25rem 3vh;
+    }
+  }
+  .picrew-container {
+    &-outer2 {
+      padding: 0;
+    }
+    &-outer {
+      width: $size;
+      height: $size;
+    }
+  }
+  .picrew-content {
+    &-left {
+      width: $size;
+      margin-right: 0;
+    }
+    &-right {
+      width: 100%;
+      flex-grow: 1;
+    }
+  }
 }

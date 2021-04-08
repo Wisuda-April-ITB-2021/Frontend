@@ -3,15 +3,15 @@ import "./Youtube.scss";
 
 export const Youtube = (props) => {
     return (
-        <iframe 
-            className="yutup"
+        <iframe
+            className='yutup'
             src={props.link}
-            height="390vh"
-            width="700vw"
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen 
-            className="youtube">
-        </iframe>
+            height='390vh'
+            width='700vw'
+            frameBorder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            allowFullScreen
+            className='youtube'
+        ></iframe>
     );
 };

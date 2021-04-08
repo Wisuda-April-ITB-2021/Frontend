@@ -1,0 +1,54 @@
+@import "../../../styles/mixin.scss";
+@import "../../../styles/variables.scss";
+
+.gather-town {
+  margin-top: 5vh;
+  h3 {
+    text-align: center;
+  }
+  p {
+    margin-top: 1.5vh;
+  }
+}
+
+.gather-town-links {
+  margin-top: 3vh;
+  .table-info {
+    a,
+    p {
+      margin: 0 2px;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+  tbody {
+    tr {
+      td {
+        color: $yellow;
+        background-color: $darkBlueTransparent2;
+        padding: 0.25rem 0.7rem;
+        position: relative;
+        &:first-of-type {
+          width: 30%;
+          &::after {
+            content: "";
+            @include setup_size(1px, 100%);
+            background-color: $darkBlue;
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint) {
+  .gather-town {
+    p {
+      margin: 1.5vh 5vw 0;
+    }
+  }
+}

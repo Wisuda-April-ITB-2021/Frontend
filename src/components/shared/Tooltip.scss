@@ -5,6 +5,8 @@
   @include setup_size(100%, 100%);
   position: relative;
   display: inline-block;
+  z-index: 999;
+  border-radius: 0 0 16px 0;
 
   .tooltip-text {
     position: absolute;

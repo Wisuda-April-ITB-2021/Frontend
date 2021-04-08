@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Tooltip from "../shared/Tooltip";
-import { useLocation } from "react-router-dom";
 import { List, ListItemPost } from "../shared/List";
+import { sendAnalyticsAction, WISUDAWAN_ACTION } from "../../api/analytics";
 import "./Message.scss";
 
-const MessageForm = () => {
+const MessageForm = ({ onPost }) => {
   const [name, setName] = useState("");
   const [msg, setMsg] = useState("");
   const [tooltipMsg, setTooltipMsg] = useState("");
@@ -23,7 +23,11 @@ const MessageForm = () => {
     validate();
   }, [name, msg]);
 
-  const handleSubmit = () => {};
+  const handleSubmit = async () => {
+    if (!msg) return;
+    sendAnalyticsAction(WISUDAWAN_ACTION, "Send message");
+    onPost(name, msg);
+  };
 
   return (
     <div className="message-form">
@@ -46,7 +50,7 @@ const MessageForm = () => {
         ></input>
       </div>
       <Tooltip text={tooltipMsg}>
-        <button className="message-send">
+        <button className="message-send" onClick={handleSubmit}>
           <h5>KIRIM</h5>
         </button>
       </Tooltip>
@@ -55,24 +59,20 @@ const MessageForm = () => {
 };
 
 const Messages = (props) => {
+  let messageList = null;
+  if (props.data) {
+    messageList = props.data.map((el, idx) => {
+      return (
+        <ListItemPost key={idx} title={el.sender}>
+          {el.message}
+        </ListItemPost>
+      );
+    });
+  } else {
+    messageList = <p>Yuk tulis pesan untuk wisudawan ini!</p>;
+  }
 
-    let messageList = null;
-    if (props.data) {
-        messageList = props.data.map(el => {
-            console.log(el)
-            return (
-               <ListItemPost title={el.title}>{el.body}</ListItemPost>
-            )
-        })
-    } else {
-        messageList = (<p>Loading placeholder</p>)
-    }
-
-    return (
-        <List>
-            { messageList}
-        </List>
-        )
-}
+  return <List>{messageList}</List>;
+};
 
 export { MessageForm, Messages };

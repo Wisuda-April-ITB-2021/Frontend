@@ -36,7 +36,7 @@ export const NavbarLinks = ({ isOpen, isMobile }) => {
           {content}
         </div>
       )}
-      {isOpen && (
+      {isMobile && isOpen && (
         <motion.div
           key="2"
           initial={{ y: "-100%" }}

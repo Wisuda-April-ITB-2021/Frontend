@@ -7,6 +7,7 @@ $font2-bold: Bitter-Bold;
 $shadow-large: 10px 2px 0 rgba(43, 34, 35, 1);
 $shadow: 4px 2px 0 rgba(43, 34, 35, 1);
 $shadow-blur: 0px 2px 17px rgba(0, 0, 0, 0.2);
+$shadow-light: 0px 2px 17px rgba(196, 220, 201, 0.2);
 $shadow-blur-inner: inset $shadow-blur;
 
 $black: rgb(43, 34, 35);
@@ -15,12 +16,14 @@ $white: rgb(253, 253, 223);
 $lightGreen: rgb(196, 220, 201);
 $darkBlue: rgb(47, 60, 79);
 $darkBlueTransparent: rgba(47, 60, 79, 0.9);
+$darkBlueTransparent2: rgba(47, 60, 79, 0.3);
 $yellow: rgb(255, 232, 151);
 $blue: rgb(75, 133, 171);
 $blueTransparent: rgba(75, 133, 171, 0.5);
 
-$border-radius: clamp(12px, 1vw, 25px);
+$border-radius: clamp(10px, 1vw, 25px);
 $breakpoint: 700px; // ubah di navbar juga
+$breakpoint-tab: 1025px;
 $navbar-height: 70px;
 $transition-duration: 250ms;
 

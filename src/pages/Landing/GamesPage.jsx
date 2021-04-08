@@ -1,31 +1,52 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { Picrew } from "../../components/LandingComponents/Games/Picrew";
 import { GatherTown } from "../../components/LandingComponents/Games/GatherTown";
+import { Majalah } from "../../components/LandingComponents/Games/Majalah";
 import { Template } from "../Template/Template";
 import "./GamesPage.scss";
 import Button from "../../components/shared/Button";
+import { Loading } from "../../components/shared/Loading/Loading";
+const Picrew = lazy(() =>
+  import("../../components/LandingComponents/Games/Picrew")
+);
 
 const GAMES = [
   {
-    title: "Picrew",
-    Component: <Picrew />,
+    title: "Avatar Maker",
+    Component: (
+      <Suspense fallback={<Loading />}>
+        <Picrew />
+      </Suspense>
+    ),
   },
   {
     title: "Gather Town",
     Component: <GatherTown />,
+    afterTgl10: true,
+  },
+  {
+    title: "Mercusuar",
+    Component: <Majalah />,
   },
 ];
 
+const showGT = () => {
+  const openDate = new Date("2021-04-10T00:00:01");
+  return new Date(openDate).valueOf() < new Date().valueOf();
+};
+
 export const GamesPage = () => {
   const [gamesIdx, setGamesIdx] = useState(0);
+  const gamesShown = GAMES.filter(
+    (game) => (game.afterTgl10 && showGT()) || game.afterTgl10 === undefined
+  );
   return (
     <Template>
       <div className="games-container">
-        <h1>Wispril Games!</h1>
+        <h1>Wispril Products!</h1>
         <div className="games-switch">
-          {GAMES.map((game, idx) => (
+          {gamesShown.map((game, idx) => (
             <Button
               active={idx === gamesIdx}
               key={idx}
@@ -47,7 +68,7 @@ export const GamesPage = () => {
               damping: 14,
             }}
           >
-            {GAMES[gamesIdx].Component}
+            {gamesShown[gamesIdx].Component}
           </motion.div>
         </AnimatePresence>
       </div>

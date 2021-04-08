@@ -1,26 +1,34 @@
-import React from 'react'
-import WisudawanCard from './WisudawanCard'
-import './WisudawanCardContainer.scss'
-import mainImage  from './img/wisudawan1.png'
-import mainImage2 from './img/wisudawan2.png'
-import mainImage3 from './img/wisudawan3.png'
-import mainImage4 from './img/wisudawan4.png'
-import mainImage5 from './img/wisudawan5.png'
-import mainImage6 from './img/wisudawan6.png'
+import React from "react";
+import { Link } from "react-router-dom";
+import { Loading } from "../Loading/Loading";
+import WisudawanCard from "./WisudawanCard";
+import "./WisudawanCardContainer.scss";
+// import {dummyWisudawan} from "../../../pages/Util";
 
+const WisudawanCardContainer = ({ data }) => {
+  // const [isLoaded, setLoaded] = useState(false)
+  return (
+    <div className="wisudawanCardContainer">
+      {!data ? (
+        <Loading />
+      ) : data.length > 0 ? (
+        data.map((row, i) => (
+          <Link key={i} to={"/galeri-wisudawan/wisudawan/" + row.id_wisudawan}>
+            <WisudawanCard
+              nama={row.nama}
+              nim={row.nim}
+              image={row.photo}
+              quotes={row.judul_ta}
+            />
+          </Link>
+        ))
+      ) : (
+        <p className="wisudawan-card-error">
+          Tidak ditemukan wisudawan yang sesuai untuk organisasi ini
+        </p>
+      )}
+    </div>
+  );
+};
 
-const WisudawanCardContainer = () => {
-    return (
-        <div className='wisudawanCardContainer'>
-            <WisudawanCard nama='ARNETTHA SEPTINEZ' nim={16720327} image={mainImage} quotes='Kiat Sukses beternak lele supaya dapat cuan dikala pandemi'/>
-            <WisudawanCard nama='ARNETTHA SEPTINEZ' nim={16720327} image={mainImage3} quotes='Kiat Sukses beternak lele supaya dapat cuan dikala pandemi'/>
-            <WisudawanCard nama='ARNETTHA SEPTINEZ' nim={16720327} image={mainImage2} quotes='Kiat Sukses beternak lele supaya dapat cuan dikala pandemi'/>
-            <WisudawanCard nama='ARNETTHA SEPTINEZ' nim={16720327} image={mainImage4} quotes='Kiat Sukses beternak lele supaya dapat cuan dikala pandemi'/>
-            <WisudawanCard nama='ARNETTHA SEPTINEZ' nim={16720327} image={mainImage5} quotes='Kiat Sukses beternak lele supaya dapat cuan dikala pandemi'/>
-            <WisudawanCard nama='ARNETTHA SEPTINEZ' nim={16720327} image={mainImage6} quotes='Kiat Sukses beternak lele supaya dapat cuan dikala pandemi'/>
-            <WisudawanCard nama='ARNETTHA SEPTINEZ' nim={16720327} image={mainImage6} quotes='Kiat Sukses beternak lele supaya dapat cuan dikala pandemi'/>
-        </div>
-    )
-}
-
-export default WisudawanCardContainer
+export default WisudawanCardContainer;

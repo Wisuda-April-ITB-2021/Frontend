@@ -43,18 +43,13 @@ export const isPastEvent = (event) => {
 };
 
 export const findUpcomingEvent = (events) => {
-  const today = new Date();
-  const futureEvents = events.filter(
-    ({ date }) =>
-      date.getDate() >= today.getDate() &&
-      date.getMonth() >= today.getMonth() &&
-      date.getFullYear() >= today.getFullYear()
-  );
+  const futureEvents = events.filter(({ date }) => calculateDays(date) >= 0);
   return futureEvents[0];
 };
 
 export const calculateDays = (date) => {
-  const today = new Date();
+  // const today = new Date();
+  const today = new Date("2021-04-11");
   const timeDifference = date.getTime() - today.getTime();
   return Math.round(timeDifference / (1000 * 60 * 60 * 24));
 };
@@ -67,7 +62,7 @@ export const getUpcomingText = (date) => {
   } else if (days === 1) {
     text = "Besok";
   } else {
-    text = `${days} hari lagi`;
+    text = `${days + 1} hari lagi`;
   }
   return `\xa0\xa0\xa0[ ${text} ]`;
 };

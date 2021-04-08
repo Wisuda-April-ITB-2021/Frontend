@@ -2,7 +2,7 @@
 @import "../../styles/mixin.scss";
 
 .footer {
-  @include setup_size(100vw, 225px);
+  @include setup_size(100vw, 180px);
   align-items: center;
   justify-content: space-evenly;
   background-size: cover;
@@ -10,8 +10,9 @@
   background-color: $darkBlue;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 0 2.5%;
-  position: relative;
+  padding: 0 3.5%;
+  position: absolute;
+  bottom: 0;
   z-index: 10;
   &-text {
     width: 100%;
@@ -283,24 +284,24 @@
         cursor: pointer;
       }
       .instagram-icon {
-        width: 32px;
+        width: 24px;
       }
       .linkedin-icon {
-        width: 27px;
+        width: 19px;
       }
       .line-icon {
-        width: 27px;
+        width: 19px;
         border-radius: 8px;
         border-radius: 7px;
       }
       .spotify-icon {
-        width: 29px;
+        width: 21px;
       }
       .tiktok-icon {
-        width: 26px;
+        width: 18px;
       }
       .twitter-icon {
-        width: 30px;
+        width: 22px;
       }
     }
   }

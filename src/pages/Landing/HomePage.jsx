@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, useTransform, useViewportScroll } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import { EVENT_PAGE } from "../../routes/routes";
+import { GAMES_PAGE } from "../../routes/routes";
 import { Template } from "../Template/Template";
 import { VisiMisi } from "../VisiMisi";
 import Logo from "../../images/logo/Logo.png";
@@ -181,8 +181,8 @@ const Parallax = () => {
             change.”
           </i>
         </h6>
-        <Link to={EVENT_PAGE.path}>
-          <Button className="button">Events</Button>
+        <Link to={GAMES_PAGE.path}>
+          <Button className="button">Products</Button>
         </Link>
       </motion.div>
     </div>
