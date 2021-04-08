@@ -153,10 +153,19 @@ export const OrganisasiPage = () => {
           </AnimatePresence>
         </div>
         {data ? (
-          <OrganisasiCardContainer
-            path={`${page}/${currUrl}`}
-            data={data[selected.replace(/ /g, "_")]}
-          />
+          <AnimatePresence exitBeforeEnter>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              key={data[selected.replace(/ /g, "_")]}
+            >
+              <OrganisasiCardContainer
+                path={`${page}/${currUrl}`}
+                data={data[selected.replace(/ /g, "_")]}
+              />
+            </motion.div>
+          </AnimatePresence>
         ) : selected ? (
           <Loading />
         ) : (
