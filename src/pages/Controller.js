@@ -27,7 +27,7 @@ export const parseImg = (url) => {
 };
 
 export const getTrending = () => {
-	return axios.get(`${URL}/wisudawan/trending`);
+	return axios.get(`${URL}/wisudawan/trending/`);
 };
 
 export const normalizeResponse = (res) => {
