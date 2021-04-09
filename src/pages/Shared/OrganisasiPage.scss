@@ -85,6 +85,21 @@
   background-color: $blue;
 }
 
+.trending-container{
+  text-align: center;
+  .trending-wisudawan-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    a{
+      @include flex_center(column);
+      margin-bottom: 2vh;
+    }
+  }
+}
+
+
+
 @media only screen and (max-width: $breakpoint) {
   .organisasi-tag {
     padding: 3% 5%;
@@ -104,4 +119,14 @@
   .suboptions-container {
     margin: 0 0 5vh;
   }
+
+  .trending-container{
+    text-align: center;
+    .trending-wisudawan-container{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows : 1fr 1fr 1fr;
+    }
+  }
+
 }

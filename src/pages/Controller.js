@@ -26,6 +26,10 @@ export const parseImg = (url) => {
   return url === "" ? null : `${base_url}/${url}`;
 };
 
+export const getTrending = () => {
+	return axios.get(`${URL}/wisudawan/trending`);
+};
+
 export const normalizeResponse = (res) => {
-  return res.data.data;
+	return res.data.data;
 };

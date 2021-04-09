@@ -8,8 +8,8 @@ const MessageForm = ({ onPost }) => {
   const [name, setName] = useState("");
   const [msg, setMsg] = useState("");
   const [tooltipMsg, setTooltipMsg] = useState("");
-  const ANONYMOUS = "Anonoymous";
-  const ERROR_NAME = `Nama yang kosong akan langsung dijadikan ${ANONYMOUS}`;
+  const ANONYMOUS = "Pengagum rahasia";
+  const ERROR_NAME = `Nama yang kosong akan langsung dijadikan "${ANONYMOUS}"`;
   const ERROR_MSG = "Pesan tidak boleh kosong";
 
   const validate = () => {
@@ -26,7 +26,11 @@ const MessageForm = ({ onPost }) => {
   const handleSubmit = async () => {
     if (!msg) return;
     sendAnalyticsAction(WISUDAWAN_ACTION, "Send message");
-    onPost(name, msg);
+    if (!name){
+      onPost(ANONYMOUS, msg);
+    }else{
+      onPost(name, msg);
+    }
   };
 
   return (
