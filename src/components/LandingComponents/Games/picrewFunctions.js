@@ -42,6 +42,9 @@ const getImage = () => {
     scrollY: -window.pageYOffset,
     backgroundColor: null,
     scale: 1080 / target.scrollHeight,
+    useCORS: true,
+    allowTaint: true,
+    logging: true,
   }).then((canvas) => canvas.toDataURL("image/png"));
 };
 

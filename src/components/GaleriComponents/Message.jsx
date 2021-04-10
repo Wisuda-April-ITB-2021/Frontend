@@ -26,9 +26,9 @@ const MessageForm = ({ onPost }) => {
   const handleSubmit = async () => {
     if (!msg) return;
     sendAnalyticsAction(WISUDAWAN_ACTION, "Send message");
-    if (!name){
+    if (!name) {
       onPost(ANONYMOUS, msg);
-    }else{
+    } else {
       onPost(name, msg);
     }
   };
@@ -41,7 +41,7 @@ const MessageForm = ({ onPost }) => {
           type="text-area"
           value={msg}
           onChange={(e) => setMsg(e.target.value)}
-          placeholder="Jika dibiarkan kosong, maka akan menjadi “Pengagum rahasia”"
+          placeholder="Ketik pesanmu di sini..."
         ></textarea>
       </div>
       <div className="sender form-col">
