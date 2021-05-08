@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Template } from "../Template/Template";
-import {
-  MessageForm,
-  Messages,
-} from "../../components/GaleriComponents/Message";
+import { Messages } from "../../components/GaleriComponents/Message";
 import { List, ListItem } from "../../components/shared/List";
 import { useHistory } from "react-router-dom";
 
@@ -17,7 +14,6 @@ import {
   fetchWisudawanMessage,
   parseImg,
   normalizeResponse,
-  postMessage,
 } from "../Controller";
 
 import { ReactComponent as InstagramIcon } from "../../icons/instagram.svg";
@@ -99,18 +95,18 @@ const generateMediaSocial = (wisudawan) => {
   ];
 
   return (
-		<div className='media-social footer-logo'>
-			{medsos.map((row, i) =>
-				row.url ? (
-					<a href={row.url} key={i} target='_blank'>
-						{row.C}
-					</a>
-				) : (
-					<p key={i}></p>
-				)
-			)}
-		</div>
-	);
+    <div className="media-social footer-logo">
+      {medsos.map((row, i) =>
+        row.url ? (
+          <a href={row.url} key={i} target="_blank">
+            {row.C}
+          </a>
+        ) : (
+          <p key={i}></p>
+        )
+      )}
+    </div>
+  );
 };
 
 const generateFunFact = (wisudawan) => {
@@ -166,26 +162,9 @@ const generatePrestasiKarya = (wisudawan) => {
 
 export const WisudawanPage = () => {
   const id = useLocation().pathname.split("/")[3];
-  const history = useHistory();
 
   const [wisudawan, setWisudawan] = useState({});
   const [messages, setMessages] = useState(null);
-
-  const handlePost = async (name, msg) => {
-    if (name == "") name = "Anonymous";
-    try {
-      await postMessage({
-        id_wisudawan: wisudawan.id_wisudawan,
-        sender: name,
-        message: msg,
-      });
-      alert("Pesan kamu sudah dikirim!");
-      history.push(0);
-    } catch (err) {
-      console.error(JSON.stringify(err));
-      alert("Maaf, terjadi error. Coba lagi dalam beberapa menit.");
-    }
-  };
 
   useEffect(async () => {
     try {
@@ -216,7 +195,7 @@ export const WisudawanPage = () => {
               <h2>{wisudawan.nama || ""}</h2>
               <h3>{`${wisudawan.nim}/${wisudawan.jurusan_short}`}</h3>
             </div>
-            <img src={parseImg(wisudawan.photo)} />
+            {/* <img src={parseImg(wisudawan.photo)} /> */}
             <h5 className="desc">{wisudawan.judul_ta}</h5>
             {generateMediaSocial(wisudawan)}
           </div>
@@ -233,7 +212,7 @@ export const WisudawanPage = () => {
         {generatePrestasiKarya(wisudawan)}
 
         <h3>Pojok Surat Cinta</h3>
-        <MessageForm onPost={handlePost} />
+        {/* <MessageForm onPost={handlePost} /> */}
         <h4>Messages ({(messages && messages.length) || 0})</h4>
         <Messages data={messages} nama={wisudawan.nama} />
       </div>
