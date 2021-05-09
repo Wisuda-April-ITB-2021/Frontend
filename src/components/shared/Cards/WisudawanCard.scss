@@ -17,32 +17,13 @@
 
   margin: 1vw;
   padding: 3vw 3vw;
-  @include setup_size(24vw, 36vw);
+  @include setup_size(24vw, fit-content);
   border-radius: $border-radius;
 
   &:hover {
     transform: translateY(-2%);
     box-shadow: $shadow-light;
     cursor: pointer;
-  }
-
-  .images {
-    @include setup_size(15vw, 15vw);
-    position: relative;
-    .mainImage {
-      @include setup_size(100%, 100%);
-      object-fit: cover;
-      border-radius: 50%;
-    }
-
-    .cardBackground {
-      width: 20vw;
-      // padding: 2vw;
-      position: absolute;
-      bottom: -2vw;
-      left: -1.75vw;
-      z-index: 2;
-    }
   }
 
   h4 {
@@ -84,20 +65,7 @@
 @media only screen and (max-width: $breakpoint) {
   .wisudawanCard {
     margin: 1.6vw;
-    @include setup_size(40vw, 65vw);
-
-    .images {
-      @include setup_size(25vw, 25vw);
-      position: relative;
-
-      .cardBackground {
-        width: 32vw;
-        position: absolute;
-        bottom: -2vw;
-        left: -1.75vw;
-        z-index: 2;
-      }
-    }
+    @include setup_size(40vw, fit-content);
 
     h4 {
       font-size: 3vw;

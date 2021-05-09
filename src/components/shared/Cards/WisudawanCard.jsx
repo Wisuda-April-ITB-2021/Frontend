@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./WisudawanCard.scss";
-import cardBG from "./img/card-background.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const WisudawanCard = ({ nama, nim, quotes }) => {
@@ -12,9 +11,6 @@ const WisudawanCard = ({ nama, nim, quotes }) => {
     <div className="wisudawanCard">
       <h4>{nama}</h4>
       <h4>{nim}</h4>
-      <div className="images">
-        <img src={cardBG} alt="" className="cardBackground" />
-      </div>
       <p
         onMouseEnter={() => setTooltipVisible(true)}
         onMouseLeave={() => setTooltipVisible(false)}

@@ -73,7 +73,7 @@ const Messages = (props) => {
       );
     });
   } else {
-    messageList = <p>Yuk tulis pesan untuk wisudawan ini!</p>;
+    messageList = <p>Tidak ada pesan untuk ditampilkan</p>;
   }
 
   return <List>{messageList}</List>;

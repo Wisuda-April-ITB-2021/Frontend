@@ -97,8 +97,10 @@ export const dummyWisudawan = [
 ];
 
 export const getFunFact = (wisudawanData) => {
-  return wisudawanData.self_data.filter(
-    (row) => row.content_type === "FUNFACT"
+  const facts = [...wisudawanData.selfData, ...wisudawanData.org_data];
+  return facts.filter(
+    (row) =>
+      row.content_type === "FUNFACT" || row.content_type === "TIPS_SUKSES"
   );
 };
 

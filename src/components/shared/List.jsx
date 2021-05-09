@@ -9,7 +9,6 @@ import React, { useState } from "react";
 import Linkify from "react-linkify";
 import ReactEmoji from "react-emoji";
 import "./List.scss";
-import { ImageModal } from "./ImageModal";
 
 export const List = (props) => {
   return (
@@ -20,23 +19,15 @@ export const List = (props) => {
 };
 
 export const ListItem = ({ title, imageLink, children, ...other }) => {
-  const [open, setOpen] = useState(false);
-  const toogleModal = () => setOpen((prev) => !prev);
   return (
     <li className="listItem" {...other}>
-      {imageLink && (
-        <ImageModal open={open} toogleOpen={toogleModal} src={imageLink} />
-      )}
       <div className="bullet" />
       <div
         className="listItemWrapper"
         style={{ paddingBottom: children ? "25px" : "10px" }}
       >
         <h5>{title}</h5>
-        <p style={{ marginTop: "8px" }}>
-          {children}
-          {imageLink && <span onClick={toogleModal}> view</span>}
-        </p>
+        <p style={{ marginTop: "8px" }}>{children}</p>
       </div>
     </li>
   );
